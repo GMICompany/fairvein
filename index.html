@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EthicalCart — Follow the Money</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+        
+        :root {
+            --cream: #F5F1E8;
+            --burnt-orange: #D9775F;
+            --dark-charcoal: #2C2C2C;
+            --warm-gray: #6B6B6B;
+            --off-white: #FDFCF9;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--cream);
+            color: var(--dark-charcoal);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+        
+        .mono {
+            font-family: 'Space Mono', monospace;
+        }
+        
+        /* Receipt texture background */
+        .receipt-bg {
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0,0,0,0.03) 2px,
+                    rgba(0,0,0,0.03) 4px
+                );
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--burnt-orange);
+            border-radius: 4px;
+        }
+        
+        /* Decorative elements */
+        .bracket {
+            color: var(--burnt-orange);
+            font-weight: 700;
+        }
+        
+        /* Asymmetric layout helper */
+        .offset-right {
+            margin-right: -2rem;
+        }
+        
+        /* Hover states */
+        .hover-lift {
+            transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 119, 95, 0.15);
+        }
+        
+        /* Search box custom styling */
+        .search-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .search-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--burnt-orange), var(--dark-charcoal));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .search-container:focus-within::before {
+            opacity: 1;
+        }
+        
+        /* Tag pill styling */
+        .tag-pill {
+            background: var(--off-white);
+            border: 1.5px solid var(--dark-charcoal);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: all 0.15s;
+        }
+        .tag-pill:hover {
+            background: var(--burnt-orange);
+            color: var(--off-white);
+            border-color: var(--burnt-orange);
+        }
+        
+        /* Neo-brutalist button */
+        .brutal-btn {
+            background: var(--burnt-orange);
+            color: var(--off-white);
+            border: 2px solid var(--dark-charcoal);
+            box-shadow: 4px 4px 0px var(--dark-charcoal);
+            transition: all 0.1s;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+        }
+        .brutal-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--dark-charcoal);
+        }
+        .brutal-btn:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px var(--dark-charcoal);
+        }
+    </style>
+</head>
+<body class="receipt-bg">
+    <!-- Header -->
+    <nav class="bg-off-white border-b-2 border-dark-charcoal sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="mono text-xl font-bold">
+                    <span class="bracket">[</span>EC<span class="bracket">]</span>
+                </div>
+                <h1 class="text-2xl tracking-tight">
+                    EthicalCart
+                </h1>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#how" class="text-sm font-medium hover:text-burnt-orange transition-colors">How It Works</a>
+                <a href="#why" class="text-sm font-medium hover:text-burnt-orange transition-colors">Why Now</a>
+                <button class="brutal-btn px-4 py-2">
+                    Get Access
+                </button>
+            </div>
+            <button class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Asymmetric Layout) -->
+    <section class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-12 gap-12 items-center">
+        <!-- Left Column (Text) -->
+        <div class="md:col-span-7 space-y-8">
+            <div class="inline-block">
+                <div class="mono text-xs uppercase tracking-widest text-warm-gray mb-2">
+                    <span class="bracket">/</span> Launching Q2 2026
+                </div>
+            </div>
+            
+            <h2 class="text-6xl md:text-7xl leading-none tracking-tight">
+                Follow<br/>
+                the Money<span class="text-burnt-orange">.</span>
+            </h2>
+            
+            <p class="text-xl text-warm-gray leading-relaxed max-w-xl">
+                Before you tap "Buy Now," know who's really cashing in. 
+                <strong>Search any brand</strong> to expose its parent company, 
+                sister brands, and active boycott campaigns.
+            </p>
+            
+            <div class="flex flex-wrap gap-3 mono text-xs">
+                <span class="tag-pill">Parent Companies</span>
+                <span class="tag-pill">Boycott Tracker</span>
+                <span class="tag-pill">Indie Alternatives</span>
+                <span class="tag-pill">Free Forever</span>
+            </div>
+            
+            <div class="pt-4">
+                <a href="#search" class="brutal-btn px-8 py-4 inline-block">
+                    Try It Now
+                </a>
+                <p class="mono text-xs text-warm-gray mt-3">
+                    No signup required <span class="bracket">→</span> 200+ brands indexed
+                </p>
+            </div>
+        </div>
+        
+        <!-- Right Column (Visual) -->
+        <div class="md:col-span-5 offset-right">
+            <div class="bg-off-white border-2 border-dark-charcoal p-8 rotate-1 hover:rotate-0 transition-transform duration-300">
+                <div class="mono text-xs uppercase tracking-widest mb-4 text-warm-gray">
+                    Case Study <span class="bracket">#001</span>
+                </div>
+                <h3 class="text-3xl mb-4">
+                    "I didn't know MAC was Estée Lauder."
+                </h3>
+                <p class="text-sm text-warm-gray leading-relaxed mb-6">
+                    8 major conglomerates own most consumer brands. 
+                    Estée Lauder alone controls MAC, Clinique, Bobbi Brown, La Mer, 
+                    Tom Ford, Too Faced, Aveda, Bumble and bumble, and 20+ others.
+                </p>
+                <div class="border-t-2 border-dark-charcoal pt-4">
+                    <p class="mono text-xs">
+                        <span class="text-burnt-orange font-bold">$2.5M</span> political donation (Nov 2025)<br/>
+                        <span class="text-burnt-orange font-bold">BDS list</span> since Oct 2023<br/>
+                        <span class="text-burnt-orange font-bold">Epstein links</span> via board member (Feb 2026)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Search Section -->
+    <section id="search" class="max-w-4xl mx-auto px-6 py-16">
+        <div class="bg-off-white border-2 border-dark-charcoal p-12">
+            <div class="text-center mb-8">
+                <h3 class="text-4xl mb-3">
+                    Search <span class="text-burnt-orange">Any</span> Brand
+                </h3>
+                <p class="text-warm-gray mono text-sm">
+                    Try: MAC, Clinique, Bobbi Brown, La Mer, Tom Ford...
+                </p>
+            </div>
+            
+            <div class="search-container bg-cream border-2 border-dark-charcoal flex items-center">
+                <input 
+                    id="brandSearch" 
+                    type="text" 
+                    placeholder="e.g., MAC Cosmetics"
+                    class="flex-1 px-6 py-4 text-lg bg-transparent focus:outline-none"
+                />
+                <button 
+                    onclick="searchBrand()"
+                    class="brutal-btn px-6 py-3 m-2"
+                >
+                    Search
+                </button>
+            </div>
+
+            <!-- Search Results -->
+            <div id="results" class="mt-8 hidden">
+                <div class="bg-cream border-2 border-dark-charcoal p-8">
+                    <div class="flex items-start gap-6">
+                        <div class="text-5xl">⚠️</div>
+                        <div class="flex-1 space-y-6">
+                            <div>
+                                <h4 id="brandName" class="text-3xl mb-2"></h4>
+                                <p class="mono text-sm text-warm-gray">
+                                    Owned by <span id="parentCompany" class="text-burnt-orange font-bold text-base"></span>
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-bold mb-3 uppercase tracking-wide text-sm">Active Boycott Campaigns:</h5>
+                                <div id="boycottReasons" class="space-y-2 mono text-xs"></div>
+                            </div>
+
+                            <div>
+                                <h5 class="font-bold mb-3 uppercase tracking-wide text-sm">Sister Brands (Same Owner):</h5>
+                                <div id="sisterBrands" class="flex flex-wrap gap-2"></div>
+                            </div>
+
+                            <div class="border-2 border-dark-charcoal bg-off-white p-6">
+                                <h5 class="font-bold mb-3 flex items-center gap-2">
+                                    <i data-lucide="check-circle" class="w-5 h-5 text-burnt-orange"></i>
+                                    Try These Indie Alternatives:
+                                </h5>
+                                <div id="alternatives" class="space-y-2 text-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results -->
+            <div id="noResults" class="mt-8 hidden">
+                <div class="bg-cream border-2 border-dark-charcoal p-8 text-center">
+                    <p class="text-warm-gray mb-2">Brand not found in our database yet.</p>
+                    <p class="mono text-xs text-warm-gray">Expanding to 1000+ brands by launch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works (Grid Layout) -->
+    <section id="how" class="max-w-6xl mx-auto px-6 py-24">
+        <h3 class="text-5xl text-center mb-16">
+            How It Works<span class="text-burnt-orange">.</span>
+        </h3>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-off-white border-2 border-dark-charcoal p-8 hover-lift">
+                <div class="mono text-6xl font-bold text-burnt-orange mb-4">01</div>
+                <h4 class="text-2xl mb-3">Search</h4>
+                <p class="text-warm-gray leading-relaxed">
+                    Type in any beauty, fashion, or consumer brand. No barcode scanner needed.
+                </p>
+            </div>
+            
+            <div class="bg-off-white border-2 border-dark-charcoal p-8 hover-lift">
+                <div class="mono text-6xl font-bold text-burnt-orange mb-4">02</div>
+                <h4 class="text-2xl mb-3">Discover</h4>
+                <p class="text-warm-gray leading-relaxed">
+                    See parent company, sister brands, active boycott campaigns—with sources.
+                </p>
+            </div>
+            
+            <div class="bg-off-white border-2 border-dark-charcoal p-8 hover-lift">
+                <div class="mono text-6xl font-bold text-burnt-orange mb-4">03</div>
+                <h4 class="text-2xl mb-3">Choose</h4>
+                <p class="text-warm-gray leading-relaxed">
+                    Get indie alternatives that align with your values. Shop informed.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Matters -->
+    <section id="why" class="max-w-4xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="mono text-xs uppercase tracking-widest text-warm-gray mb-4">
+                    <span class="bracket">/</span> The Problem
+                </div>
+                <h3 class="text-5xl leading-tight mb-6">
+                    Your Wallet<br/>
+                    is Your<br/>
+                    Voice<span class="text-burnt-orange">.</span>
+                </h3>
+            </div>
+            <div class="space-y-6 text-warm-gray leading-relaxed">
+                <p>
+                    <strong class="text-dark-charcoal">8 conglomerates</strong> control most of the brands you love. 
+                    They hide behind "indie-looking" labels, making billions while you think you're supporting small businesses.
+                </p>
+                <p>
+                    <strong class="text-dark-charcoal">Boycott campaigns</strong> are everywhere—BDS lists, Reddit threads, 
+                    Instagram stories—but they're scattered, outdated, and hard to track.
+                </p>
+                <p class="font-semibold text-dark-charcoal">
+                    Before EthicalCart: 20 minutes of Googling every brand before checkout.<br/>
+                    <span class="text-burnt-orange">Now: One search.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Stats -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+        <div class="bg-dark-charcoal text-off-white border-2 border-dark-charcoal p-12">
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div>
+                    <div class="mono text-5xl font-bold text-burnt-orange mb-2">200+</div>
+                    <p class="text-sm uppercase tracking-widest">Brands Indexed</p>
+                </div>
+                <div>
+                    <div class="mono text-5xl font-bold text-burnt-orange mb-2">15</div>
+                    <p class="text-sm uppercase tracking-widest">Boycott Campaigns</p>
+                </div>
+                <div>
+                    <div class="mono text-5xl font-bold text-burnt-orange mb-2">100%</div>
+                    <p class="text-sm uppercase tracking-widest">Free Forever</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="max-w-4xl mx-auto px-6 py-24 text-center">
+        <h3 class="text-6xl mb-6">
+            Get Early Access<span class="text-burnt-orange">.</span>
+        </h3>
+        <p class="text-xl text-warm-gray mb-8 max-w-2xl mx-auto">
+            Join the waitlist to be notified when we launch. Free forever. No credit card required.
+        </p>
+        <button class="brutal-btn px-12 py-5 text-base">
+            Join Waitlist
+        </button>
+        <p class="mono text-xs text-warm-gray mt-4">
+            500+ people already waiting <span class="bracket">→</span> Launch: Q2 2026
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-charcoal text-off-white border-t-2 border-dark-charcoal py-12 mt-24">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+            <div class="mono text-2xl font-bold">
+                <span class="bracket text-burnt-orange">[</span>EC<span class="bracket text-burnt-orange">]</span>
+            </div>
+            <p class="text-sm text-warm-gray max-w-lg mx-auto leading-relaxed">
+                Built by people who believe consumers deserve transparency. 
+                Powered by open data and community contributions. 
+                Not affiliated with any brands or parent companies.
+            </p>
+            <div class="flex justify-center gap-6 text-xs uppercase tracking-widest">
+                <a href="#" class="hover:text-burnt-orange transition-colors">About</a>
+                <a href="#" class="hover:text-burnt-orange transition-colors">Database</a>
+                <a href="#" class="hover:text-burnt-orange transition-colors">Sources</a>
+                <a href="#" class="hover:text-burnt-orange transition-colors">API</a>
+            </div>
+            <p class="mono text-xs text-warm-gray">
+                © 2026 EthicalCart
+            </p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        function searchBrand() {
+            const query = document.getElementById('brandSearch').value.toLowerCase().trim();
+            const results = document.getElementById('results');
+            const noResults = document.getElementById('noResults');
+            
+            results.classList.add('hidden');
+            noResults.classList.add('hidden');
+            
+            if (!query) return;
+            
+            // Search in database
+            const brand = brandDatabase.find(b => 
+                b.name.toLowerCase() === query || 
+                b.aliases.some(a => a.toLowerCase() === query)
+            );
+            
+            if (brand) {
+                document.getElementById('brandName').textContent = brand.name;
+                document.getElementById('parentCompany').textContent = brand.parent;
+                
+                // Boycott reasons
+                const boycottDiv = document.getElementById('boycottReasons');
+                boycottDiv.innerHTML = brand.boycotts.map(b => 
+                    `<div class="flex items-start gap-2">
+                        <span class="text-burnt-orange">→</span>
+                        <span><strong>${b.reason}</strong> (since ${b.since})</span>
+                    </div>`
+                ).join('');
+                
+                // Sister brands
+                const sistersDiv = document.getElementById('sisterBrands');
+                sistersDiv.innerHTML = brand.sisters.slice(0, 12).map(s => 
+                    `<span class="tag-pill">${s}</span>`
+                ).join('');
+                if (brand.sisters.length > 12) {
+                    sistersDiv.innerHTML += `<span class="mono text-xs text-warm-gray">+${brand.sisters.length - 12} more</span>`;
+                }
+                
+                // Alternatives
+                const altDiv = document.getElementById('alternatives');
+                altDiv.innerHTML = brand.alternatives.map(a => 
+                    `<p class="flex items-start gap-2">
+                        <span class="text-burnt-orange">✓</span>
+                        <span>${a}</span>
+                    </p>`
+                ).join('');
+                
+                results.classList.remove('hidden');
+                
+                // Re-init icons after dynamic content
+                lucide.createIcons();
+            } else {
+                noResults.classList.remove('hidden');
+            }
+        }
+        
+        // Allow Enter key to search
+        document.getElementById('brandSearch').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchBrand();
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
