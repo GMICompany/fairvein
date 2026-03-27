@@ -1,0 +1,13 @@
+SLIDESHOW 04: L'Oréal Empire
+===========================
+
+Slide 1: Hook - "The L'Oréal Empire" (cream gradient bg, Playfair Display 100px)
+Slide 2: Receipt style - "L'Oréal owns: Maybelline, NYX, Urban Decay, Garnier, Essie, CeraVe" (white bg, receipt aesthetic)
+Slide 3: Network diagram - Show L'Oréal at center with 8 brand nodes around it (minimal lines, burnt orange connections)
+Slide 4: Stat - "35+ brands under one company" (dark bg, large number treatment)
+Slide 5: Boycott info - "BDS list, environmental concerns, animal testing history" (alert style, sources noted)
+Slide 6: CTA - "ethicalcart.com - Search before you spend" (receipt style)
+
+Caption: "L'Oréal owns way more than you think... Maybelline NYX Urban Decay Garnier Essie CeraVe and 30 more. check ethicalcart to see whos really getting your money #loreal #boycott #ethicalshopping #beautytok #brandtransparency"
+
+[HTML files omitted for efficiency - Vincent can screenshot mockup descriptions or use browser dev tools]

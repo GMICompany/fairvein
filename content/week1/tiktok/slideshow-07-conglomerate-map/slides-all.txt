@@ -1,0 +1,11 @@
+SLIDESHOW 07: The 8 Companies
+==============================
+
+Slide 1: Hook - "8 companies own basically everything you buy" (dark gradient, impactful)
+Slide 2: List - "Estée Lauder, L'Oréal, Unilever, Procter & Gamble, LVMH, Shiseido, Coty, Johnson & Johnson" (receipt style)
+Slide 3: Stat - "They control 90%+ of the beauty industry" (large number treatment, burnt orange)
+Slide 4: Visual - Simple network diagram showing 8 conglomerate names with lines connecting to "Your Bathroom Shelf"
+Slide 5: Message - "They hide behind 'indie' branding on purpose" (alert style)
+Slide 6: CTA - "See who really owns your favorite brands → ethicalcart.com"
+
+Caption: "8 companies literally control everything. estee lauder loreal unilever pg lvmh shiseido coty jnj. they WANT you to think brands are independent. dont fall for it. check ethicalcart #anticonsumption #boycott #brandtransparency #conglomerate"

@@ -1,8 +1,8 @@
-# EthicalCart - Brand Ownership Transparency
+# Fairvein - Brand Ownership Transparency
 
 ## 🎯 What is This?
 
-**EthicalCart** helps conscious consumers know who they're really buying from. Search any beauty or fashion brand to instantly see:
+**Fairvein** helps conscious consumers know who they're really buying from. Search any beauty or fashion brand to instantly see:
 - Its parent company
 - All sister brands under the same owner
 - Active boycott campaigns with context

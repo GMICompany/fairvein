@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IG Carousel 1 - Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1080px; height: 1080px; background: #FFF8F0;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Inter', sans-serif; position: relative;
+        }
+        .network {
+            width: 100%; height: 100%; padding: 60px; position: relative;
+        }
+        .center {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: #D2691E; color: white;
+            width: 300px; height: 300px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 48px; font-weight: 700; text-align: center;
+            box-shadow: 0 8px 32px rgba(210, 105, 30, 0.3);
+            line-height: 1.2; padding: 20px;
+        }
+        .brand {
+            position: absolute;
+            background: white; border: 2px solid #2C1810;
+            padding: 20px 30px; border-radius: 8px;
+            font-size: 28px; font-weight: 600; color: #2C1810;
+            box-shadow: 4px 4px 0 rgba(210, 105, 30, 0.2);
+        }
+        /* Position brands in circle around center */
+        .b1 { top: 80px; left: 50%; transform: translateX(-50%); }
+        .b2 { top: 180px; right: 120px; }
+        .b3 { top: 400px; right: 60px; }
+        .b4 { bottom: 180px; right: 120px; }
+        .b5 { bottom: 80px; left: 50%; transform: translateX(-50%); }
+        .b6 { bottom: 180px; left: 120px; }
+        .b7 { top: 400px; left: 60px; }
+        .b8 { top: 180px; left: 120px; }
+        /* Connection lines */
+        .line {
+            position: absolute; background: #D2691E; opacity: 0.3;
+            height: 2px; transform-origin: 0 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="network">
+        <div class="center">Estée Lauder Companies</div>
+        <div class="brand b1">MAC</div>
+        <div class="brand b2">Clinique</div>
+        <div class="brand b3">Bobbi Brown</div>
+        <div class="brand b4">La Mer</div>
+        <div class="brand b5">Tom Ford</div>
+        <div class="brand b6">Too Faced</div>
+        <div class="brand b7">The Ordinary</div>
+        <div class="brand b8">Aveda</div>
+    </div>
+</body>
+</html>

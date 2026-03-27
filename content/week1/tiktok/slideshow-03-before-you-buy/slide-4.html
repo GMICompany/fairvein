@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 4 - Before You Buy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1080px; height: 1920px; background: #FFF8F0;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Inter', sans-serif; padding: 80px;
+        }
+        .receipt {
+            width: 100%; background: white; border: 3px solid #2C1810;
+            padding: 70px 60px; box-shadow: 8px 8px 0 rgba(210, 105, 30, 0.3);
+        }
+        .time {
+            font-family: 'Playfair Display', serif;
+            font-size: 140px; font-weight: 700; color: #D2691E;
+            text-align: center; margin-bottom: 40px;
+        }
+        .label {
+            font-size: 48px; color: #5C4033; text-align: center;
+            font-weight: 600; line-height: 1.4;
+        }
+        .divider {
+            border: none; border-top: 3px dashed #2C1810; margin: 50px 0;
+        }
+        .comparison {
+            font-size: 38px; color: #8B7355; text-align: center;
+            line-height: 1.6;
+        }
+        .strike { text-decoration: line-through; opacity: 0.5; }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <div class="time">5 seconds</div>
+        <div class="label">That's all it takes</div>
+        <hr class="divider">
+        <div class="comparison">
+            <div class="strike">20 minutes of Googling</div>
+            <div style="margin-top: 20px; font-weight: 700; color: #D2691E;">vs 5 second search</div>
+        </div>
+    </div>
+</body>
+</html>
