@@ -1,0 +1,23 @@
+{
+  "posts": [],
+  "hookPerformance": {
+    "doubleDown": [],
+    "testing": [],
+    "dropped": []
+  },
+  "ctaPerformance": {
+    "Link in bio": {
+      "timesUsed": 0,
+      "totalViews": 0,
+      "totalClicks": 0,
+      "ctr": 0
+    },
+    "Check your brands at fairvein.com": {
+      "timesUsed": 0,
+      "totalViews": 0,
+      "totalClicks": 0,
+      "ctr": 0
+    }
+  },
+  "notes": "Track every TikTok post here. Update 24h, 48h, 72h after posting. Use Larry's diagnostic framework to decide what to do next."
+}

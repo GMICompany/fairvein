@@ -53,29 +53,62 @@
 
 ## Content Strategy: Viral Hooks
 
+### Larry-Inspired Improvements (Extracted from Proven 300K+ View System)
+
+**Key learnings adapted for Fairvein:**
+1. **Text overlay formula** — Dynamic sizing, 28% from top, 4-6 words/line
+2. **Post as drafts** — Add trending music manually (2.9x more engagement)
+3. **Hook tracking** — JSON log, drop <1K views after 2 tries, scale 50K+ winners
+4. **Analytics framework** — Daily review: views vs conversions diagnostic
+5. **6-slide structure** — Proven format (see below)
+
 ### Content Pillar 1: "Brands You Didn't Know" (Educational Shock)
 
-**Format:** TikTok/Reel/Short (15-30 sec)
+**Format:** TikTok slideshow (6 slides) — NOT screen recording
 
-**Hook examples:**
-1. "POV: You just found out MAC is owned by Estée Lauder 😳"
-2. "Brands you thought were indie but are actually owned by conglomerates"
-3. "When you realize your 'ethical' purchase isn't ethical at all"
+**Why slideshows > video:**
+- 2.9x more comments, 2.6x more shares (TikTok data)
+- Easier for AI to generate consistently
+- Text overlays stop the scroll
 
-**Script template:**
-```
-[Hook - 2 sec]: "Wait, MAC is owned by WHO?!"
-[Problem - 5 sec]: "I thought I was boycotting Estée Lauder but..."
-[Reveal - 8 sec]: Shows EthicalCart search revealing MAC = EL
-[Solution - 10 sec]: "Use EthicalCart to know who you're really buying from"
-[CTA - 5 sec]: "Link in bio / Search your favorite brand"
-```
+**6-Slide Structure (Larry's Formula):**
 
-**Visual style:**
-- Screen recording of EthicalCart search
-- Text overlays with shocking facts
-- Trending audio (e.g., "Oh no, oh no, oh no no no")
-- Duet/Stitch with boycott TikToks
+**Slide 1: Hook** (Stop the scroll)
+- Image: Close-up of popular product (MAC lipstick, Clinique moisturizer)
+- Text: "Wait... MAC is owned by WHO?!" (4-6 words per line, reactions not labels)
+
+**Slide 2: Setup** (Build tension)
+- Image: Multiple MAC products arranged
+- Text: "I've been boycotting\nEstée Lauder for\n2 years straight"
+
+**Slide 3: Discovery** (The reveal)
+- Image: Fairvein search result screenshot
+- Text: "Then I searched MAC\non Fairvein and\nfound this out"
+
+**Slide 4: Evidence** (The shock)
+- Image: Full Estée Lauder brand list
+- Text: "MAC, Clinique, Bobbi Brown\nTom Ford, Too Faced\nALL the same company"
+
+**Slide 5: Reaction** (Relatable emotion)
+- Image: Person looking shocked (or product close-up)
+- Text: "I literally had\n5 of these brands\nin my makeup bag"
+
+**Slide 6: CTA** (Solution)
+- Image: Fairvein homepage on phone
+- Text: "Fairvein shows you\nwho owns what\nLink in bio"
+
+**Text Overlay Rules (Larry's Proven Formula):**
+- **Font size:** Dynamic (short text 75px, long text 51px on 1024w image)
+- **Position:** Centered at 28% from top (TikTok safe zone, above controls)
+- **Style:** White text + thick black outline (15% of font size)
+- **Line breaks:** Manual `\n` every 4-6 words (readable at a glance)
+- **Tone:** REACTIONS not labels ("Wait... this is nice??" not "Modern minimalist")
+
+**Image Generation (Adapted):**
+- Portrait 1024x1536 (fills TikTok screen)
+- "iPhone photo, realistic lighting, natural colors" in prompts
+- Consistency: Same product/background across related slides
+- Free tools: Canva (templates), Pexels (stock photos), or AI (if budget allows)
 
 **Topics (Week 1-4):**
 - Week 1: Estée Lauder brands (MAC, Clinique, Tom Ford)
@@ -303,6 +336,61 @@ Thanks,
 - Week 2: 100 searches/day
 - Week 4: 500 searches/day
 - Month 1 total: 10,000 searches (product-market fit signal)
+
+---
+
+### Daily Analytics Framework (Larry-Inspired)
+
+**Track every TikTok post in `analytics/tiktok-posts.json`:**
+
+```json
+{
+  "posts": [
+    {
+      "id": "2026-03-27-post1",
+      "publishDate": "2026-03-27 07:30",
+      "hook": "Wait... MAC is owned by WHO?!",
+      "cta": "Link in bio",
+      "views24h": 1200,
+      "views48h": 3500,
+      "views72h": 5200,
+      "likes": 340,
+      "comments": 18,
+      "shares": 45,
+      "fairveinClicks": 120,
+      "searches": 85,
+      "status": "testing"
+    }
+  ]
+}
+```
+
+**Daily Review Checklist (Every morning before posting):**
+
+1. **Pull yesterday's performance** (24h after post)
+2. **Diagnose using Larry's framework:**
+
+   | Views | Fairvein Clicks | Action |
+   |-------|-----------------|--------|
+   | 50K+ | Any | 🟢 SCALE IT — Make 3 hook variations immediately |
+   | 10K-50K | High (>5% CTR) | 🟢 Good — Keep in rotation |
+   | 10K-50K | Low (<2% CTR) | 🟡 Fix CTA — Test new slide 6 text |
+   | 1K-10K | Any | 🟡 Try 1 more variation |
+   | <1K | After 2 tries | 🔴 DROP — Try radically different hook |
+
+3. **Update hook performance tracker:**
+   - **doubleDown:** Hooks with 50K+ views
+   - **testing:** Hooks with 1K-10K views
+   - **dropped:** Hooks with <1K after 2 tries
+
+4. **Generate today's hooks** based on yesterday's winners
+
+**CTA Rotation (When views high but clicks low):**
+- "Fairvein shows who owns what — link in bio"
+- "Check your brands at fairvein.com"
+- "I used Fairvein for this — link in bio"
+- "Search [brand name] on Fairvein"
+- Just show domain on slide 6 (no explicit CTA)
 
 ---
 
