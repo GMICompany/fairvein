@@ -21,10 +21,10 @@ const brandDatabase = [
             "Smashbox", "Estée Lauder"
         ],
         alternatives: [
-            { name: "Fenty Beauty", why: "Indie, Rihanna-owned, inclusive shade ranges" },
-            { name: "Rare Beauty", why: "Selena Gomez-owned, donates 1% to mental health" },
-            { name: "Tower 28", why: "Woman-owned, sensitive skin focus, clean ingredients" },
-            { name: "Mented Cosmetics", why: "Black woman-owned, inclusive beauty" }
+            "Fenty Beauty (Indie, Rihanna-owned, inclusive shade ranges)",
+            "Rare Beauty (Selena Gomez-owned, donates 1% to mental health)",
+            "Tower 28 (Woman-owned, sensitive skin focus, clean ingredients)",
+            "Mented Cosmetics (Black woman-owned, inclusive beauty)"
         ]
     },
     {
@@ -42,10 +42,10 @@ const brandDatabase = [
             "Smashbox", "Estée Lauder"
         ],
         alternatives: [
-            { name: "The Ordinary", why: "Affordable, science-backed, transparent formulas" },
-            { name: "Versed", why: "Clean, affordable skincare, Target-exclusive" },
-            { name: "Good Molecules", why: "Effective, affordable, minimal ingredient lists" },
-            { name: "Naturium", why: "Susan Yara-founded, research-backed ingredients" }
+            "The Ordinary (Affordable, science-backed, transparent formulas)",
+            "Versed (Clean, affordable skincare, Target-exclusive)",
+            "Good Molecules (Effective, affordable, minimal ingredient lists)",
+            "Naturium (Susan Yara-founded, research-backed ingredients)"
         ]
     },
     {
@@ -63,10 +63,10 @@ const brandDatabase = [
             "Smashbox", "Estée Lauder"
         ],
         alternatives: [
-            { name: "Jones Road Beauty", why: "Bobbi Brown's NEW indie line! Clean, minimal" },
-            { name: "Ilia Beauty", why: "Clean, high-performance color cosmetics" },
-            { name: "RMS Beauty", why: "Organic, founder-led by Rose-Marie Swift" },
-            { name: "Kosas", why: "Clean, skin-focused makeup with skincare benefits" }
+            "Jones Road Beauty (Bobbi Brown's NEW indie line! Clean, minimal)",
+            "Ilia Beauty (Clean, high-performance color cosmetics)",
+            "RMS Beauty (Organic, founder-led by Rose-Marie Swift)",
+            "Kosas (Clean, skin-focused makeup with skincare benefits)"
         ]
     },
     {
@@ -83,10 +83,10 @@ const brandDatabase = [
             "Too Faced", "Aveda", "Estée Lauder"
         ],
         alternatives: [
-            { name: "Augustinus Bader", why: "Luxury, science-backed, stem cell technology" },
-            { name: "Dr. Barbara Sturm", why: "Luxury, clean, anti-inflammatory focus" },
-            { name: "Vintner's Daughter", why: "Ultra-luxury indie, botanical formulas" },
-            { name: "True Botanicals", why: "MADE SAFE certified luxury skincare" }
+            "Augustinus Bader (Luxury, science-backed, stem cell technology)",
+            "Dr. Barbara Sturm (Luxury, clean, anti-inflammatory focus)",
+            "Vintner's Daughter (Ultra-luxury indie, botanical formulas)",
+            "True Botanicals (MADE SAFE certified luxury skincare)"
         ]
     },
     {
@@ -103,10 +103,10 @@ const brandDatabase = [
             "Too Faced", "Aveda", "Estée Lauder"
         ],
         alternatives: [
-            { name: "Chanel Beauty", why: "Independent, family-owned luxury" },
-            { name: "Hermès Beauty", why: "Independent, family-owned, artisanal" },
-            { name: "Byredo", why: "Independent Swedish luxury fragrance & cosmetics" },
-            { name: "Nars", why: "Shiseido-owned, different parent company" }
+            "Chanel Beauty (Independent, family-owned luxury)",
+            "Hermès Beauty (Independent, family-owned, artisanal)",
+            "Byredo (Independent Swedish luxury fragrance & cosmetics)",
+            "Nars (Shiseido-owned, different parent company)"
         ]
     },
     {
@@ -123,10 +123,10 @@ const brandDatabase = [
             "Tom Ford Beauty", "Aveda", "Smashbox", "Estée Lauder"
         ],
         alternatives: [
-            { name: "ColourPop", why: "Affordable indie, cruelty-free, bold colors" },
-            { name: "BH Cosmetics", why: "Affordable, playful, diverse color ranges" },
-            { name: "Juvia's Place", why: "Black woman-owned, vibrant eyeshadows" },
-            { name: "Milani", why: "Drugstore, family-owned, high quality" }
+            "ColourPop (Affordable indie, cruelty-free, bold colors)",
+            "BH Cosmetics (Affordable, playful, diverse color ranges)",
+            "Juvia's Place (Black woman-owned, vibrant eyeshadows)",
+            "Milani (Drugstore, family-owned, high quality)"
         ]
     },
     {
@@ -143,10 +143,10 @@ const brandDatabase = [
             "Estée Lauder"
         ],
         alternatives: [
-            { name: "Rahua", why: "Sustainable, rainforest alliance, plant-based" },
-            { name: "Innersense Organic Beauty", why: "Certified organic, salon-quality" },
-            { name: "Act+Acre", why: "Scalp-focused, clean, cold-processed" },
-            { name: "Josh Rosebrook", why: "Organic, small-batch, herbalist-formulated" }
+            "Rahua (Sustainable, rainforest alliance, plant-based)",
+            "Innersense Organic Beauty (Certified organic, salon-quality)",
+            "Act+Acre (Scalp-focused, clean, cold-processed)",
+            "Josh Rosebrook (Organic, small-batch, herbalist-formulated)"
         ]
     },
     {
@@ -162,10 +162,10 @@ const brandDatabase = [
             "MAC Cosmetics", "Aveda", "Origins", "Estée Lauder"
         ],
         alternatives: [
-            { name: "Olaplex", why: "Bond-building technology, indie, salon-quality" },
-            { name: "Amika", why: "Indie, salon-quality, fun branding" },
-            { name: "Verb", why: "Affordable, clean, cruelty-free" },
-            { name: "Briogeo", why: "Clean, indie, diverse hair types" }
+            "Olaplex (Bond-building technology, indie, salon-quality)",
+            "Amika (Indie, salon-quality, fun branding)",
+            "Verb (Affordable, clean, cruelty-free)",
+            "Briogeo (Clean, indie, diverse hair types)"
         ]
     },
     {
@@ -181,10 +181,10 @@ const brandDatabase = [
             "MAC Cosmetics", "Clinique", "Aveda", "Estée Lauder"
         ],
         alternatives: [
-            { name: "Youth to the People", why: "Vegan, superfood-based, clean" },
-            { name: "Herbivore Botanicals", why: "Natural, indie, non-toxic ingredients" },
-            { name: "Biossance", why: "Sustainable, clean, squalane-focused" },
-            { name: "Cocokind", why: "Affordable, transparent, sustainable" }
+            "Youth to the People (Vegan, superfood-based, clean)",
+            "Herbivore Botanicals (Natural, indie, non-toxic ingredients)",
+            "Biossance (Sustainable, clean, squalane-focused)",
+            "Cocokind (Affordable, transparent, sustainable)"
         ]
     },
     {
@@ -200,10 +200,10 @@ const brandDatabase = [
             "MAC Cosmetics", "Too Faced", "Estée Lauder"
         ],
         alternatives: [
-            { name: "e.l.f. Cosmetics", why: "Affordable, publicly traded, cruelty-free" },
-            { name: "Morphe", why: "Indie, influencer-driven, affordable pro makeup" },
-            { name: "Makeup by Mario", why: "Mario Dedivanovic's indie line, pro quality" },
-            { name: "Danessa Myricks Beauty", why: "Pro MUA-founded, inclusive, innovative" }
+            "e.l.f. Cosmetics (Affordable, publicly traded, cruelty-free)",
+            "Morphe (Indie, influencer-driven, affordable pro makeup)",
+            "Makeup by Mario (Mario Dedivanovic's indie line, pro quality)",
+            "Danessa Myricks Beauty (Pro MUA-founded, inclusive, innovative)"
         ]
     },
     {
@@ -221,10 +221,10 @@ const brandDatabase = [
             "Origins", "Smashbox"
         ],
         alternatives: [
-            { name: "Chanel", why: "Independent, family-owned luxury" },
-            { name: "Shiseido", why: "Independent Japanese beauty conglomerate" },
-            { name: "Tatcha", why: "Independent, Japanese-inspired skincare" },
-            { name: "Summer Fridays", why: "Clean, indie, minimal skincare" }
+            "Chanel (Independent, family-owned luxury)",
+            "Shiseido (Independent Japanese beauty conglomerate)",
+            "Tatcha (Independent, Japanese-inspired skincare)",
+            "Summer Fridays (Clean, indie, minimal skincare)"
         ]
     },
 
@@ -243,10 +243,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "e.l.f. Cosmetics", why: "Affordable drugstore, cruelty-free, indie" },
-            { name: "Milani", why: "Family-owned drugstore brand, quality formulas" },
-            { name: "Wet n Wild", why: "Affordable, cruelty-free, indie" },
-            { name: "ColourPop", why: "Affordable indie, wide color range" }
+            "e.l.f. Cosmetics (Affordable drugstore, cruelty-free, indie)",
+            "Milani (Family-owned drugstore brand, quality formulas)",
+            "Wet n Wild (Affordable, cruelty-free, indie)",
+            "ColourPop (Affordable indie, wide color range)"
         ]
     },
     {
@@ -260,10 +260,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "ColourPop", why: "Affordable indie, cruelty-free, bold colors" },
-            { name: "BH Cosmetics", why: "Affordable, playful, quality pigments" },
-            { name: "Makeup Revolution", why: "UK indie, affordable, trend-driven" },
-            { name: "Profusion Cosmetics", why: "Budget-friendly, cruelty-free" }
+            "ColourPop (Affordable indie, cruelty-free, bold colors)",
+            "BH Cosmetics (Affordable, playful, quality pigments)",
+            "Makeup Revolution (UK indie, affordable, trend-driven)",
+            "Profusion Cosmetics (Budget-friendly, cruelty-free)"
         ]
     },
     {
@@ -276,10 +276,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Melt Cosmetics", why: "Indie, bold colors, cruelty-free" },
-            { name: "Sugarpill", why: "Indie, vibrant pigments, vegan" },
-            { name: "Anastasia Beverly Hills", why: "Family-owned, pro-quality" },
-            { name: "Huda Beauty", why: "Founder-owned, innovative formulas" }
+            "Melt Cosmetics (Indie, bold colors, cruelty-free)",
+            "Sugarpill (Indie, vibrant pigments, vegan)",
+            "Anastasia Beverly Hills (Family-owned, pro-quality)",
+            "Huda Beauty (Founder-owned, innovative formulas)"
         ]
     },
     {
@@ -292,10 +292,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Chanel", why: "Independent, family-owned luxury" },
-            { name: "Clarins", why: "Independent family-owned French beauty" },
-            { name: "Sisley Paris", why: "Independent luxury skincare" },
-            { name: "Cle de Peau", why: "Shiseido luxury division, different parent" }
+            "Chanel (Independent, family-owned luxury)",
+            "Clarins (Independent family-owned French beauty)",
+            "Sisley Paris (Independent luxury skincare)",
+            "Cle de Peau (Shiseido luxury division, different parent)"
         ]
     },
     {
@@ -308,10 +308,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Acure", why: "Affordable, clean, vegan, widely available" },
-            { name: "Andalou Naturals", why: "Fruit stem cell science, affordable" },
-            { name: "Alba Botanica", why: "Vegetarian, affordable drugstore clean" },
-            { name: "Pacifica", why: "100% vegan, clean, affordable" }
+            "Acure (Affordable, clean, vegan, widely available)",
+            "Andalou Naturals (Fruit stem cell science, affordable)",
+            "Alba Botanica (Vegetarian, affordable drugstore clean)",
+            "Pacifica (100% vegan, clean, affordable)"
         ]
     },
     {
@@ -324,10 +324,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Vanicream", why: "Dermatologist-developed, fragrance-free, indie" },
-            { name: "Versed", why: "Clean, affordable, dermatologist-tested" },
-            { name: "Good Molecules", why: "Minimal ingredients, affordable, effective" },
-            { name: "The Inkey List", why: "Transparent, affordable actives" }
+            "Vanicream (Dermatologist-developed, fragrance-free, indie)",
+            "Versed (Clean, affordable, dermatologist-tested)",
+            "Good Molecules (Minimal ingredients, affordable, effective)",
+            "The Inkey List (Transparent, affordable actives)"
         ]
     },
     {
@@ -339,10 +339,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Avène", why: "Independent French thermal water skincare" },
-            { name: "Bioderma", why: "Independent French dermatological brand" },
-            { name: "Eucerin", why: "Beiersdorf-owned, dermatologist-recommended" },
-            { name: "Uriage", why: "Independent French thermal water brand" }
+            "Avène (Independent French thermal water skincare)",
+            "Bioderma (Independent French dermatological brand)",
+            "Eucerin (Beiersdorf-owned, dermatologist-recommended)",
+            "Uriage (Independent French thermal water brand)"
         ]
     },
     {
@@ -354,10 +354,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Aesop", why: "Independent Australian apothecary skincare" },
-            { name: "Le Labo", why: "Independent NYC-based fragrance & skincare" },
-            { name: "Grown Alchemist", why: "Independent Australian organic skincare" },
-            { name: "Malin + Goetz", why: "Independent NYC apothecary brand" }
+            "Aesop (Independent Australian apothecary skincare)",
+            "Le Labo (Independent NYC-based fragrance & skincare)",
+            "Grown Alchemist (Independent Australian organic skincare)",
+            "Malin + Goetz (Independent NYC apothecary brand)"
         ]
     },
     {
@@ -369,10 +369,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Ella+Mila", why: "7-free, vegan, cruelty-free indie" },
-            { name: "Zoya", why: "Long-wearing, 10-free, family-owned" },
-            { name: "Lights Lacquer", why: "Indie, vegan, cruelty-free" },
-            { name: "Cirque Colors", why: "NYC indie, 9-free, vegan" }
+            "Ella+Mila (7-free, vegan, cruelty-free indie)",
+            "Zoya (Long-wearing, 10-free, family-owned)",
+            "Lights Lacquer (Indie, vegan, cruelty-free)",
+            "Cirque Colors (NYC indie, 9-free, vegan)"
         ]
     },
     {
@@ -384,10 +384,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Olaplex", why: "Indie bond-building technology" },
-            { name: "K18", why: "Indie biotech hair repair" },
-            { name: "JVN Hair", why: "Jonathan Van Ness indie clean haircare" },
-            { name: "Amika", why: "Indie salon-quality, cruelty-free" }
+            "Olaplex (Indie bond-building technology)",
+            "K18 (Indie biotech hair repair)",
+            "JVN Hair (Jonathan Van Ness indie clean haircare)",
+            "Amika (Indie salon-quality, cruelty-free)"
         ]
     },
     {
@@ -399,10 +399,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Verb", why: "Clean, affordable salon brand" },
-            { name: "IGK Hair", why: "Indie NYC salon brand" },
-            { name: "Kristin Ess", why: "Affordable, clean, Target-exclusive" },
-            { name: "Pattern Beauty", why: "Tracee Ellis Ross-owned, textured hair" }
+            "Verb (Clean, affordable salon brand)",
+            "IGK Hair (Indie NYC salon brand)",
+            "Kristin Ess (Affordable, clean, Target-exclusive)",
+            "Pattern Beauty (Tracee Ellis Ross-owned, textured hair)"
         ]
     },
     {
@@ -414,10 +414,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Tom Ford Beauty", why: "Estée Lauder-owned, luxury alternative" },
-            { name: "Chanel Beauty", why: "Independent luxury" },
-            { name: "Guerlain", why: "LVMH-owned luxury French brand" },
-            { name: "Dior Beauty", why: "LVMH-owned luxury alternative" }
+            "Tom Ford Beauty (Estée Lauder-owned, luxury alternative)",
+            "Chanel Beauty (Independent luxury)",
+            "Guerlain (LVMH-owned luxury French brand)",
+            "Dior Beauty (LVMH-owned luxury alternative)"
         ]
     },
     {
@@ -429,10 +429,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Chanel Beauty", why: "Independent family-owned luxury" },
-            { name: "Guerlain", why: "LVMH luxury French beauty house" },
-            { name: "Hermès Beauty", why: "Independent luxury fragrance & color" },
-            { name: "Byredo", why: "Independent Swedish luxury beauty" }
+            "Chanel Beauty (Independent family-owned luxury)",
+            "Guerlain (LVMH luxury French beauty house)",
+            "Hermès Beauty (Independent luxury fragrance & color)",
+            "Byredo (Independent Swedish luxury beauty)"
         ]
     },
     {
@@ -444,10 +444,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Jo Malone London", why: "Estée Lauder-owned, different parent" },
-            { name: "Byredo", why: "Independent Swedish luxury fragrance" },
-            { name: "Le Labo", why: "Independent NYC fragrance house" },
-            { name: "Diptyque", why: "Independent French luxury fragrance" }
+            "Jo Malone London (Estée Lauder-owned, different parent)",
+            "Byredo (Independent Swedish luxury fragrance)",
+            "Le Labo (Independent NYC fragrance house)",
+            "Diptyque (Independent French luxury fragrance)"
         ]
     },
     {
@@ -459,10 +459,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Maison Francis Kurkdjian", why: "LVMH-owned luxury fragrance house" },
-            { name: "Byredo", why: "Independent Swedish luxury fragrance" },
-            { name: "Frederic Malle", why: "Estée Lauder-owned, artisanal perfumer" },
-            { name: "Serge Lutens", why: "Independent luxury niche fragrance" }
+            "Maison Francis Kurkdjian (LVMH-owned luxury fragrance house)",
+            "Byredo (Independent Swedish luxury fragrance)",
+            "Frederic Malle (Estée Lauder-owned, artisanal perfumer)",
+            "Serge Lutens (Independent luxury niche fragrance)"
         ]
     },
     {
@@ -474,10 +474,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Gucci Beauty", why: "Coty-owned luxury alternative" },
-            { name: "Prada Beauty", why: "L'Oréal Luxe, but listed separately" },
-            { name: "Hermès Beauty", why: "Independent luxury house" },
-            { name: "Chanel Beauty", why: "Independent family-owned" }
+            "Gucci Beauty (Coty-owned luxury alternative)",
+            "Prada Beauty (L'Oréal Luxe, but listed separately)",
+            "Hermès Beauty (Independent luxury house)",
+            "Chanel Beauty (Independent family-owned)"
         ]
     },
 
@@ -494,10 +494,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "e.l.f. Cosmetics", why: "Affordable drugstore indie, cruelty-free" },
-            { name: "Milani", why: "Family-owned, quality drugstore brand" },
-            { name: "NYX", why: "L'Oréal-owned but different parent" },
-            { name: "Wet n Wild", why: "Affordable indie, cruelty-free" }
+            "e.l.f. Cosmetics (Affordable drugstore indie, cruelty-free)",
+            "Milani (Family-owned, quality drugstore brand)",
+            "NYX (L'Oréal-owned but different parent)",
+            "Wet n Wild (Affordable indie, cruelty-free)"
         ]
     },
     {
@@ -509,10 +509,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "e.l.f. Cosmetics", why: "Affordable, cruelty-free indie" },
-            { name: "Makeup Revolution", why: "UK indie, affordable, trend-driven" },
-            { name: "Catrice", why: "European indie, affordable, quality" },
-            { name: "Essence", why: "German indie, ultra-affordable, cruelty-free" }
+            "e.l.f. Cosmetics (Affordable, cruelty-free indie)",
+            "Makeup Revolution (UK indie, affordable, trend-driven)",
+            "Catrice (European indie, affordable, quality)",
+            "Essence (German indie, ultra-affordable, cruelty-free)"
         ]
     },
     {
@@ -524,10 +524,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Zoya", why: "10-free, long-wearing, family-owned" },
-            { name: "Ella+Mila", why: "7-free, vegan indie nail care" },
-            { name: "Pacifica", why: "7-free, vegan, affordable" },
-            { name: "Lights Lacquer", why: "Indie, vegan, cruelty-free" }
+            "Zoya (10-free, long-wearing, family-owned)",
+            "Ella+Mila (7-free, vegan indie nail care)",
+            "Pacifica (7-free, vegan, affordable)",
+            "Lights Lacquer (Indie, vegan, cruelty-free)"
         ]
     },
     {
@@ -539,10 +539,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Zoya", why: "10-free, professional-quality, indie" },
-            { name: "Ella+Mila", why: "7-free, vegan, cruelty-free" },
-            { name: "Cirque Colors", why: "NYC indie, 9-free, vegan" },
-            { name: "ILNP", why: "Indie holographic specialist, 7-free" }
+            "Zoya (10-free, professional-quality, indie)",
+            "Ella+Mila (7-free, vegan, cruelty-free)",
+            "Cirque Colors (NYC indie, 9-free, vegan)",
+            "ILNP (Indie holographic specialist, 7-free)"
         ]
     },
     {
@@ -554,10 +554,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Makeup Revolution", why: "UK indie, affordable, quality" },
-            { name: "Catrice", why: "European indie, drugstore pricing" },
-            { name: "e.l.f. Cosmetics", why: "Affordable indie, cruelty-free" },
-            { name: "Milani", why: "Family-owned drugstore quality" }
+            "Makeup Revolution (UK indie, affordable, quality)",
+            "Catrice (European indie, drugstore pricing)",
+            "e.l.f. Cosmetics (Affordable indie, cruelty-free)",
+            "Milani (Family-owned drugstore quality)"
         ]
     },
     {
@@ -569,10 +569,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Madison Reed", why: "Clean hair color, indie, salon-quality" },
-            { name: "dpHUE", why: "Clean, gloss + color, indie" },
-            { name: "Overtone", why: "Indie, vegan, conditioning color" },
-            { name: "Arctic Fox", why: "Vegan, cruelty-free, vibrant semi-permanent" }
+            "Madison Reed (Clean hair color, indie, salon-quality)",
+            "dpHUE (Clean, gloss + color, indie)",
+            "Overtone (Indie, vegan, conditioning color)",
+            "Arctic Fox (Vegan, cruelty-free, vibrant semi-permanent)"
         ]
     },
     {
@@ -584,25 +584,25 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Olaplex", why: "Indie bond-building technology" },
-            { name: "Oribe", why: "Luxury indie salon brand" },
-            { name: "R+Co", why: "Indie collective salon brand" },
-            { name: "Virtue", why: "Indie biotech hair repair" }
+            "Olaplex (Indie bond-building technology)",
+            "Oribe (Luxury indie salon brand)",
+            "R+Co (Indie collective salon brand)",
+            "Virtue (Indie biotech hair repair)"
         ]
     },
     {
-        name: "Adidas",
-        aliases: ["adidas fragrance", "adidas cologne"],
+        name: "Adidas Fragrance",
+        aliases: ["adidas cologne", "adidas body spray"],
         parent: "Coty",
         sisters: [
             "Calvin Klein", "Marc Jacobs Fragrance", "Gucci Fragrance"
         ],
         boycotts: [],
         alternatives: [
-            { name: "Herban Cowboy", why: "Natural, affordable men's fragrance" },
-            { name: "Every Man Jack", why: "Clean, affordable men's grooming" },
-            { name: "Bluemercury M-61", why: "Clean, indie skincare brand" },
-            { name: "Malin + Goetz", why: "Indie unisex apothecary" }
+            "Herban Cowboy (natural, affordable men's fragrance)",
+            "Every Man Jack (clean, affordable men's grooming)",
+            "Bluemercury M-61 (clean, indie skincare brand)",
+            "Malin + Goetz (indie unisex apothecary)"
         ]
     },
     {
@@ -614,10 +614,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Le Labo", why: "Independent NYC fragrance house" },
-            { name: "Byredo", why: "Independent Swedish luxury fragrance" },
-            { name: "D.S. & Durga", why: "Independent Brooklyn perfume house" },
-            { name: "Commodity", why: "Indie, minimalist, unisex scents" }
+            "Le Labo (Independent NYC fragrance house)",
+            "Byredo (Independent Swedish luxury fragrance)",
+            "D.S. & Durga (Independent Brooklyn perfume house)",
+            "Commodity (Indie, minimalist, unisex scents)"
         ]
     },
     {
@@ -629,10 +629,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Byredo", why: "Independent Swedish luxury fragrance" },
-            { name: "Le Labo", why: "Independent artisanal fragrance" },
-            { name: "Diptyque", why: "Independent French luxury fragrance" },
-            { name: "Maison Francis Kurkdjian", why: "LVMH luxury perfumer" }
+            "Byredo (Independent Swedish luxury fragrance)",
+            "Le Labo (Independent artisanal fragrance)",
+            "Diptyque (Independent French luxury fragrance)",
+            "Maison Francis Kurkdjian (LVMH luxury perfumer)"
         ]
     },
     {
@@ -644,10 +644,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Hermès Fragrance", why: "Independent luxury fragrance house" },
-            { name: "Byredo", why: "Independent Swedish luxury" },
-            { name: "Maison Francis Kurkdjian", why: "LVMH artisanal perfumer" },
-            { name: "Tom Ford Private Blend", why: "Estée Lauder luxury fragrance" }
+            "Hermès Fragrance (Independent luxury fragrance house)",
+            "Byredo (Independent Swedish luxury)",
+            "Maison Francis Kurkdjian (LVMH artisanal perfumer)",
+            "Tom Ford Private Blend (Estée Lauder luxury fragrance)"
         ]
     },
     {
@@ -659,10 +659,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Boy Smells", why: "Indie LA-based fragrance & candles" },
-            { name: "D.S. & Durga", why: "Independent Brooklyn perfume house" },
-            { name: "Commodity", why: "Indie minimalist fragrance" },
-            { name: "Dedcool", why: "Indie layerable fragrances" }
+            "Boy Smells (Indie LA-based fragrance & candles)",
+            "D.S. & Durga (Independent Brooklyn perfume house)",
+            "Commodity (Indie minimalist fragrance)",
+            "Dedcool (Indie layerable fragrances)"
         ]
     },
 
@@ -679,10 +679,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Native", why: "Clean, P&G-owned but different parent" },
-            { name: "Schmidt's Naturals", why: "Natural deodorant, indie" },
-            { name: "Everyone Soap", why: "EO Products, clean, affordable" },
-            { name: "Dr. Bronner's", why: "Fair trade, organic, family-owned" }
+            "Native (Clean, P&G-owned but different parent)",
+            "Schmidt's Naturals (Natural deodorant, indie)",
+            "Everyone Soap (EO Products, clean, affordable)",
+            "Dr. Bronner's (Fair trade, organic, family-owned)"
         ]
     },
     {
@@ -694,10 +694,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Every Man Jack", why: "Clean men's grooming, indie" },
-            { name: "Duke Cannon", why: "Men's grooming, veteran-owned" },
-            { name: "Dr. Squatch", why: "Natural men's soap, indie" },
-            { name: "Herban Cowboy", why: "Natural men's grooming" }
+            "Every Man Jack (Clean men's grooming, indie)",
+            "Duke Cannon (Men's grooming, veteran-owned)",
+            "Dr. Squatch (Natural men's soap, indie)",
+            "Herban Cowboy (Natural men's grooming)"
         ]
     },
     {
@@ -709,10 +709,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Kristin Ess", why: "Affordable clean haircare, Target-exclusive" },
-            { name: "Not Your Mother's", why: "Indie, affordable, salon-quality" },
-            { name: "Briogeo", why: "Clean, indie, diverse formulas" },
-            { name: "Verb", why: "Clean salon brand, cruelty-free" }
+            "Kristin Ess (Affordable clean haircare, Target-exclusive)",
+            "Not Your Mother's (Indie, affordable, salon-quality)",
+            "Briogeo (Clean, indie, diverse formulas)",
+            "Verb (Clean salon brand, cruelty-free)"
         ]
     },
     {
@@ -724,10 +724,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Acure", why: "Clean, affordable, vegan" },
-            { name: "Andalou Naturals", why: "Fruit stem cell science, affordable" },
-            { name: "Kristin Ess", why: "Affordable clean haircare" },
-            { name: "Love Beauty and Planet", why: "Unilever-owned but vegan focus" }
+            "Acure (Clean, affordable, vegan)",
+            "Andalou Naturals (Fruit stem cell science, affordable)",
+            "Kristin Ess (Affordable clean haircare)",
+            "Love Beauty and Planet (Unilever-owned but vegan focus)"
         ]
     },
     {
@@ -739,10 +739,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Acure", why: "Clean, affordable skincare" },
-            { name: "Pacifica", why: "Vegan, cruelty-free, affordable" },
-            { name: "Alba Botanica", why: "Vegetarian, natural ingredients" },
-            { name: "Andalou Naturals", why: "Fruit stem cell technology" }
+            "Acure (Clean, affordable skincare)",
+            "Pacifica (Vegan, cruelty-free, affordable)",
+            "Alba Botanica (Vegetarian, natural ingredients)",
+            "Andalou Naturals (Fruit stem cell technology)"
         ]
     },
     {
@@ -754,10 +754,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Versed", why: "Clean, affordable, dermatologist-tested" },
-            { name: "Good Molecules", why: "Minimal ingredients, effective" },
-            { name: "Acure", why: "Clean, vegan, affordable" },
-            { name: "The Inkey List", why: "Transparent actives, affordable" }
+            "Versed (Clean, affordable, dermatologist-tested)",
+            "Good Molecules (Minimal ingredients, effective)",
+            "Acure (Clean, vegan, affordable)",
+            "The Inkey List (Transparent actives, affordable)"
         ]
     },
     {
@@ -769,10 +769,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Aquaphor", why: "Beiersdorf-owned healing ointment" },
-            { name: "Waxelene", why: "Petroleum-free, organic alternative" },
-            { name: "CeraVe Healing Ointment", why: "L'Oréal-owned dermatologist-recommended" },
-            { name: "Homeoplasmine", why: "French cult pharmacy balm" }
+            "Aquaphor (Beiersdorf-owned healing ointment)",
+            "Waxelene (Petroleum-free, organic alternative)",
+            "CeraVe Healing Ointment (L'Oréal-owned dermatologist-recommended)",
+            "Homeoplasmine (French cult pharmacy balm)"
         ]
     },
     {
@@ -784,10 +784,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Olay", why: "P&G-owned, affordable anti-aging" },
-            { name: "Versed", why: "Clean, affordable skincare" },
-            { name: "Good Molecules", why: "Minimal, effective ingredients" },
-            { name: "The Inkey List", why: "Affordable actives" }
+            "Olay (P&G-owned, affordable anti-aging)",
+            "Versed (Clean, affordable skincare)",
+            "Good Molecules (Minimal, effective ingredients)",
+            "The Inkey List (Affordable actives)"
         ]
     },
     {
@@ -799,10 +799,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Oribe", why: "Luxury indie salon brand" },
-            { name: "R+Co", why: "Indie collective salon brand" },
-            { name: "Amika", why: "Indie salon-quality" },
-            { name: "IGK Hair", why: "NYC indie salon brand" }
+            "Oribe (Luxury indie salon brand)",
+            "R+Co (Indie collective salon brand)",
+            "Amika (Indie salon-quality)",
+            "IGK Hair (NYC indie salon brand)"
         ]
     },
     {
@@ -814,10 +814,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Briogeo Scalp Revival", why: "Clean scalp treatment, indie" },
-            { name: "Act+Acre", why: "Clean scalp-focused haircare" },
-            { name: "Jupiter", why: "Indie dandruff care, dermatologist-developed" },
-            { name: "Natural Haircare", why: "Indie clean scalp solutions" }
+            "Briogeo Scalp Revival (Clean scalp treatment, indie)",
+            "Act+Acre (Clean scalp-focused haircare)",
+            "Jupiter (Indie dandruff care, dermatologist-developed)",
+            "Natural Haircare (Indie clean scalp solutions)"
         ]
     },
     {
@@ -829,10 +829,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Dr. Dennis Gross", why: "Independent dermatologist-founded" },
-            { name: "Dr. Barbara Sturm", why: "Independent luxury clinical skincare" },
-            { name: "Drunk Elephant", why: "Shiseido-owned clean clinical brand" },
-            { name: "Revision Skincare", why: "Independent professional skincare" }
+            "Dr. Dennis Gross (Independent dermatologist-founded)",
+            "Dr. Barbara Sturm (Independent luxury clinical skincare)",
+            "Drunk Elephant (Shiseido-owned clean clinical brand)",
+            "Revision Skincare (Independent professional skincare)"
         ]
     },
     {
@@ -844,10 +844,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Omorovicza", why: "Independent Hungarian luxury skincare" },
-            { name: "Biossance", why: "Clean, sustainable, squalane-focused" },
-            { name: "Allies of Skin", why: "Indie clinical-grade skincare" },
-            { name: "Farmacy Beauty", why: "Clean, farm-to-face ingredients" }
+            "Omorovicza (Independent Hungarian luxury skincare)",
+            "Biossance (Clean, sustainable, squalane-focused)",
+            "Allies of Skin (Indie clinical-grade skincare)",
+            "Farmacy Beauty (Clean, farm-to-face ingredients)"
         ]
     },
     {
@@ -859,12 +859,12 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "The Ordinary", why: "DECIEM-owned, transparent affordable actives" },
-            { name: "The Inkey List", why: "Transparent, affordable clinical ingredients" },
-            { name: "Good Molecules", why: "Minimal ingredient lists, effective" },
-            { name: "Naturium", why: "Susan Yara-founded, research-backed" }
+            "The Ordinary (DECIEM-owned, transparent affordable actives)",
+            "The Inkey List (Transparent, affordable clinical ingredients)",
+            "Good Molecules (Minimal ingredient lists, effective)",
+            "Naturium (Susan Yara-founded, research-backed)"
         ]
-    }
+    },
     // ============================================
     // FASHION & APPAREL BRANDS (March 2026)
     // ============================================
@@ -872,7 +872,7 @@ const brandDatabase = [
     // INDITEX GROUP (Spain) - 6 brands
     {
         name: "Zara",
-        aliases: ["zara home"],
+        aliases: ["zara home", "zarra"],
         parent: "Inditex",
         sisters: [
             "Pull&Bear", "Massimo Dutti", "Bershka", "Stradivarius", "Oysho"
@@ -885,10 +885,10 @@ const brandDatabase = [
             }
         ],
         alternatives: [
-            { name: "Everlane", why: "Transparent pricing and ethical factories" },
-            { name: "Reformation", why: "Sustainable fast fashion alternative" },
-            { name: "Kotn", why: "Direct-to-consumer Egyptian cotton, transparent" },
-            { name: "Pact", why: "Fair trade organic cotton basics" }
+            "Everlane (transparent pricing and ethical factories)",
+            "Reformation (sustainable fast fashion alternative)",
+            "Kotn (direct-to-consumer Egyptian cotton, transparent)",
+            "Pact (fair trade organic cotton basics)"
         ]
     },
     {
@@ -900,10 +900,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Outerknown", why: "Kelly Slater-founded sustainable surf brand" },
-            { name: "Tentree", why: "Plants 10 trees per item, sustainable" },
-            { name: "Prana", why: "Fair trade, organic, outdoor lifestyle" },
-            { name: "United By Blue", why: "Removes 1 lb ocean plastic per product" }
+            "Outerknown (Kelly Slater-founded sustainable surf brand)",
+            "Tentree (Plants 10 trees per item, sustainable)",
+            "Prana (Fair trade, organic, outdoor lifestyle)",
+            "United By Blue (Removes 1 lb ocean plastic per product)"
         ]
     },
     {
@@ -915,10 +915,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Cuyana", why: "Fewer, better things philosophy" },
-            { name: "Everlane", why: "Transparent costs, ethical production" },
-            { name: "Sezane", why: "French indie with charitable foundation" },
-            { name: "Amour Vert", why: "Sustainable luxury basics, plants trees" }
+            "Cuyana (Fewer, better things philosophy)",
+            "Everlane (Transparent costs, ethical production)",
+            "Sezane (French indie with charitable foundation)",
+            "Amour Vert (Sustainable luxury basics, plants trees)"
         ]
     },
     {
@@ -930,10 +930,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Reformation", why: "Sustainable trendy fashion" },
-            { name: "Girlfriend Collective", why: "Recycled materials, transparent" },
-            { name: "Pangaia", why: "Science-driven sustainable materials" },
-            { name: "Organic Basics", why: "Certified organic, minimal basics" }
+            "Reformation (Sustainable trendy fashion)",
+            "Girlfriend Collective (Recycled materials, transparent)",
+            "Pangaia (Science-driven sustainable materials)",
+            "Organic Basics (Certified organic, minimal basics)"
         ]
     },
     {
@@ -945,10 +945,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Reformation", why: "Sustainable fashion for Gen Z" },
-            { name: "Christy Dawn", why: "Deadstock fabrics, farm-to-closet" },
-            { name: "For Days", why: "Circular fashion, take-back program" },
-            { name: "Whimsy + Row", why: "Small-batch sustainable LA brand" }
+            "Reformation (Sustainable fashion for Gen Z)",
+            "Christy Dawn (Deadstock fabrics, farm-to-closet)",
+            "For Days (Circular fashion, take-back program)",
+            "Whimsy + Row (Small-batch sustainable LA brand)"
         ]
     },
     {
@@ -960,10 +960,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Pact", why: "Fair trade organic underwear & loungewear" },
-            { name: "Boody", why: "Organic bamboo basics" },
-            { name: "Knickey", why: "Organic cotton underwear, take-back program" },
-            { name: "Proclaim", why: "Size-inclusive lingerie, body positive" }
+            "Pact (Fair trade organic underwear & loungewear)",
+            "Boody (Organic bamboo basics)",
+            "Knickey (Organic cotton underwear, take-back program)",
+            "Proclaim (Size-inclusive lingerie, body positive)"
         ]
     },
 
@@ -983,10 +983,10 @@ const brandDatabase = [
             }
         ],
         alternatives: [
-            { name: "Pact", why: "Fair trade organic cotton basics" },
-            { name: "Kotn", why: "Transparent supply chain, Egyptian cotton" },
-            { name: "Everlane", why: "Radical transparency in pricing" },
-            { name: "Quince", why: "Affordable sustainable basics" }
+            "Pact (Fair trade organic cotton basics)",
+            "Kotn (Transparent supply chain, Egyptian cotton)",
+            "Everlane (Radical transparency in pricing)",
+            "Quince (Affordable sustainable basics)"
         ]
     },
     {
@@ -998,10 +998,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Everlane", why: "Minimalist ethical basics" },
-            { name: "Cuyana", why: "Fewer, better philosophy" },
-            { name: "Kotn", why: "Transparent minimalist essentials" },
-            { name: "Amour Vert", why: "Sustainable luxury basics" }
+            "Everlane (Minimalist ethical basics)",
+            "Cuyana (Fewer, better philosophy)",
+            "Kotn (Transparent minimalist essentials)",
+            "Amour Vert (Sustainable luxury basics)"
         ]
     },
     {
@@ -1013,10 +1013,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Sezane", why: "French indie with charity arm" },
-            { name: "Reformation", why: "Sustainable trendy pieces" },
-            { name: "Ganni", why: "Independent Danish brand, sustainability focus" },
-            { name: "Madewell", why: "Denim-focused, some sustainable lines" }
+            "Sezane (French indie with charity arm)",
+            "Reformation (Sustainable trendy pieces)",
+            "Ganni (Independent Danish brand, sustainability focus)",
+            "Madewell (Denim-focused, some sustainable lines)"
         ]
     },
     {
@@ -1028,10 +1028,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Lucy & Yak", why: "UK indie, playful sustainable fashion" },
-            { name: "Girlfriend Collective", why: "Recycled materials, bright colors" },
-            { name: "Reformation", why: "Fun sustainable pieces" },
-            { name: "Wray", why: "NYC indie, small-batch colorful designs" }
+            "Lucy & Yak (UK indie, playful sustainable fashion)",
+            "Girlfriend Collective (Recycled materials, bright colors)",
+            "Reformation (Fun sustainable pieces)",
+            "Wray (NYC indie, small-batch colorful designs)"
         ]
     },
     {
@@ -1043,10 +1043,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Nudie Jeans", why: "Free repairs for life, organic denim" },
-            { name: "Outland Denim", why: "Fights human trafficking, ethical denim" },
-            { name: "Reformation", why: "Sustainable denim & trendy pieces" },
-            { name: "Boyish Jeans", why: "100% recycled & sustainable denim" }
+            "Nudie Jeans (Free repairs for life, organic denim)",
+            "Outland Denim (Fights human trafficking, ethical denim)",
+            "Reformation (Sustainable denim & trendy pieces)",
+            "Boyish Jeans (100% recycled & sustainable denim)"
         ]
     },
     {
@@ -1058,10 +1058,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Cuyana", why: "Timeless minimalist pieces" },
-            { name: "Everlane", why: "Transparent ethical basics" },
-            { name: "Kotn", why: "Minimal sustainable essentials" },
-            { name: "Organic Basics", why: "Certified organic minimalist" }
+            "Cuyana (Timeless minimalist pieces)",
+            "Everlane (Transparent ethical basics)",
+            "Kotn (Minimal sustainable essentials)",
+            "Organic Basics (Certified organic minimalist)"
         ]
     },
 
@@ -1081,10 +1081,10 @@ const brandDatabase = [
             }
         ],
         alternatives: [
-            { name: "Pact", why: "Fair trade organic cotton basics" },
-            { name: "Kotn", why: "Transparent Egyptian cotton essentials" },
-            { name: "Asket", why: "Swedish brand, lifetime guarantee, traceable" },
-            { name: "Entireworld", why: "Scott Sternberg indie basics brand" }
+            "Pact (Fair trade organic cotton basics)",
+            "Kotn (Transparent Egyptian cotton essentials)",
+            "Asket (Swedish brand, lifetime guarantee, traceable)",
+            "Entireworld (Scott Sternberg indie basics brand)"
         ]
     },
     {
@@ -1096,10 +1096,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Pact", why: "Affordable fair trade basics" },
-            { name: "Quince", why: "Affordable sustainable essentials" },
-            { name: "Everlane", why: "Transparent affordable basics" },
-            { name: "Kotn", why: "Affordable Egyptian cotton" }
+            "Pact (Affordable fair trade basics)",
+            "Quince (Affordable sustainable essentials)",
+            "Everlane (Transparent affordable basics)",
+            "Kotn (Affordable Egyptian cotton)"
         ]
     },
     {
@@ -1111,10 +1111,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Cuyana", why: "Investment pieces, transparent" },
-            { name: "Everlane", why: "Modern workwear, ethical" },
-            { name: "Amour Vert", why: "Sustainable luxury basics" },
-            { name: "Eileen Fisher", why: "Timeless sustainable pieces, take-back" }
+            "Cuyana (Investment pieces, transparent)",
+            "Everlane (Modern workwear, ethical)",
+            "Amour Vert (Sustainable luxury basics)",
+            "Eileen Fisher (Timeless sustainable pieces, take-back)"
         ]
     },
     {
@@ -1126,10 +1126,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Entireworld", why: "Scott Sternberg's new indie brand" },
-            { name: "Baserange", why: "Minimalist sustainable basics" },
-            { name: "The Frankie Shop", why: "Independent minimalist retailer" },
-            { name: "Tibi", why: "Amy Smilovic indie contemporary brand" }
+            "Entireworld (Scott Sternberg's new indie brand)",
+            "Baserange (Minimalist sustainable basics)",
+            "The Frankie Shop (Independent minimalist retailer)",
+            "Tibi (Amy Smilovic indie contemporary brand)"
         ]
     },
     {
@@ -1141,10 +1141,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Outland Denim", why: "Fights trafficking, ethical production" },
-            { name: "Nudie Jeans", why: "Free repairs, organic denim" },
-            { name: "Boyish Jeans", why: "100% sustainable denim" },
-            { name: "Reformation Denim", why: "Sustainable premium denim" }
+            "Outland Denim (Fights trafficking, ethical production)",
+            "Nudie Jeans (Free repairs, organic denim)",
+            "Boyish Jeans (100% sustainable denim)",
+            "Reformation Denim (Sustainable premium denim)"
         ]
     },
 
@@ -1158,10 +1158,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Everlane", why: "Transparent basics, ethical factories" },
-            { name: "Pact", why: "Fair trade organic basics" },
-            { name: "Kotn", why: "Transparent supply chain" },
-            { name: "Buck Mason", why: "American-made quality basics" }
+            "Everlane (Transparent basics, ethical factories)",
+            "Pact (Fair trade organic basics)",
+            "Kotn (Transparent supply chain)",
+            "Buck Mason (American-made quality basics)"
         ]
     },
     {
@@ -1173,10 +1173,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Pact", why: "Affordable fair trade organic" },
-            { name: "Quince", why: "Affordable sustainable basics" },
-            { name: "Primary", why: "Affordable basics for families" },
-            { name: "Hanna Andersson", why: "Quality kids clothes, buy-back" }
+            "Pact (Affordable fair trade organic)",
+            "Quince (Affordable sustainable basics)",
+            "Primary (Affordable basics for families)",
+            "Hanna Andersson (Quality kids clothes, buy-back)"
         ]
     },
     {
@@ -1188,10 +1188,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Cuyana", why: "Investment workwear pieces" },
-            { name: "Everlane", why: "Modern work essentials" },
-            { name: "M.M.LaFleur", why: "Women's workwear, transparent" },
-            { name: "Amour Vert", why: "Sustainable work-appropriate" }
+            "Cuyana (Investment workwear pieces)",
+            "Everlane (Modern work essentials)",
+            "M.M.LaFleur (Women's workwear, transparent)",
+            "Amour Vert (Sustainable work-appropriate)"
         ]
     },
     {
@@ -1203,10 +1203,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Girlfriend Collective", why: "Recycled materials, transparent" },
-            { name: "Outdoor Voices", why: "Indie activewear brand" },
-            { name: "Patagonia", why: "Activist outdoor & activewear" },
-            { name: "Oiselle", why: "Women-run activewear brand" }
+            "Girlfriend Collective (Recycled materials, transparent)",
+            "Outdoor Voices (Indie activewear brand)",
+            "Patagonia (Activist outdoor & activewear)",
+            "Oiselle (Women-run activewear brand)"
         ]
     },
 
@@ -1226,10 +1226,10 @@ const brandDatabase = [
             }
         ],
         alternatives: [
-            { name: "Patagonia", why: "1% for the Planet, activist brand, repair program" },
-            { name: "Cotopaxi", why: "B Corp, colorful sustainable outdoor" },
-            { name: "REI Co-op", why: "Member-owned outdoor gear" },
-            { name: "Arc'teryx", why: "Independent high-performance outdoor" }
+            "Patagonia (1% for the Planet, activist brand, repair program)",
+            "Cotopaxi (B Corp, colorful sustainable outdoor)",
+            "REI Co-op (Member-owned outdoor gear)",
+            "Arc'teryx (Independent high-performance outdoor)"
         ]
     },
     {
@@ -1241,10 +1241,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Cariuma", why: "B Corp, sustainable sneakers, plants trees" },
-            { name: "Allbirds", why: "Sustainable materials, carbon neutral" },
-            { name: "Thousand Fell", why: "Fully recyclable sneakers" },
-            { name: "Nisolo", why: "Ethical leather shoes, transparent" }
+            "Cariuma (B Corp, sustainable sneakers, plants trees)",
+            "Allbirds (Sustainable materials, carbon neutral)",
+            "Thousand Fell (Fully recyclable sneakers)",
+            "Nisolo (Ethical leather shoes, transparent)"
         ]
     },
     {
@@ -1256,10 +1256,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Nisolo", why: "Ethical leather, transparent wages" },
-            { name: "Able", why: "Fair wages, leather goods" },
-            { name: "Thursday Boot Company", why: "Direct-to-consumer quality boots" },
-            { name: "Danner", why: "American-made boots, repair program" }
+            "Nisolo (Ethical leather, transparent wages)",
+            "Able (Fair wages, leather goods)",
+            "Thursday Boot Company (Direct-to-consumer quality boots)",
+            "Danner (American-made boots, repair program)"
         ]
     },
     {
@@ -1271,10 +1271,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Carhartt", why: "Family-owned workwear, union-made options" },
-            { name: "Dovetail Workwear", why: "Women-owned workwear brand" },
-            { name: "Kirrin Finch", why: "Queer-owned menswear for all bodies" },
-            { name: "Wildfang", why: "Tomboy style, ethical production" }
+            "Carhartt (Family-owned workwear, union-made options)",
+            "Dovetail Workwear (Women-owned workwear brand)",
+            "Kirrin Finch (Queer-owned menswear for all bodies)",
+            "Wildfang (Tomboy style, ethical production)"
         ]
     },
     {
@@ -1286,10 +1286,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Noah", why: "Brendon Babenzien sustainable streetwear" },
-            { name: "Entireworld", why: "Scott Sternberg indie brand" },
-            { name: "Patagonia", why: "Activist outdoor brand" },
-            { name: "Story Mfg", why: "Hand-loomed sustainable clothing" }
+            "Noah (Brendon Babenzien sustainable streetwear)",
+            "Entireworld (Scott Sternberg indie brand)",
+            "Patagonia (Activist outdoor brand)",
+            "Story Mfg (Hand-loomed sustainable clothing)"
         ]
     },
     {
@@ -1301,17 +1301,17 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Darn Tough", why: "Vermont-made, lifetime guarantee" },
-            { name: "Icebreaker", why: "Merino specialist, sustainable" },
-            { name: "Woolly Clothing Co", why: "Sustainable merino basics" },
-            { name: "Tracksmith", why: "Running-focused merino gear" }
+            "Darn Tough (Vermont-made, lifetime guarantee)",
+            "Icebreaker (Merino specialist, sustainable)",
+            "Woolly Clothing Co (Sustainable merino basics)",
+            "Tracksmith (Running-focused merino gear)"
         ]
     },
 
     // NIKE INC (USA) - 3 brands
     {
         name: "Nike",
-        aliases: ["nike sportswear"],
+        aliases: ["nike sportswear", "nike shoes", "nikey"],
         parent: "Nike Inc.",
         sisters: [
             "Converse", "Jordan Brand"
@@ -1324,10 +1324,10 @@ const brandDatabase = [
             }
         ],
         alternatives: [
-            { name: "Allbirds", why: "Sustainable materials, carbon neutral" },
-            { name: "Cariuma", why: "B Corp, plants 2 trees per pair" },
-            { name: "Veja", why: "Fair trade, organic materials" },
-            { name: "On Running", why: "Swiss performance brand, sustainability focus" }
+            "Allbirds (Sustainable materials, carbon neutral)",
+            "Cariuma (B Corp, plants 2 trees per pair)",
+            "Veja (Fair trade, organic materials)",
+            "On Running (Swiss performance brand, sustainability focus)"
         ]
     },
     {
@@ -1339,10 +1339,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Cariuma", why: "Sustainable canvas sneakers" },
-            { name: "Veja", why: "Fair trade canvas shoes" },
-            { name: "SeaVees", why: "California-made sustainable sneakers" },
-            { name: "Thousand Fell", why: "Fully recyclable sneakers" }
+            "Cariuma (Sustainable canvas sneakers)",
+            "Veja (Fair trade canvas shoes)",
+            "SeaVees (California-made sustainable sneakers)",
+            "Thousand Fell (Fully recyclable sneakers)"
         ]
     },
     {
@@ -1354,17 +1354,17 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "New Balance", why: "Some USA-made options available" },
-            { name: "On Running", why: "Performance innovation, sustainable" },
-            { name: "Hoka", why: "Independent performance brand" },
-            { name: "Allbirds", why: "Sustainable performance shoes" }
+            "New Balance (Some USA-made options available)",
+            "On Running (Performance innovation, sustainable)",
+            "Hoka (Independent performance brand)",
+            "Allbirds (Sustainable performance shoes)"
         ]
     },
 
     // ADIDAS GROUP (Germany) - 2 brands
     {
         name: "Adidas",
-        aliases: ["adidas originals"],
+        aliases: ["adidas originals", "addidas", "adiddas", "adidas shoes"],
         parent: "Adidas AG",
         sisters: [
             "Reebok"
@@ -1377,25 +1377,25 @@ const brandDatabase = [
             }
         ],
         alternatives: [
-            { name: "Veja", why: "Fair trade sustainable sneakers" },
-            { name: "Allbirds", why: "Carbon neutral, sustainable" },
-            { name: "Cariuma", why: "B Corp certified, ethical" },
-            { name: "On Running", why: "Swiss performance, sustainability focus" }
+            "Veja (Fair trade sustainable sneakers)",
+            "Allbirds (Carbon neutral, sustainable)",
+            "Cariuma (B Corp certified, ethical)",
+            "On Running (Swiss performance, sustainability focus)"
         ]
     },
     {
         name: "Reebok",
-        aliases: [],
+        aliases: ["rebok", "reebook", "reebok shoes"],
         parent: "Adidas AG",
         sisters: [
             "Adidas"
         ],
         boycotts: [],
         alternatives: [
-            { name: "New Balance", why: "Some American-made options" },
-            { name: "Brooks", why: "Running specialist, sustainability focus" },
-            { name: "On Running", why: "Performance innovation" },
-            { name: "Hoka", why: "Independent performance brand" }
+            "New Balance (Some American-made options)",
+            "Brooks (Running specialist, sustainability focus)",
+            "On Running (Performance innovation)",
+            "Hoka (Independent performance brand)"
         ]
     },
 
@@ -1409,10 +1409,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Cuyana", why: "Fewer, better luxury accessories" },
-            { name: "Mansur Gavriel", why: "Indie luxury leather goods" },
-            { name: "Métier", why: "Independent luxury handbags" },
-            { name: "Strathberry", why: "Scottish indie luxury handbags" }
+            "Cuyana (Fewer, better luxury accessories)",
+            "Mansur Gavriel (Indie luxury leather goods)",
+            "Métier (Independent luxury handbags)",
+            "Strathberry (Scottish indie luxury handbags)"
         ]
     },
     {
@@ -1424,10 +1424,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Chanel", why: "Independent family-owned luxury" },
-            { name: "Hermès", why: "Independent family-owned luxury" },
-            { name: "The Row", why: "Olsen twins indie luxury minimalism" },
-            { name: "Khaite", why: "NYC indie luxury brand" }
+            "Chanel (Independent family-owned luxury)",
+            "Hermès (Independent family-owned luxury)",
+            "The Row (Olsen twins indie luxury minimalism)",
+            "Khaite (NYC indie luxury brand)"
         ]
     },
     {
@@ -1439,10 +1439,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Mansur Gavriel", why: "Indie luxury leather" },
-            { name: "The Row", why: "Independent American luxury" },
-            { name: "Métier", why: "Independent luxury handbags" },
-            { name: "Hunting Season", why: "Artisan luxury bags" }
+            "Mansur Gavriel (Indie luxury leather)",
+            "The Row (Independent American luxury)",
+            "Métier (Independent luxury handbags)",
+            "Hunting Season (Artisan luxury bags)"
         ]
     },
     {
@@ -1454,10 +1454,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "The Row", why: "Independent minimalist luxury" },
-            { name: "Gabriela Hearst", why: "Sustainable luxury fashion" },
-            { name: "Khaite", why: "NYC indie luxury" },
-            { name: "Proenza Schouler", why: "Independent NYC luxury" }
+            "The Row (Independent minimalist luxury)",
+            "Gabriela Hearst (Sustainable luxury fashion)",
+            "Khaite (NYC indie luxury)",
+            "Proenza Schouler (Independent NYC luxury)"
         ]
     },
     {
@@ -1469,10 +1469,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Tory Burch", why: "Independent American designer" },
-            { name: "Staud", why: "LA indie contemporary brand" },
-            { name: "Mansur Gavriel", why: "Indie NYC brand" },
-            { name: "Khaite", why: "Independent NYC luxury" }
+            "Tory Burch (Independent American designer)",
+            "Staud (LA indie contemporary brand)",
+            "Mansur Gavriel (Indie NYC brand)",
+            "Khaite (Independent NYC luxury)"
         ]
     },
     {
@@ -1484,10 +1484,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Ganni", why: "Independent Danish brand" },
-            { name: "Stine Goya", why: "Danish indie colorful fashion" },
-            { name: "Ulla Johnson", why: "Independent NYC designer" },
-            { name: "Farm Rio", why: "Brazilian indie colorful brand" }
+            "Ganni (Independent Danish brand)",
+            "Stine Goya (Danish indie colorful fashion)",
+            "Ulla Johnson (Independent NYC designer)",
+            "Farm Rio (Brazilian indie colorful brand)"
         ]
     },
 
@@ -1501,10 +1501,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Chanel", why: "Independent family-owned luxury" },
-            { name: "Hermès", why: "Independent family-owned luxury" },
-            { name: "The Row", why: "Independent American luxury" },
-            { name: "Khaite", why: "NYC indie luxury brand" }
+            "Chanel (Independent family-owned luxury)",
+            "Hermès (Independent family-owned luxury)",
+            "The Row (Independent American luxury)",
+            "Khaite (NYC indie luxury brand)"
         ]
     },
     {
@@ -1516,10 +1516,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "The Row", why: "Independent minimalist luxury" },
-            { name: "Khaite", why: "NYC indie luxury" },
-            { name: "Totême", why: "Swedish indie minimalist luxury" },
-            { name: "Gabriela Hearst", why: "Sustainable luxury" }
+            "The Row (Independent minimalist luxury)",
+            "Khaite (NYC indie luxury)",
+            "Totême (Swedish indie minimalist luxury)",
+            "Gabriela Hearst (Sustainable luxury)"
         ]
     },
     {
@@ -1531,10 +1531,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Vetements", why: "Independent disruptive fashion" },
-            { name: "Margiela", why: "OTB Group experimental fashion" },
-            { name: "Acne Studios", why: "Independent Swedish avant-garde" },
-            { name: "Our Legacy", why: "Swedish indie contemporary" }
+            "Vetements (Independent disruptive fashion)",
+            "Margiela (OTB Group experimental fashion)",
+            "Acne Studios (Independent Swedish avant-garde)",
+            "Our Legacy (Swedish indie contemporary)"
         ]
     },
     {
@@ -1546,10 +1546,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Rick Owens", why: "Independent avant-garde designer" },
-            { name: "Comme des Garçons", why: "Independent Japanese avant-garde" },
-            { name: "Iris van Herpen", why: "Independent couture innovation" },
-            { name: "Noir Kei Ninomiya", why: "Independent experimental fashion" }
+            "Rick Owens (Independent avant-garde designer)",
+            "Comme des Garçons (Independent Japanese avant-garde)",
+            "Iris van Herpen (Independent couture innovation)",
+            "Noir Kei Ninomiya (Independent experimental fashion)"
         ]
     },
     {
@@ -1561,10 +1561,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "The Row", why: "Independent quiet luxury" },
-            { name: "Métier", why: "Independent luxury handbags" },
-            { name: "Hunting Season", why: "Artisan luxury accessories" },
-            { name: "Mansur Gavriel", why: "Indie luxury leather goods" }
+            "The Row (Independent quiet luxury)",
+            "Métier (Independent luxury handbags)",
+            "Hunting Season (Artisan luxury accessories)",
+            "Mansur Gavriel (Indie luxury leather goods)"
         ]
     },
 
@@ -1578,10 +1578,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Everlane", why: "Transparent minimalist basics" },
-            { name: "Cuyana", why: "Minimalist investment pieces" },
-            { name: "Entireworld", why: "Indie minimalist basics" },
-            { name: "Kotn", why: "Transparent Egyptian cotton" }
+            "Everlane (Transparent minimalist basics)",
+            "Cuyana (Minimalist investment pieces)",
+            "Entireworld (Indie minimalist basics)",
+            "Kotn (Transparent Egyptian cotton)"
         ]
     },
     {
@@ -1593,10 +1593,10 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Gant", why: "Independent American sportswear heritage" },
-            { name: "Polo Ralph Lauren", why: "Independent American classic" },
-            { name: "Buck Mason", why: "American-made quality basics" },
-            { name: "Todd Snyder", why: "Independent American menswear" }
+            "Gant (Independent American sportswear heritage)",
+            "Polo Ralph Lauren (Independent American classic)",
+            "Buck Mason (American-made quality basics)",
+            "Todd Snyder (Independent American menswear)"
         ]
     },
     {
@@ -1608,17 +1608,17 @@ const brandDatabase = [
         ],
         boycotts: [],
         alternatives: [
-            { name: "Bonobos", why: "Indie menswear, better fit" },
-            { name: "Ministry of Supply", why: "Performance workwear innovation" },
-            { name: "Buck Mason", why: "American-made quality" },
-            { name: "Suitsupply", why: "Independent Dutch menswear" }
+            "Bonobos (Indie menswear, better fit)",
+            "Ministry of Supply (Performance workwear innovation)",
+            "Buck Mason (American-made quality)",
+            "Suitsupply (Independent Dutch menswear)"
         ]
     },
 
     // BDS-TARGETED BRANDS
     {
         name: "Puma",
-        aliases: [],
+        aliases: ["pooma", "puma shoes", "puma sportswear"],
         parent: "Puma SE",
         sisters: [],
         boycotts: [
@@ -1629,10 +1629,10 @@ const brandDatabase = [
             }
         ],
         alternatives: [
-            { name: "Veja", why: "Fair trade sustainable sneakers" },
-            { name: "Allbirds", why: "Carbon neutral, sustainable" },
-            { name: "Cariuma", why: "B Corp ethical sneakers" },
-            { name: "New Balance", why: "Some American-made options" }
+            "Veja (Fair trade sustainable sneakers)",
+            "Allbirds (Carbon neutral, sustainable)",
+            "Cariuma (B Corp ethical sneakers)",
+            "New Balance (Some American-made options)"
         ]
     }
 ];
