@@ -420,12 +420,162 @@
         </div>
     </footer>
 
+    <!-- Email Capture Modal -->
+    <div id="emailModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4" style="background: rgba(44, 44, 44, 0.7);">
+        <div class="bg-cream border-4 border-dark-charcoal max-w-md w-full receipt-bg relative" style="box-shadow: 8px 8px 0px var(--dark-charcoal);">
+            <!-- Close Button -->
+            <button onclick="closeEmailModal()" class="absolute top-4 right-4 text-dark-charcoal hover:text-burnt-orange transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            
+            <div class="p-8">
+                <div class="text-center mb-6">
+                    <h4 class="text-4xl mb-3">Stay Updated<span class="text-burnt-orange">.</span></h4>
+                    <p class="text-warm-gray leading-relaxed">
+                        We're adding <strong class="text-dark-charcoal">100+ new brands every month</strong>. 
+                        Get early access to premium features.
+                    </p>
+                </div>
+                
+                <div id="emailForm" class="space-y-4">
+                    <input 
+                        id="emailInput" 
+                        type="email" 
+                        placeholder="your@email.com"
+                        class="w-full px-4 py-3 bg-off-white border-2 border-dark-charcoal focus:outline-none focus:border-burnt-orange mono text-sm"
+                        required
+                    />
+                    
+                    <button 
+                        onclick="submitEmail()"
+                        class="brutal-btn w-full px-6 py-3"
+                    >
+                        Notify Me
+                    </button>
+                    
+                    <button 
+                        onclick="closeEmailModal()"
+                        class="w-full text-center text-sm text-warm-gray hover:text-dark-charcoal transition-colors mono"
+                    >
+                        Maybe Later
+                    </button>
+                    
+                    <p class="text-xs text-warm-gray text-center leading-relaxed">
+                        We'll never spam you or share your email. Unsubscribe anytime.
+                    </p>
+                </div>
+                
+                <!-- Success Message (hidden by default) -->
+                <div id="emailSuccess" class="hidden text-center space-y-4">
+                    <div class="text-5xl">✓</div>
+                    <h5 class="text-2xl">You're on the list!</h5>
+                    <p class="text-warm-gray leading-relaxed text-sm">
+                        We'll email you when we add premium features (browser extension, collection scanner, etc.)
+                    </p>
+                    <button 
+                        onclick="closeEmailModal()"
+                        class="brutal-btn px-6 py-2 text-sm"
+                    >
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="data.js"></script>
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
         
+        // Email Modal Logic
+        let hasSearched = false;
+        let modalTimer = null;
+        
+        function showEmailModal() {
+            // Only show if not already shown this session
+            if (sessionStorage.getItem('emailModalShown')) {
+                return;
+            }
+            
+            const modal = document.getElementById('emailModal');
+            modal.classList.remove('hidden');
+            lucide.createIcons(); // Re-init icons in modal
+            
+            // Mark as shown
+            sessionStorage.setItem('emailModalShown', 'true');
+        }
+        
+        function closeEmailModal() {
+            document.getElementById('emailModal').classList.add('hidden');
+        }
+        
+        async function submitEmail() {
+            const emailInput = document.getElementById('emailInput');
+            const email = emailInput.value.trim();
+            
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            const source = hasSearched ? 'search' : 'homepage';
+            
+            try {
+                // Store email (Google Sheets Web App endpoint)
+                const response = await fetch('https://script.google.com/macros/s/AKfycbwvfbWaL2vHx5pJBqH-YIjYpP3VuPGRfJBLWQnmrEXXXXXXXXXX/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        timestamp: new Date().toISOString(),
+                        source: source,
+                        userAgent: navigator.userAgent
+                    })
+                });
+                
+                // Show success message
+                document.getElementById('emailForm').classList.add('hidden');
+                document.getElementById('emailSuccess').classList.remove('hidden');
+                
+                // Also store locally as backup
+                const localEmails = JSON.parse(localStorage.getItem('fairveinEmails') || '[]');
+                localEmails.push({
+                    email: email,
+                    timestamp: new Date().toISOString(),
+                    source: source
+                });
+                localStorage.setItem('fairveinEmails', JSON.stringify(localEmails));
+                
+            } catch (error) {
+                console.error('Error submitting email:', error);
+                // Still show success to user - we have localStorage backup
+                document.getElementById('emailForm').classList.add('hidden');
+                document.getElementById('emailSuccess').classList.remove('hidden');
+            }
+        }
+        
+        // Trigger modal after 30 seconds if not yet shown
+        modalTimer = setTimeout(() => {
+            showEmailModal();
+        }, 30000);
+        
         function searchBrand() {
+            // Mark that user has searched
+            if (!hasSearched) {
+                hasSearched = true;
+                // Clear the timer and show modal
+                clearTimeout(modalTimer);
+                setTimeout(() => {
+                    showEmailModal();
+                }, 1000); // Show 1 second after first search
+            }
+            
             const query = document.getElementById('brandSearch').value.toLowerCase().trim();
             const results = document.getElementById('results');
             const noResults = document.getElementById('noResults');
@@ -484,6 +634,11 @@
         // Allow Enter key to search
         document.getElementById('brandSearch').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') searchBrand();
+        });
+        
+        // Allow Enter key in email modal
+        document.getElementById('emailInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') submitEmail();
         });
         
         // Smooth scroll for anchor links
