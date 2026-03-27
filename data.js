@@ -865,6 +865,776 @@ const brandDatabase = [
             { name: "Naturium", why: "Susan Yara-founded, research-backed" }
         ]
     }
+    // ============================================
+    // FASHION & APPAREL BRANDS (March 2026)
+    // ============================================
+    
+    // INDITEX GROUP (Spain) - 6 brands
+    {
+        name: "Zara",
+        aliases: ["zara home"],
+        parent: "Inditex",
+        sisters: [
+            "Pull&Bear", "Massimo Dutti", "Bershka", "Stradivarius", "Oysho"
+        ],
+        boycotts: [
+            {
+                reason: "Uyghur forced labor concerns in supply chain",
+                since: "2020-07",
+                sources: ["https://www.business-humanrights.org/en/latest-news/china-83-major-brands-implicated-in-report-on-forced-labour-of-ethnic-minorities-from-xinjiang-assigned-to-factories-across-provinces-includes-company-responses/"]
+            }
+        ],
+        alternatives: [
+            { name: "Everlane", why: "Transparent pricing and ethical factories" },
+            { name: "Reformation", why: "Sustainable fast fashion alternative" },
+            { name: "Kotn", why: "Direct-to-consumer Egyptian cotton, transparent" },
+            { name: "Pact", why: "Fair trade organic cotton basics" }
+        ]
+    },
+    {
+        name: "Pull&Bear",
+        aliases: ["pull and bear"],
+        parent: "Inditex",
+        sisters: [
+            "Zara", "Massimo Dutti", "Bershka", "Stradivarius", "Oysho"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Outerknown", why: "Kelly Slater-founded sustainable surf brand" },
+            { name: "Tentree", why: "Plants 10 trees per item, sustainable" },
+            { name: "Prana", why: "Fair trade, organic, outdoor lifestyle" },
+            { name: "United By Blue", why: "Removes 1 lb ocean plastic per product" }
+        ]
+    },
+    {
+        name: "Massimo Dutti",
+        aliases: [],
+        parent: "Inditex",
+        sisters: [
+            "Zara", "Pull&Bear", "Bershka", "Stradivarius", "Oysho"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Cuyana", why: "Fewer, better things philosophy" },
+            { name: "Everlane", why: "Transparent costs, ethical production" },
+            { name: "Sezane", why: "French indie with charitable foundation" },
+            { name: "Amour Vert", why: "Sustainable luxury basics, plants trees" }
+        ]
+    },
+    {
+        name: "Bershka",
+        aliases: [],
+        parent: "Inditex",
+        sisters: [
+            "Zara", "Pull&Bear", "Massimo Dutti", "Stradivarius", "Oysho"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Reformation", why: "Sustainable trendy fashion" },
+            { name: "Girlfriend Collective", why: "Recycled materials, transparent" },
+            { name: "Pangaia", why: "Science-driven sustainable materials" },
+            { name: "Organic Basics", why: "Certified organic, minimal basics" }
+        ]
+    },
+    {
+        name: "Stradivarius",
+        aliases: [],
+        parent: "Inditex",
+        sisters: [
+            "Zara", "Pull&Bear", "Massimo Dutti", "Bershka", "Oysho"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Reformation", why: "Sustainable fashion for Gen Z" },
+            { name: "Christy Dawn", why: "Deadstock fabrics, farm-to-closet" },
+            { name: "For Days", why: "Circular fashion, take-back program" },
+            { name: "Whimsy + Row", why: "Small-batch sustainable LA brand" }
+        ]
+    },
+    {
+        name: "Oysho",
+        aliases: [],
+        parent: "Inditex",
+        sisters: [
+            "Zara", "Pull&Bear", "Massimo Dutti", "Bershka", "Stradivarius"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Pact", why: "Fair trade organic underwear & loungewear" },
+            { name: "Boody", why: "Organic bamboo basics" },
+            { name: "Knickey", why: "Organic cotton underwear, take-back program" },
+            { name: "Proclaim", why: "Size-inclusive lingerie, body positive" }
+        ]
+    },
+
+    // H&M GROUP (Sweden) - 6 brands
+    {
+        name: "H&M",
+        aliases: ["hennes and mauritz"],
+        parent: "H&M Group",
+        sisters: [
+            "COS", "& Other Stories", "Monki", "Weekday", "Arket"
+        ],
+        boycotts: [
+            {
+                reason: "Uyghur forced labor in supply chain",
+                since: "2020-07",
+                sources: ["https://www.business-humanrights.org/en/latest-news/china-83-major-brands-implicated-in-report-on-forced-labour-of-ethnic-minorities-from-xinjiang-assigned-to-factories-across-provinces-includes-company-responses/"]
+            }
+        ],
+        alternatives: [
+            { name: "Pact", why: "Fair trade organic cotton basics" },
+            { name: "Kotn", why: "Transparent supply chain, Egyptian cotton" },
+            { name: "Everlane", why: "Radical transparency in pricing" },
+            { name: "Quince", why: "Affordable sustainable basics" }
+        ]
+    },
+    {
+        name: "COS",
+        aliases: ["collection of style"],
+        parent: "H&M Group",
+        sisters: [
+            "H&M", "& Other Stories", "Monki", "Weekday", "Arket"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Everlane", why: "Minimalist ethical basics" },
+            { name: "Cuyana", why: "Fewer, better philosophy" },
+            { name: "Kotn", why: "Transparent minimalist essentials" },
+            { name: "Amour Vert", why: "Sustainable luxury basics" }
+        ]
+    },
+    {
+        name: "& Other Stories",
+        aliases: ["and other stories", "other stories"],
+        parent: "H&M Group",
+        sisters: [
+            "H&M", "COS", "Monki", "Weekday", "Arket"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Sezane", why: "French indie with charity arm" },
+            { name: "Reformation", why: "Sustainable trendy pieces" },
+            { name: "Ganni", why: "Independent Danish brand, sustainability focus" },
+            { name: "Madewell", why: "Denim-focused, some sustainable lines" }
+        ]
+    },
+    {
+        name: "Monki",
+        aliases: [],
+        parent: "H&M Group",
+        sisters: [
+            "H&M", "COS", "& Other Stories", "Weekday", "Arket"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Lucy & Yak", why: "UK indie, playful sustainable fashion" },
+            { name: "Girlfriend Collective", why: "Recycled materials, bright colors" },
+            { name: "Reformation", why: "Fun sustainable pieces" },
+            { name: "Wray", why: "NYC indie, small-batch colorful designs" }
+        ]
+    },
+    {
+        name: "Weekday",
+        aliases: [],
+        parent: "H&M Group",
+        sisters: [
+            "H&M", "COS", "& Other Stories", "Monki", "Arket"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Nudie Jeans", why: "Free repairs for life, organic denim" },
+            { name: "Outland Denim", why: "Fights human trafficking, ethical denim" },
+            { name: "Reformation", why: "Sustainable denim & trendy pieces" },
+            { name: "Boyish Jeans", why: "100% recycled & sustainable denim" }
+        ]
+    },
+    {
+        name: "Arket",
+        aliases: [],
+        parent: "H&M Group",
+        sisters: [
+            "H&M", "COS", "& Other Stories", "Monki", "Weekday"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Cuyana", why: "Timeless minimalist pieces" },
+            { name: "Everlane", why: "Transparent ethical basics" },
+            { name: "Kotn", why: "Minimal sustainable essentials" },
+            { name: "Organic Basics", why: "Certified organic minimalist" }
+        ]
+    },
+
+    // FAST RETAILING (Japan) - 5 brands
+    {
+        name: "Uniqlo",
+        aliases: [],
+        parent: "Fast Retailing",
+        sisters: [
+            "GU", "Theory", "Helmut Lang", "J Brand"
+        ],
+        boycotts: [
+            {
+                reason: "Uyghur forced labor in Xinjiang cotton supply chain",
+                since: "2021-01",
+                sources: ["https://www.saveuighur.org/83-companies-linked-to-uighur-forced-labor/"]
+            }
+        ],
+        alternatives: [
+            { name: "Pact", why: "Fair trade organic cotton basics" },
+            { name: "Kotn", why: "Transparent Egyptian cotton essentials" },
+            { name: "Asket", why: "Swedish brand, lifetime guarantee, traceable" },
+            { name: "Entireworld", why: "Scott Sternberg indie basics brand" }
+        ]
+    },
+    {
+        name: "GU",
+        aliases: [],
+        parent: "Fast Retailing",
+        sisters: [
+            "Uniqlo", "Theory", "Helmut Lang", "J Brand"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Pact", why: "Affordable fair trade basics" },
+            { name: "Quince", why: "Affordable sustainable essentials" },
+            { name: "Everlane", why: "Transparent affordable basics" },
+            { name: "Kotn", why: "Affordable Egyptian cotton" }
+        ]
+    },
+    {
+        name: "Theory",
+        aliases: [],
+        parent: "Fast Retailing",
+        sisters: [
+            "Uniqlo", "GU", "Helmut Lang", "J Brand"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Cuyana", why: "Investment pieces, transparent" },
+            { name: "Everlane", why: "Modern workwear, ethical" },
+            { name: "Amour Vert", why: "Sustainable luxury basics" },
+            { name: "Eileen Fisher", why: "Timeless sustainable pieces, take-back" }
+        ]
+    },
+    {
+        name: "Helmut Lang",
+        aliases: [],
+        parent: "Fast Retailing",
+        sisters: [
+            "Uniqlo", "GU", "Theory", "J Brand"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Entireworld", why: "Scott Sternberg's new indie brand" },
+            { name: "Baserange", why: "Minimalist sustainable basics" },
+            { name: "The Frankie Shop", why: "Independent minimalist retailer" },
+            { name: "Tibi", why: "Amy Smilovic indie contemporary brand" }
+        ]
+    },
+    {
+        name: "J Brand",
+        aliases: [],
+        parent: "Fast Retailing",
+        sisters: [
+            "Uniqlo", "GU", "Theory", "Helmut Lang"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Outland Denim", why: "Fights trafficking, ethical production" },
+            { name: "Nudie Jeans", why: "Free repairs, organic denim" },
+            { name: "Boyish Jeans", why: "100% sustainable denim" },
+            { name: "Reformation Denim", why: "Sustainable premium denim" }
+        ]
+    },
+
+    // GAP INC (USA) - 4 brands
+    {
+        name: "Gap",
+        aliases: ["gap inc"],
+        parent: "Gap Inc.",
+        sisters: [
+            "Old Navy", "Banana Republic", "Athleta"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Everlane", why: "Transparent basics, ethical factories" },
+            { name: "Pact", why: "Fair trade organic basics" },
+            { name: "Kotn", why: "Transparent supply chain" },
+            { name: "Buck Mason", why: "American-made quality basics" }
+        ]
+    },
+    {
+        name: "Old Navy",
+        aliases: [],
+        parent: "Gap Inc.",
+        sisters: [
+            "Gap", "Banana Republic", "Athleta"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Pact", why: "Affordable fair trade organic" },
+            { name: "Quince", why: "Affordable sustainable basics" },
+            { name: "Primary", why: "Affordable basics for families" },
+            { name: "Hanna Andersson", why: "Quality kids clothes, buy-back" }
+        ]
+    },
+    {
+        name: "Banana Republic",
+        aliases: [],
+        parent: "Gap Inc.",
+        sisters: [
+            "Gap", "Old Navy", "Athleta"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Cuyana", why: "Investment workwear pieces" },
+            { name: "Everlane", why: "Modern work essentials" },
+            { name: "M.M.LaFleur", why: "Women's workwear, transparent" },
+            { name: "Amour Vert", why: "Sustainable work-appropriate" }
+        ]
+    },
+    {
+        name: "Athleta",
+        aliases: [],
+        parent: "Gap Inc.",
+        sisters: [
+            "Gap", "Old Navy", "Banana Republic"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Girlfriend Collective", why: "Recycled materials, transparent" },
+            { name: "Outdoor Voices", why: "Indie activewear brand" },
+            { name: "Patagonia", why: "Activist outdoor & activewear" },
+            { name: "Oiselle", why: "Women-run activewear brand" }
+        ]
+    },
+
+    // VF CORPORATION (USA) - 6 brands
+    {
+        name: "The North Face",
+        aliases: ["north face", "tnf"],
+        parent: "VF Corporation",
+        sisters: [
+            "Vans", "Timberland", "Dickies", "Supreme", "Smartwool"
+        ],
+        boycotts: [
+            {
+                reason: "Uyghur forced labor in supply chain",
+                since: "2020-07",
+                sources: ["https://www.business-humanrights.org/en/latest-news/china-83-major-brands-implicated-in-report-on-forced-labour-of-ethnic-minorities-from-xinjiang-assigned-to-factories-across-provinces-includes-company-responses/"]
+            }
+        ],
+        alternatives: [
+            { name: "Patagonia", why: "1% for the Planet, activist brand, repair program" },
+            { name: "Cotopaxi", why: "B Corp, colorful sustainable outdoor" },
+            { name: "REI Co-op", why: "Member-owned outdoor gear" },
+            { name: "Arc'teryx", why: "Independent high-performance outdoor" }
+        ]
+    },
+    {
+        name: "Vans",
+        aliases: [],
+        parent: "VF Corporation",
+        sisters: [
+            "The North Face", "Timberland", "Dickies", "Supreme"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Cariuma", why: "B Corp, sustainable sneakers, plants trees" },
+            { name: "Allbirds", why: "Sustainable materials, carbon neutral" },
+            { name: "Thousand Fell", why: "Fully recyclable sneakers" },
+            { name: "Nisolo", why: "Ethical leather shoes, transparent" }
+        ]
+    },
+    {
+        name: "Timberland",
+        aliases: [],
+        parent: "VF Corporation",
+        sisters: [
+            "The North Face", "Vans", "Dickies", "Supreme"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Nisolo", why: "Ethical leather, transparent wages" },
+            { name: "Able", why: "Fair wages, leather goods" },
+            { name: "Thursday Boot Company", why: "Direct-to-consumer quality boots" },
+            { name: "Danner", why: "American-made boots, repair program" }
+        ]
+    },
+    {
+        name: "Dickies",
+        aliases: [],
+        parent: "VF Corporation",
+        sisters: [
+            "The North Face", "Vans", "Timberland", "Supreme"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Carhartt", why: "Family-owned workwear, union-made options" },
+            { name: "Dovetail Workwear", why: "Women-owned workwear brand" },
+            { name: "Kirrin Finch", why: "Queer-owned menswear for all bodies" },
+            { name: "Wildfang", why: "Tomboy style, ethical production" }
+        ]
+    },
+    {
+        name: "Supreme",
+        aliases: [],
+        parent: "VF Corporation",
+        sisters: [
+            "The North Face", "Vans", "Timberland", "Dickies"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Noah", why: "Brendon Babenzien sustainable streetwear" },
+            { name: "Entireworld", why: "Scott Sternberg indie brand" },
+            { name: "Patagonia", why: "Activist outdoor brand" },
+            { name: "Story Mfg", why: "Hand-loomed sustainable clothing" }
+        ]
+    },
+    {
+        name: "Smartwool",
+        aliases: [],
+        parent: "VF Corporation",
+        sisters: [
+            "The North Face", "Timberland", "Icebreaker"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Darn Tough", why: "Vermont-made, lifetime guarantee" },
+            { name: "Icebreaker", why: "Merino specialist, sustainable" },
+            { name: "Woolly Clothing Co", why: "Sustainable merino basics" },
+            { name: "Tracksmith", why: "Running-focused merino gear" }
+        ]
+    },
+
+    // NIKE INC (USA) - 3 brands
+    {
+        name: "Nike",
+        aliases: ["nike sportswear"],
+        parent: "Nike Inc.",
+        sisters: [
+            "Converse", "Jordan Brand"
+        ],
+        boycotts: [
+            {
+                reason: "Uyghur forced labor concerns",
+                since: "2020-07",
+                sources: ["https://www.business-humanrights.org/en/latest-news/china-83-major-brands-implicated-in-report-on-forced-labour-of-ethnic-minorities-from-xinjiang-assigned-to-factories-across-provinces-includes-company-responses/"]
+            }
+        ],
+        alternatives: [
+            { name: "Allbirds", why: "Sustainable materials, carbon neutral" },
+            { name: "Cariuma", why: "B Corp, plants 2 trees per pair" },
+            { name: "Veja", why: "Fair trade, organic materials" },
+            { name: "On Running", why: "Swiss performance brand, sustainability focus" }
+        ]
+    },
+    {
+        name: "Converse",
+        aliases: ["converse chuck taylor", "chuck taylors"],
+        parent: "Nike Inc.",
+        sisters: [
+            "Nike", "Jordan Brand"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Cariuma", why: "Sustainable canvas sneakers" },
+            { name: "Veja", why: "Fair trade canvas shoes" },
+            { name: "SeaVees", why: "California-made sustainable sneakers" },
+            { name: "Thousand Fell", why: "Fully recyclable sneakers" }
+        ]
+    },
+    {
+        name: "Jordan Brand",
+        aliases: ["air jordan", "jordan"],
+        parent: "Nike Inc.",
+        sisters: [
+            "Nike", "Converse"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "New Balance", why: "Some USA-made options available" },
+            { name: "On Running", why: "Performance innovation, sustainable" },
+            { name: "Hoka", why: "Independent performance brand" },
+            { name: "Allbirds", why: "Sustainable performance shoes" }
+        ]
+    },
+
+    // ADIDAS GROUP (Germany) - 2 brands
+    {
+        name: "Adidas",
+        aliases: ["adidas originals"],
+        parent: "Adidas AG",
+        sisters: [
+            "Reebok"
+        ],
+        boycotts: [
+            {
+                reason: "Israel settlements sponsorship and ties",
+                since: "2023-10",
+                sources: ["https://bdsmovement.net/news/adidas-ends-sponsorship-israeli-football-association"]
+            }
+        ],
+        alternatives: [
+            { name: "Veja", why: "Fair trade sustainable sneakers" },
+            { name: "Allbirds", why: "Carbon neutral, sustainable" },
+            { name: "Cariuma", why: "B Corp certified, ethical" },
+            { name: "On Running", why: "Swiss performance, sustainability focus" }
+        ]
+    },
+    {
+        name: "Reebok",
+        aliases: [],
+        parent: "Adidas AG",
+        sisters: [
+            "Adidas"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "New Balance", why: "Some American-made options" },
+            { name: "Brooks", why: "Running specialist, sustainability focus" },
+            { name: "On Running", why: "Performance innovation" },
+            { name: "Hoka", why: "Independent performance brand" }
+        ]
+    },
+
+    // LVMH FASHION (France) - 6 brands
+    {
+        name: "Louis Vuitton",
+        aliases: ["lv", "louis vuitton malletier"],
+        parent: "LVMH",
+        sisters: [
+            "Dior", "Fendi", "Givenchy", "Marc Jacobs", "Kenzo", "Celine", "Loewe"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Cuyana", why: "Fewer, better luxury accessories" },
+            { name: "Mansur Gavriel", why: "Indie luxury leather goods" },
+            { name: "Métier", why: "Independent luxury handbags" },
+            { name: "Strathberry", why: "Scottish indie luxury handbags" }
+        ]
+    },
+    {
+        name: "Dior",
+        aliases: ["christian dior"],
+        parent: "LVMH",
+        sisters: [
+            "Louis Vuitton", "Fendi", "Givenchy", "Marc Jacobs", "Kenzo"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Chanel", why: "Independent family-owned luxury" },
+            { name: "Hermès", why: "Independent family-owned luxury" },
+            { name: "The Row", why: "Olsen twins indie luxury minimalism" },
+            { name: "Khaite", why: "NYC indie luxury brand" }
+        ]
+    },
+    {
+        name: "Fendi",
+        aliases: [],
+        parent: "LVMH",
+        sisters: [
+            "Louis Vuitton", "Dior", "Givenchy", "Marc Jacobs", "Kenzo"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Mansur Gavriel", why: "Indie luxury leather" },
+            { name: "The Row", why: "Independent American luxury" },
+            { name: "Métier", why: "Independent luxury handbags" },
+            { name: "Hunting Season", why: "Artisan luxury bags" }
+        ]
+    },
+    {
+        name: "Givenchy",
+        aliases: [],
+        parent: "LVMH",
+        sisters: [
+            "Louis Vuitton", "Dior", "Fendi", "Marc Jacobs", "Kenzo"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "The Row", why: "Independent minimalist luxury" },
+            { name: "Gabriela Hearst", why: "Sustainable luxury fashion" },
+            { name: "Khaite", why: "NYC indie luxury" },
+            { name: "Proenza Schouler", why: "Independent NYC luxury" }
+        ]
+    },
+    {
+        name: "Marc Jacobs",
+        aliases: ["marc by marc jacobs"],
+        parent: "LVMH",
+        sisters: [
+            "Louis Vuitton", "Dior", "Fendi", "Givenchy", "Kenzo"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Tory Burch", why: "Independent American designer" },
+            { name: "Staud", why: "LA indie contemporary brand" },
+            { name: "Mansur Gavriel", why: "Indie NYC brand" },
+            { name: "Khaite", why: "Independent NYC luxury" }
+        ]
+    },
+    {
+        name: "Kenzo",
+        aliases: [],
+        parent: "LVMH",
+        sisters: [
+            "Louis Vuitton", "Dior", "Fendi", "Givenchy", "Marc Jacobs"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Ganni", why: "Independent Danish brand" },
+            { name: "Stine Goya", why: "Danish indie colorful fashion" },
+            { name: "Ulla Johnson", why: "Independent NYC designer" },
+            { name: "Farm Rio", why: "Brazilian indie colorful brand" }
+        ]
+    },
+
+    // KERING (France) - 5 brands
+    {
+        name: "Gucci",
+        aliases: [],
+        parent: "Kering",
+        sisters: [
+            "Saint Laurent", "Balenciaga", "Alexander McQueen", "Bottega Veneta"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Chanel", why: "Independent family-owned luxury" },
+            { name: "Hermès", why: "Independent family-owned luxury" },
+            { name: "The Row", why: "Independent American luxury" },
+            { name: "Khaite", why: "NYC indie luxury brand" }
+        ]
+    },
+    {
+        name: "Saint Laurent",
+        aliases: ["ysl", "yves saint laurent"],
+        parent: "Kering",
+        sisters: [
+            "Gucci", "Balenciaga", "Alexander McQueen", "Bottega Veneta"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "The Row", why: "Independent minimalist luxury" },
+            { name: "Khaite", why: "NYC indie luxury" },
+            { name: "Totême", why: "Swedish indie minimalist luxury" },
+            { name: "Gabriela Hearst", why: "Sustainable luxury" }
+        ]
+    },
+    {
+        name: "Balenciaga",
+        aliases: [],
+        parent: "Kering",
+        sisters: [
+            "Gucci", "Saint Laurent", "Alexander McQueen", "Bottega Veneta"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Vetements", why: "Independent disruptive fashion" },
+            { name: "Margiela", why: "OTB Group experimental fashion" },
+            { name: "Acne Studios", why: "Independent Swedish avant-garde" },
+            { name: "Our Legacy", why: "Swedish indie contemporary" }
+        ]
+    },
+    {
+        name: "Alexander McQueen",
+        aliases: ["mcqueen"],
+        parent: "Kering",
+        sisters: [
+            "Gucci", "Saint Laurent", "Balenciaga", "Bottega Veneta"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Rick Owens", why: "Independent avant-garde designer" },
+            { name: "Comme des Garçons", why: "Independent Japanese avant-garde" },
+            { name: "Iris van Herpen", why: "Independent couture innovation" },
+            { name: "Noir Kei Ninomiya", why: "Independent experimental fashion" }
+        ]
+    },
+    {
+        name: "Bottega Veneta",
+        aliases: [],
+        parent: "Kering",
+        sisters: [
+            "Gucci", "Saint Laurent", "Balenciaga", "Alexander McQueen"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "The Row", why: "Independent quiet luxury" },
+            { name: "Métier", why: "Independent luxury handbags" },
+            { name: "Hunting Season", why: "Artisan luxury accessories" },
+            { name: "Mansur Gavriel", why: "Indie luxury leather goods" }
+        ]
+    },
+
+    // PVH CORP (USA) - 3 brands
+    {
+        name: "Calvin Klein",
+        aliases: ["ck", "calvin klein jeans"],
+        parent: "PVH Corp",
+        sisters: [
+            "Tommy Hilfiger", "Van Heusen"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Everlane", why: "Transparent minimalist basics" },
+            { name: "Cuyana", why: "Minimalist investment pieces" },
+            { name: "Entireworld", why: "Indie minimalist basics" },
+            { name: "Kotn", why: "Transparent Egyptian cotton" }
+        ]
+    },
+    {
+        name: "Tommy Hilfiger",
+        aliases: ["tommy"],
+        parent: "PVH Corp",
+        sisters: [
+            "Calvin Klein", "Van Heusen"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Gant", why: "Independent American sportswear heritage" },
+            { name: "Polo Ralph Lauren", why: "Independent American classic" },
+            { name: "Buck Mason", why: "American-made quality basics" },
+            { name: "Todd Snyder", why: "Independent American menswear" }
+        ]
+    },
+    {
+        name: "Van Heusen",
+        aliases: [],
+        parent: "PVH Corp",
+        sisters: [
+            "Calvin Klein", "Tommy Hilfiger"
+        ],
+        boycotts: [],
+        alternatives: [
+            { name: "Bonobos", why: "Indie menswear, better fit" },
+            { name: "Ministry of Supply", why: "Performance workwear innovation" },
+            { name: "Buck Mason", why: "American-made quality" },
+            { name: "Suitsupply", why: "Independent Dutch menswear" }
+        ]
+    },
+
+    // BDS-TARGETED BRANDS
+    {
+        name: "Puma",
+        aliases: [],
+        parent: "Puma SE",
+        sisters: [],
+        boycotts: [
+            {
+                reason: "Sponsorship of Israel Football Association (operates in illegal settlements)",
+                since: "2018-06",
+                sources: ["https://bdsmovement.net/news/puma-still-violating-palestinian-human-rights"]
+            }
+        ],
+        alternatives: [
+            { name: "Veja", why: "Fair trade sustainable sneakers" },
+            { name: "Allbirds", why: "Carbon neutral, sustainable" },
+            { name: "Cariuma", why: "B Corp ethical sneakers" },
+            { name: "New Balance", why: "Some American-made options" }
+        ]
+    }
 ];
 
 // Export for use in the app
