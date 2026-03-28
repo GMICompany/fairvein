@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post 3 - Slide 3 (Fixed)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1024px;
+            height: 1536px;
+            background: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .text-section {
+            flex: 0 0 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 70px;
+            background: #0a0a0a;
+        }
+        .headline {
+            font-size: 56px;
+            font-weight: 900;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        .headline .highlight {
+            color: #ff6b35;
+        }
+        .subtext {
+            font-family: 'Space Mono', monospace;
+            font-size: 26px;
+            color: #666;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .card-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 60px;
+            background: #111;
+            border-top: 4px solid #ff6b35;
+        }
+        .result-card {
+            width: 100%;
+            background: #1a1a1a;
+            border: 2px solid #333;
+            padding: 50px;
+            font-family: 'Space Mono', monospace;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px dashed #333;
+        }
+        .brand-name {
+            font-size: 48px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .status-badge {
+            background: #ff3333;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 8px 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .ownership-row {
+            margin-bottom: 25px;
+        }
+        .label {
+            font-size: 18px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .value {
+            font-size: 36px;
+            color: #ff6b35;
+            font-weight: 700;
+        }
+        .boycott-list {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px dashed #333;
+        }
+        .boycott-item {
+            font-size: 22px;
+            color: #ff6666;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .boycott-item::before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .sister-brands {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px dashed #333;
+        }
+        .sister-label {
+            font-size: 18px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .sister-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .sister-tag {
+            background: #222;
+            border: 1px solid #444;
+            color: #aaa;
+            font-size: 18px;
+            padding: 6px 14px;
+        }
+        .site-url {
+            font-family: 'Space Mono', monospace;
+            font-size: 24px;
+            color: #ff6b35;
+            text-align: center;
+            margin-top: 30px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-section">
+        <div class="headline"><span class="highlight">Too Faced</span> is owned by<br>Estée Lauder</div>
+        <div class="subtext">here's the full picture ↓</div>
+    </div>
+    <div class="card-section">
+        <div class="result-card">
+            <div class="card-header">
+                <div class="brand-name">Too Faced</div>
+                <div class="status-badge">⚠ Boycott Active</div>
+            </div>
+            <div class="ownership-row">
+                <div class="label">Parent Company</div>
+                <div class="value">Estée Lauder Companies</div>
+            </div>
+            <div class="boycott-list">
+                <div class="label">Active Campaigns</div>
+                <div class="boycott-item">Palestine solidarity / BDS list</div>
+                <div class="boycott-item">$2.5M political donation (Nov 2025)</div>
+                <div class="boycott-item">Epstein files connection</div>
+            </div>
+            <div class="sister-brands">
+                <div class="sister-label">Sister Brands (same owner)</div>
+                <div class="sister-tags">
+                    <span class="sister-tag">MAC</span>
+                    <span class="sister-tag">Clinique</span>
+                    <span class="sister-tag">Bobbi Brown</span>
+                    <span class="sister-tag">La Mer</span>
+                    <span class="sister-tag">Tom Ford</span>
+                    <span class="sister-tag">Smashbox</span>
+                    <span class="sister-tag">+20 more</span>
+                </div>
+            </div>
+            <div class="site-url">fairvein.com</div>
+        </div>
+    </div>
+</body>
+</html>

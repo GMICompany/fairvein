@@ -1634,6 +1634,728 @@ const brandDatabase = [
             "Cariuma (B Corp ethical sneakers)",
             "New Balance (Some American-made options)"
         ]
+    },
+
+    // PROCTER & GAMBLE (P&G) - 18 beauty/personal care brands
+    {
+        name: "Olay",
+        aliases: ["olay regenerist", "olay total effects"],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Pantene", "Head & Shoulders", "Herbal Essences", "SK-II",
+            "Old Spice", "Secret", "Native", "Gillette", "Venus"
+        ],
+        boycotts: [],
+        alternatives: [
+            "CeraVe (L'Oréal-owned but dermatologist-backed)",
+            "The Ordinary (Affordable, science-backed)",
+            "Versed (Clean, affordable, Target-exclusive)",
+            "Naturium (Susan Yara-founded indie)"
+        ]
+    },
+    {
+        name: "SK-II",
+        aliases: ["skii", "sk2"],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Olay", "Pantene", "Head & Shoulders", "Herbal Essences",
+            "Old Spice", "Secret", "Native"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Tatcha (Independent Japanese luxury)",
+            "Sulwhasoo (Amorepacific luxury K-beauty)",
+            "Shiseido (Independent Japanese heritage)",
+            "Drunk Elephant (Shiseido-owned clean clinical)"
+        ]
+    },
+    {
+        name: "Pantene",
+        aliases: ["pantene pro-v"],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Head & Shoulders", "Herbal Essences", "Olay", "SK-II",
+            "Old Spice", "Secret", "Native"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Briogeo (Indie clean hair care)",
+            "Amika (Indie salon-quality)",
+            "Kristin Ess (Affordable indie at Target)",
+            "Verb (Indie salon brand)"
+        ]
+    },
+    {
+        name: "Head & Shoulders",
+        aliases: ["head and shoulders"],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Pantene", "Herbal Essences", "Olay", "SK-II",
+            "Old Spice", "Secret", "Native"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Briogeo Scalp Revival (Indie clean anti-dandruff)",
+            "Jupiter (Direct-to-consumer dandruff specialist)",
+            "Act+Acre (Scalp-focused indie)",
+            "Neutrogena T/Gel (Johnson & Johnson, different parent)"
+        ]
+    },
+    {
+        name: "Herbal Essences",
+        aliases: [],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Pantene", "Head & Shoulders", "Olay", "SK-II",
+            "Old Spice", "Secret", "Native"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Love Beauty and Planet (Unilever-owned but vegan)",
+            "Acure (Independent clean beauty)",
+            "Pacifica (Independent vegan beauty)",
+            "Ethique (Plastic-free solid bars)"
+        ]
+    },
+    {
+        name: "Old Spice",
+        aliases: [],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Secret", "Native", "Gillette", "Venus", "Olay",
+            "Pantene", "Head & Shoulders"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Native (P&G-owned but clean focus)",
+            "Schmidt's (Unilever-owned natural deodorant)",
+            "Dr. Squatch (Independent men's natural products)",
+            "Routine (Canadian indie natural deodorant)"
+        ]
+    },
+    {
+        name: "Secret",
+        aliases: ["secret clinical strength"],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Old Spice", "Native", "Olay", "Pantene",
+            "Head & Shoulders", "Herbal Essences"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Native (P&G-owned but cleaner ingredients)",
+            "Lume (Indie whole-body deodorant)",
+            "Megababe (Independent women-founded)",
+            "Myro (Refillable indie deodorant)"
+        ]
+    },
+    {
+        name: "Native",
+        aliases: ["native deodorant"],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Old Spice", "Secret", "Olay", "Pantene",
+            "Head & Shoulders"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Schmidt's (Unilever-owned natural alternative)",
+            "Type:A (The Deodorant) (Independent clean)",
+            "Routine (Canadian indie natural)",
+            "Meow Meow Tweet (Small-batch natural)"
+        ]
+    },
+    {
+        name: "Gillette",
+        aliases: ["gillette fusion", "gillette mach3"],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Venus", "Braun", "Old Spice", "Secret",
+            "Olay", "Pantene"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Harry's (Independent direct-to-consumer)",
+            "Billie (Women-owned indie razors)",
+            "Flamingo (Target indie shaving)",
+            "Supply (Single-blade indie razors)"
+        ]
+    },
+    {
+        name: "Venus",
+        aliases: ["gillette venus"],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Gillette", "Braun", "Old Spice", "Secret",
+            "Olay", "Pantene"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Billie (Women-owned direct-to-consumer)",
+            "Flamingo (Target indie shaving brand)",
+            "Athena Club (Subscription indie razors)",
+            "Leaf Shave (Plastic-free safety razors)"
+        ]
+    },
+    {
+        name: "Braun",
+        aliases: [],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Gillette", "Venus", "Old Spice", "Secret",
+            "Olay", "Pantene"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Philips Norelco (Philips-owned, different parent)",
+            "Panasonic (Independent Japanese electronics)",
+            "Wahl (Independent American grooming tools)",
+            "Remington (Independent grooming appliances)"
+        ]
+    },
+    {
+        name: "Crest",
+        aliases: ["crest 3d white", "crest pro-health"],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Oral-B", "Vicks", "Olay", "Pantene",
+            "Head & Shoulders"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Tom's of Maine (Colgate-owned natural alternative)",
+            "Hello Products (Colgate-owned indie-style)",
+            "Davids (Independent natural toothpaste)",
+            "Bite (Plastic-free toothpaste bits)"
+        ]
+    },
+    {
+        name: "Oral-B",
+        aliases: ["oral b"],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Crest", "Vicks", "Olay", "Pantene",
+            "Head & Shoulders"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Philips Sonicare (Philips-owned, different parent)",
+            "Quip (Independent electric toothbrush)",
+            "Burst (Direct-to-consumer sonic toothbrush)",
+            "Goodwell Co (Sustainable indie toothbrush)"
+        ]
+    },
+    {
+        name: "Vicks",
+        aliases: ["vicks vaporub", "vicks nyquil", "vicks dayquil"],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Crest", "Oral-B", "Olay", "Pantene",
+            "Head & Shoulders"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Genexa (Clean OTC medicine)",
+            "Zarbee's (Johnson & Johnson naturals)",
+            "Mucinex (Reckitt Benckiser, different parent)",
+            "Homeopathic alternatives (Boiron, Hyland's)"
+        ]
+    },
+    {
+        name: "Aussie",
+        aliases: [],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Pantene", "Head & Shoulders", "Herbal Essences",
+            "Olay", "SK-II"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Not Your Mother's (Revlon indie-style)",
+            "Verb (Independent salon hair care)",
+            "Kristin Ess (Indie at Target)",
+            "Cake Beauty (Independent Canadian)"
+        ]
+    },
+    {
+        name: "Rejoice",
+        aliases: [],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Pantene", "Head & Shoulders", "Herbal Essences",
+            "Olay", "SK-II"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Local Asian indie brands (varies by market)",
+            "Mise en Scène (Korean indie hair care)",
+            "Tsubaki (Shiseido-owned Japanese)",
+            "LG Household & Health Care brands"
+        ]
+    },
+    {
+        name: "Safeguard",
+        aliases: [],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Old Spice", "Olay", "Secret", "Native",
+            "Pantene"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Dr. Bronner's (Independent natural soap)",
+            "Everyone (EO Products independent)",
+            "Mrs. Meyer's (SC Johnson natural)",
+            "Method (SC Johnson modern clean)"
+        ]
+    },
+    {
+        name: "Ivory",
+        aliases: [],
+        parent: "Procter & Gamble",
+        sisters: [
+            "Safeguard", "Old Spice", "Olay", "Secret",
+            "Native"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Dove (Unilever-owned but different parent)",
+            "Basis (Beiersdorf-owned simple soap)",
+            "Dr. Bronner's (Independent natural)",
+            "Kirk's Castile (Independent heritage soap)"
+        ]
+    },
+
+    // SHISEIDO (Japan) - 15 prestige brands
+    {
+        name: "NARS",
+        aliases: ["nars cosmetics"],
+        parent: "Shiseido",
+        sisters: [
+            "Clé de Peau Beauté", "Drunk Elephant", "IPSA", "Shiseido",
+            "Elixir", "Anessa", "Dr. Dennis Gross", "Laura Mercier"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Rare Beauty (Selena Gomez indie)",
+            "Mented Cosmetics (Black woman-owned)",
+            "Danessa Myricks (Independent makeup artistry)",
+            "Kosas (Independent clean color)"
+        ]
+    },
+    {
+        name: "Clé de Peau Beauté",
+        aliases: ["cle de peau", "cdp"],
+        parent: "Shiseido",
+        sisters: [
+            "NARS", "Drunk Elephant", "IPSA", "Shiseido",
+            "Elixir", "Anessa"
+        ],
+        boycotts: [],
+        alternatives: [
+            "La Prairie (Beiersdorf luxury, different parent)",
+            "Sisley Paris (Independent French luxury)",
+            "Chantecaille (Independent luxury)",
+            "Augustinus Bader (Independent science luxury)"
+        ]
+    },
+    {
+        name: "Drunk Elephant",
+        aliases: [],
+        parent: "Shiseido",
+        sisters: [
+            "NARS", "Clé de Peau Beauté", "IPSA", "Shiseido",
+            "Dr. Dennis Gross", "Laura Mercier"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Youth to the People (Independent clean)",
+            "Biossance (Independent clean squalane)",
+            "Versed (Independent affordable clean)",
+            "Cocokind (Independent accessible clean)"
+        ]
+    },
+    {
+        name: "Dr. Dennis Gross Skincare",
+        aliases: ["dr dennis gross", "dennis gross"],
+        parent: "Shiseido",
+        sisters: [
+            "Drunk Elephant", "NARS", "Clé de Peau Beauté",
+            "IPSA", "Shiseido"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Paula's Choice (Independent science-backed)",
+            "The Ordinary (DECIEM affordable actives)",
+            "SkinCeuticals (L'Oréal clinical, different parent)",
+            "Murad (Independent dermatologist brand)"
+        ]
+    },
+    {
+        name: "IPSA",
+        aliases: [],
+        parent: "Shiseido",
+        sisters: [
+            "NARS", "Clé de Peau Beauté", "Drunk Elephant",
+            "Shiseido", "Elixir", "Anessa"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Hada Labo (Rohto independent Japanese)",
+            "Curel (Kao independent Japanese)",
+            "d program (Shiseido sister brand)",
+            "Fancl (Independent Japanese additive-free)"
+        ]
+    },
+    {
+        name: "Shiseido",
+        aliases: ["shiseido skincare"],
+        parent: "Shiseido",
+        sisters: [
+            "NARS", "Clé de Peau Beauté", "Drunk Elephant",
+            "IPSA", "Elixir", "Anessa", "The Ginza"
+        ],
+        boycotts: [],
+        alternatives: [
+            "SK-II (P&G luxury, different parent)",
+            "Sulwhasoo (Amorepacific independent Korean)",
+            "Tatcha (Independent Japanese-inspired)",
+            "Sisley Paris (Independent French luxury)"
+        ]
+    },
+    {
+        name: "Elixir",
+        aliases: [],
+        parent: "Shiseido",
+        sisters: [
+            "Shiseido", "IPSA", "Anessa", "Haku",
+            "Maquillage", "Integrate"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Aestura (Amorepacific indie K-beauty)",
+            "Laneige (Amorepacific K-beauty)",
+            "Cosrx (Independent Korean)",
+            "Pyunkang Yul (Independent Korean minimalist)"
+        ]
+    },
+    {
+        name: "Anessa",
+        aliases: [],
+        parent: "Shiseido",
+        sisters: [
+            "Shiseido", "Elixir", "IPSA", "Haku",
+            "Maquillage"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Supergoop! (Independent sunscreen specialist)",
+            "Biore UV (Kao independent Japanese)",
+            "Skin Aqua (Rohto independent Japanese)",
+            "Black Girl Sunscreen (Black woman-owned indie)"
+        ]
+    },
+    {
+        name: "Laura Mercier",
+        aliases: [],
+        parent: "Shiseido",
+        sisters: [
+            "NARS", "Clé de Peau Beauté", "Drunk Elephant",
+            "IPSA", "Shiseido"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Charlotte Tilbury (Independent British luxury)",
+            "Hourglass Cosmetics (Unilever-owned but different)",
+            "RMS Beauty (Independent organic)",
+            "Jones Road Beauty (Bobbi Brown's indie)"
+        ]
+    },
+    {
+        name: "BareMinerals",
+        aliases: ["bare minerals", "bareminerals"],
+        parent: "Shiseido",
+        sisters: [
+            "NARS", "Drunk Elephant", "Laura Mercier",
+            "IPSA", "Shiseido"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Ilia Beauty (Independent clean makeup)",
+            "RMS Beauty (Independent organic)",
+            "Tower 28 (Independent clean sensitive skin)",
+            "Kosas (Independent clean color)"
+        ]
+    },
+    {
+        name: "Benefique",
+        aliases: [],
+        parent: "Shiseido",
+        sisters: [
+            "Shiseido", "Elixir", "IPSA", "The Ginza",
+            "Anessa"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Decorté (Kosé independent Japanese)",
+            "Albion (Independent Japanese skincare)",
+            "Pola (Independent Japanese luxury)",
+            "Amorepacific (Independent Korean)"
+        ]
+    },
+    {
+        name: "The Ginza",
+        aliases: ["ginza"],
+        parent: "Shiseido",
+        sisters: [
+            "Shiseido", "Clé de Peau Beauté", "IPSA",
+            "Benefique", "Elixir"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Decorté (Kosé independent Japanese)",
+            "Suqqu (Kosé luxury Japanese)",
+            "Sensai (Kanebo luxury)",
+            "Tatcha (Independent Japanese-inspired)"
+        ]
+    },
+    {
+        name: "Narciso Rodriguez",
+        aliases: [],
+        parent: "Shiseido",
+        sisters: [
+            "Issey Miyake Parfums", "Serge Lutens", "Zadig & Voltaire",
+            "Tory Burch"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Le Labo (Estée Lauder-owned niche)",
+            "Byredo (Independent Swedish luxury)",
+            "Diptyque (LVMH niche, different parent)",
+            "Maison Francis Kurkdjian (LVMH niche)"
+        ]
+    },
+    {
+        name: "Issey Miyake Parfums",
+        aliases: ["issey miyake"],
+        parent: "Shiseido",
+        sisters: [
+            "Narciso Rodriguez", "Serge Lutens", "Zadig & Voltaire",
+            "Tory Burch"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Comme des Garçons (Independent Japanese niche)",
+            "Byredo (Independent Swedish)",
+            "Aesop (L'Oréal-owned but different parent)",
+            "Diptyque (LVMH niche)"
+        ]
+    },
+    {
+        name: "Tory Burch",
+        aliases: ["tory burch perfume"],
+        parent: "Shiseido",
+        sisters: [
+            "Narciso Rodriguez", "Issey Miyake Parfums",
+            "Serge Lutens", "Zadig & Voltaire"
+        ],
+        boycotts: [],
+        alternatives: [
+            "Carolina Herrera (Puig-owned, different parent)",
+            "Michael Kors (Estée Lauder license)",
+            "Marc Jacobs (Coty-owned, different parent)",
+            "Kate Spade (Independent fashion fragrance)"
+        ]
+    },
+
+    // ============================================
+    // L'ORÉAL GROUP (additional brands)
+    // ============================================
+    {
+        name: "IT Cosmetics",
+        aliases: ["it cosmetics", "it beauty"],
+        parent: "L'Oréal Group",
+        sisters: [
+            "Maybelline", "NYX", "Lancôme", "Urban Decay",
+            "YSL Beauty", "CeraVe", "La Roche-Posay", "Garnier",
+            "Kiehl's", "Giorgio Armani Beauty"
+        ],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — L'Oréal operates factory in occupied territories)", since: "Oct 2023" },
+            { reason: "Animal testing (Naturewatch Foundation boycott — tests where required by law)", since: "2013" }
+        ],
+        alternatives: [
+            "Jones Road Beauty (Bobbi Brown's indie line, clean, inclusive coverage)",
+            "Ilia Beauty (Clean, skin-first approach with buildable coverage)",
+            "Kosas (Skincare-infused makeup, clean ingredients)",
+            "Tower 28 (Sensitive skin focus, clean, woman-owned)"
+        ]
+    },
+
+    // ============================================
+    // COTY (additional brands)
+    // ============================================
+    {
+        name: "Burberry Beauty",
+        aliases: ["burberry beauty", "burberry makeup", "burberry fragrance"],
+        parent: "Coty",
+        sisters: [
+            "CoverGirl", "Rimmel", "Sally Hansen", "OPI",
+            "Hugo Boss", "Calvin Klein", "Marc Jacobs Fragrance",
+            "Gucci Fragrance", "Max Factor"
+        ],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — JAB Holdings/Reimann family funds pro-Israel institutions)", since: "Oct 2023" }
+        ],
+        alternatives: [
+            "Charlotte Tilbury (Independent British luxury beauty)",
+            "Victoria Beckham Beauty (Independent, clean luxury)",
+            "Byredo (Swedish indie luxury, owned by Puig)",
+            "Chanel Beauty (Independent, family-owned luxury)"
+        ]
+    },
+    {
+        name: "Hugo Boss",
+        aliases: ["hugo boss", "boss fragrance", "hugo boss perfume", "boss bottled"],
+        parent: "Coty",
+        sisters: [
+            "CoverGirl", "Rimmel", "Sally Hansen", "OPI",
+            "Burberry Beauty", "Calvin Klein", "Marc Jacobs Fragrance",
+            "Gucci Fragrance", "Max Factor"
+        ],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — JAB Holdings/Reimann family funds pro-Israel institutions)", since: "Oct 2023" }
+        ],
+        alternatives: [
+            "Byredo (Swedish indie luxury fragrance)",
+            "Maison Francis Kurkdjian (Artisanal French perfumery)",
+            "Le Labo (Indie, unisex, cult-favorite fragrances)",
+            "D.S. & Durga (Brooklyn-based, independent niche house)"
+        ]
+    },
+
+    // ============================================
+    // LVMH (beauty brands)
+    // ============================================
+    {
+        name: "Sephora",
+        aliases: ["sephora", "sephora collection"],
+        parent: "LVMH",
+        sisters: [
+            "Fenty Beauty", "Benefit", "Make Up For Ever",
+            "Givenchy Beauty", "Dior Beauty", "Louis Vuitton",
+            "Kenzo", "Guerlain", "Fresh"
+        ],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — Bernard Arnault invests in Israeli companies)", since: "Oct 2023" },
+            { reason: "Trump association (LVMH donated $1M to Trump inauguration fund)", since: "Jan 2025" }
+        ],
+        alternatives: [
+            "Credo Beauty (Clean beauty retailer, indie-focused curation)",
+            "The Detox Market (Clean beauty retailer, transparent standards)",
+            "Thirteen Lune (BIPOC-founded beauty retailer)",
+            "Follain (Clean beauty retailer with strict ingredient standards)"
+        ]
+    },
+    {
+        name: "Fenty Beauty",
+        aliases: ["fenty beauty", "fenty skin", "fenty"],
+        parent: "LVMH",
+        sisters: [
+            "Sephora", "Benefit", "Make Up For Ever",
+            "Givenchy Beauty", "Dior Beauty", "Guerlain",
+            "Kenzo", "Fresh"
+        ],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — Bernard Arnault invests in Israeli companies)", since: "Oct 2023" },
+            { reason: "Trump association (LVMH donated $1M to Trump inauguration fund)", since: "Jan 2025" }
+        ],
+        alternatives: [
+            "Rare Beauty (Selena Gomez-owned, inclusive, donates 1% to mental health)",
+            "Mented Cosmetics (Black woman-owned, inclusive shade ranges)",
+            "Danessa Myricks Beauty (Indie, innovative, inclusive color cosmetics)",
+            "Range Beauty (Clean, inclusive foundation shades for melanin-rich skin)"
+        ]
+    },
+    {
+        name: "Benefit",
+        aliases: ["benefit cosmetics", "benefit"],
+        parent: "LVMH",
+        sisters: [
+            "Sephora", "Fenty Beauty", "Make Up For Ever",
+            "Givenchy Beauty", "Dior Beauty", "Guerlain",
+            "Kenzo", "Fresh"
+        ],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — Bernard Arnault invests in Israeli companies)", since: "Oct 2023" },
+            { reason: "Trump association (LVMH donated $1M to Trump inauguration fund)", since: "Jan 2025" }
+        ],
+        alternatives: [
+            "Glossier (Indie, minimal aesthetic, cult-favorite brow products)",
+            "Patrick Ta Beauty (Indie, celeb-favorite, glow-focused)",
+            "Saie (Clean beauty, everyday staples)",
+            "Kosas (Skincare-meets-makeup, clean ingredients)"
+        ]
+    },
+    {
+        name: "Make Up For Ever",
+        aliases: ["make up for ever", "mufe", "makeup for ever"],
+        parent: "LVMH",
+        sisters: [
+            "Sephora", "Fenty Beauty", "Benefit",
+            "Givenchy Beauty", "Dior Beauty", "Guerlain",
+            "Kenzo", "Fresh"
+        ],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — Bernard Arnault invests in Israeli companies)", since: "Oct 2023" },
+            { reason: "Trump association (LVMH donated $1M to Trump inauguration fund)", since: "Jan 2025" }
+        ],
+        alternatives: [
+            "Danessa Myricks Beauty (Pro-quality, innovative formulas, indie)",
+            "Natasha Denona (High-pigment, artistry-focused, indie)",
+            "Viseart (Pro-grade palettes, indie French brand)",
+            "Mehron (Professional stage/film makeup, independent)"
+        ]
+    },
+    {
+        name: "Givenchy Beauty",
+        aliases: ["givenchy beauty", "givenchy makeup", "givenchy fragrance", "givenchy perfume"],
+        parent: "LVMH",
+        sisters: [
+            "Sephora", "Fenty Beauty", "Benefit",
+            "Make Up For Ever", "Dior Beauty", "Guerlain",
+            "Kenzo", "Fresh"
+        ],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — Bernard Arnault invests in Israeli companies)", since: "Oct 2023" },
+            { reason: "Trump association (LVMH donated $1M to Trump inauguration fund)", since: "Jan 2025" }
+        ],
+        alternatives: [
+            "Charlotte Tilbury (Independent British luxury beauty)",
+            "Chanel Beauty (Independent, family-owned luxury)",
+            "Hermès Beauty (Independent, family-owned, artisanal)",
+            "Westman Atelier (Clean luxury, founder-led)"
+        ]
+    },
+    {
+        name: "Dior Beauty",
+        aliases: ["dior beauty", "dior makeup", "dior fragrance", "dior perfume", "dior lip"],
+        parent: "LVMH",
+        sisters: [
+            "Sephora", "Fenty Beauty", "Benefit",
+            "Make Up For Ever", "Givenchy Beauty", "Guerlain",
+            "Kenzo", "Fresh"
+        ],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — Bernard Arnault invests in Israeli companies)", since: "Oct 2023" },
+            { reason: "Trump association (LVMH donated $1M to Trump inauguration fund)", since: "Jan 2025" }
+        ],
+        alternatives: [
+            "Chanel Beauty (Independent, family-owned luxury)",
+            "Hermès Beauty (Independent, family-owned, artisanal)",
+            "Augustinus Bader (Luxury indie skincare, science-backed)",
+            "Westman Atelier (Clean luxury, celebrity MUA-founded)"
+        ]
     }
 ];
 

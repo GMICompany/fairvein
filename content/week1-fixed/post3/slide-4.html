@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post 3 - Slide 4 (Fixed)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1024px;
+            height: 1536px;
+            background: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .text-section {
+            flex: 0 0 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 70px;
+            background: #0a0a0a;
+        }
+        .headline {
+            font-size: 52px;
+            font-weight: 900;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        .headline .highlight {
+            color: #ff6b35;
+        }
+        .card-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 60px;
+            background: #111;
+            border-top: 4px solid #ff6b35;
+        }
+        .how-card {
+            width: 100%;
+            background: #1a1a1a;
+            border: 2px solid #333;
+            padding: 50px;
+            font-family: 'Space Mono', monospace;
+        }
+        .card-title {
+            font-size: 24px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #333;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 35px;
+        }
+        .step-num {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-right: 25px;
+            line-height: 1;
+            min-width: 70px;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .step-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .step-desc {
+            font-size: 22px;
+            color: #888;
+            line-height: 1.4;
+        }
+        .time-badge {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px dashed #333;
+            text-align: center;
+        }
+        .time-big {
+            font-size: 72px;
+            font-weight: 700;
+            color: #ff6b35;
+        }
+        .time-label {
+            font-size: 28px;
+            color: #888;
+            margin-top: 10px;
+        }
+        .comparison {
+            font-size: 22px;
+            color: #555;
+            margin-top: 15px;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-section">
+        <div class="headline">Use <span class="highlight">Fairvein</span> to check<br>who really owns what</div>
+    </div>
+    <div class="card-section">
+        <div class="how-card">
+            <div class="card-title">How It Works</div>
+            <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                    <div class="step-title">Open fairvein.com</div>
+                    <div class="step-desc">No signup, no app download</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                    <div class="step-title">Search any brand</div>
+                    <div class="step-desc">MAC, Clinique, NYX — anything</div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                    <div class="step-title">See the full picture</div>
+                    <div class="step-desc">Parent company, boycott status, sister brands</div>
+                </div>
+            </div>
+            <div class="time-badge">
+                <div class="time-big">5 seconds</div>
+                <div class="time-label">That's all it takes</div>
+                <div class="comparison">vs 20 minutes of Googling</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

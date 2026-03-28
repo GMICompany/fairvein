@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post 1 - Slide 4 (Fixed)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1024px;
+            height: 1536px;
+            background: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .text-section {
+            flex: 0 0 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 70px;
+            background: #0a0a0a;
+        }
+        .headline {
+            font-size: 58px;
+            font-weight: 900;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        .headline .highlight {
+            color: #ff6b35;
+        }
+        .card-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 60px;
+            background: #111;
+            border-top: 4px solid #ff6b35;
+        }
+        .brands-card {
+            width: 100%;
+            background: #1a1a1a;
+            border: 2px solid #333;
+            padding: 50px;
+            font-family: 'Space Mono', monospace;
+        }
+        .card-title {
+            font-size: 28px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #333;
+        }
+        .brand-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 0;
+            border-bottom: 1px solid #222;
+        }
+        .brand-row:last-child {
+            border-bottom: none;
+        }
+        .brand-name {
+            font-size: 38px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .brand-arrow {
+            font-size: 28px;
+            color: #ff6b35;
+        }
+        .parent-name {
+            font-size: 28px;
+            color: #ff6b35;
+            text-align: right;
+        }
+        .bottom-bar {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 2px dashed #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .count {
+            font-size: 22px;
+            color: #666;
+        }
+        .count span {
+            color: #ff6b35;
+            font-weight: 700;
+        }
+        .tag {
+            background: #ff3333;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 8px 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-section">
+        <div class="headline"><span class="highlight">All the same company.</span><br>All on the boycott list.</div>
+    </div>
+    <div class="card-section">
+        <div class="brands-card">
+            <div class="card-title">Estée Lauder Companies ─ Brands</div>
+            <div class="brand-row">
+                <div class="brand-name">MAC</div>
+                <div class="brand-arrow">→ Estée Lauder</div>
+            </div>
+            <div class="brand-row">
+                <div class="brand-name">Clinique</div>
+                <div class="brand-arrow">→ Estée Lauder</div>
+            </div>
+            <div class="brand-row">
+                <div class="brand-name">Bobbi Brown</div>
+                <div class="brand-arrow">→ Estée Lauder</div>
+            </div>
+            <div class="brand-row">
+                <div class="brand-name">La Mer</div>
+                <div class="brand-arrow">→ Estée Lauder</div>
+            </div>
+            <div class="brand-row">
+                <div class="brand-name">Tom Ford Beauty</div>
+                <div class="brand-arrow">→ Estée Lauder</div>
+            </div>
+            <div class="brand-row">
+                <div class="brand-name">Too Faced</div>
+                <div class="brand-arrow">→ Estée Lauder</div>
+            </div>
+            <div class="bottom-bar">
+                <div class="count"><span>+23</span> more brands</div>
+                <div class="tag">⚠ All Boycotted</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

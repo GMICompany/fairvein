@@ -1,0 +1,16 @@
+{
+  "name": "fairvein-tiktok-uploader",
+  "version": "1.0.0",
+  "description": "Automated TikTok slideshow uploader for Fairvein",
+  "main": "upload-tiktok.js",
+  "scripts": {
+    "upload": "node upload-tiktok.js",
+    "week1": "node upload-week1.js",
+    "install-deps": "npm install puppeteer puppeteer-extra puppeteer-extra-plugin-stealth"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}

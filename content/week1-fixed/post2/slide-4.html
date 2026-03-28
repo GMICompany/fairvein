@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post 2 - Slide 4 (Fixed)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1024px;
+            height: 1536px;
+            background: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .text-section {
+            flex: 0 0 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 70px;
+            background: #0a0a0a;
+        }
+        .headline {
+            font-size: 56px;
+            font-weight: 900;
+            color: #ffffff;
+            text-align: center;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        .headline .highlight {
+            color: #ff6b35;
+        }
+        .card-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 60px;
+            background: #111;
+            border-top: 4px solid #ff6b35;
+        }
+        .ownership-card {
+            width: 100%;
+            background: #1a1a1a;
+            border: 2px solid #333;
+            padding: 50px;
+            font-family: 'Space Mono', monospace;
+        }
+        .card-title {
+            font-size: 24px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #333;
+        }
+        .reveal-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+        .brand-label {
+            font-size: 34px;
+            font-weight: 700;
+            color: #fff;
+            flex: 1;
+        }
+        .arrow {
+            font-size: 28px;
+            color: #ff6b35;
+            margin: 0 20px;
+        }
+        .parent-label {
+            font-size: 28px;
+            color: #ff6b35;
+            text-align: right;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #222;
+            margin: 8px 0;
+        }
+        .verdict {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px dashed #333;
+            text-align: center;
+        }
+        .verdict-text {
+            font-size: 32px;
+            color: #ff6666;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .verdict-sub {
+            font-size: 22px;
+            color: #888;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-section">
+        <div class="headline">Your <span class="highlight">"indie"</span> brand?<br>Probably not indie.</div>
+    </div>
+    <div class="card-section">
+        <div class="ownership-card">
+            <div class="card-title">Ownership Lookup Results</div>
+            <div class="reveal-row">
+                <div class="brand-label">NYX</div>
+                <div class="arrow">→</div>
+                <div class="parent-label">L'Oréal</div>
+            </div>
+            <hr class="divider">
+            <div class="reveal-row">
+                <div class="brand-label">The Ordinary</div>
+                <div class="arrow">→</div>
+                <div class="parent-label">Estée Lauder</div>
+            </div>
+            <hr class="divider">
+            <div class="reveal-row">
+                <div class="brand-label">CeraVe</div>
+                <div class="arrow">→</div>
+                <div class="parent-label">L'Oréal</div>
+            </div>
+            <hr class="divider">
+            <div class="reveal-row">
+                <div class="brand-label">Drunk Elephant</div>
+                <div class="arrow">→</div>
+                <div class="parent-label">Shiseido</div>
+            </div>
+            <hr class="divider">
+            <div class="reveal-row">
+                <div class="brand-label">Too Faced</div>
+                <div class="arrow">→</div>
+                <div class="parent-label">Estée Lauder</div>
+            </div>
+            <div class="verdict">
+                <div class="verdict-text">⚠ All corporate-owned</div>
+                <div class="verdict-sub">Search any brand at fairvein.com</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

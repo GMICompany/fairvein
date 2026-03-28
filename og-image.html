@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>FairVein OG Image</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: 'Space Mono', monospace;
+    background: #0a0a0a;
+    color: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .receipt {
+    width: 1200px;
+    height: 630px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 80px;
+  }
+
+  /* Dashed receipt border */
+  .receipt::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 60px;
+    right: 60px;
+    bottom: 24px;
+    border: 2px dashed rgba(255, 107, 53, 0.35);
+    pointer-events: none;
+  }
+
+  /* Top tear edge */
+  .tear-top, .tear-bottom {
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    height: 12px;
+    overflow: hidden;
+  }
+  .tear-top { top: 12px; }
+  .tear-bottom { bottom: 12px; }
+  .tear-top::after, .tear-bottom::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 12px;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 8px,
+      #ff6b35 8px,
+      #ff6b35 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    opacity: 0.5;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .brand-line {
+    font-size: 14px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(255, 107, 53, 0.6);
+    margin-bottom: 12px;
+  }
+
+  .title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #ff6b35;
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  .title span {
+    color: #e8e8e8;
+  }
+
+  /* Divider */
+  .divider {
+    width: 680px;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 107, 53, 0.4);
+    letter-spacing: 4px;
+    margin: 20px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  /* Bracket notation section */
+  .ownership-block {
+    text-align: left;
+    width: 680px;
+    margin-bottom: 24px;
+  }
+
+  .bracket-line {
+    font-size: 15px;
+    line-height: 2;
+    color: #999;
+  }
+
+  .bracket-line .parent {
+    color: #ff6b35;
+    font-weight: 700;
+  }
+
+  .bracket-line .brand {
+    color: #e8e8e8;
+  }
+
+  .bracket-line .arrow {
+    color: #555;
+    margin: 0 6px;
+  }
+
+  /* Subtitle */
+  .subtitle {
+    font-size: 22px;
+    color: #e8e8e8;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 700px;
+  }
+
+  .subtitle em {
+    font-style: normal;
+    color: #ff6b35;
+    border-bottom: 2px solid rgba(255, 107, 53, 0.4);
+  }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .url {
+    font-size: 18px;
+    color: #ff6b35;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    border: 2px solid #ff6b35;
+  }
+
+  .tagline {
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* Corner markers */
+  .corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-color: #ff6b35;
+    border-style: solid;
+    opacity: 0.5;
+  }
+  .corner.tl { top: 36px; left: 72px; border-width: 2px 0 0 2px; }
+  .corner.tr { top: 36px; right: 72px; border-width: 2px 2px 0 0; }
+  .corner.bl { bottom: 36px; left: 72px; border-width: 0 0 2px 2px; }
+  .corner.br { bottom: 36px; right: 72px; border-width: 0 2px 2px 0; }
+
+  /* Brand count badge */
+  .badge {
+    position: absolute;
+    top: 44px;
+    right: 88px;
+    font-size: 12px;
+    color: #0a0a0a;
+    background: #ff6b35;
+    padding: 4px 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+  <div class="receipt">
+    <div class="tear-top"></div>
+    <div class="tear-bottom"></div>
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+    <div class="badge">141 BRANDS INDEXED</div>
+
+    <div class="header">
+      <div class="brand-line">· · · receipt · · ·</div>
+      <div class="title">FairVein <span>—</span> Follow the Money</div>
+    </div>
+
+    <div class="divider">─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</div>
+
+    <div class="ownership-block">
+      <div class="bracket-line"><span class="brand">MAC</span><span class="arrow">→</span><span class="parent">[Estée Lauder]</span></div>
+      <div class="bracket-line"><span class="brand">NYX</span><span class="arrow">→</span><span class="parent">[L'Oréal]</span></div>
+      <div class="bracket-line"><span class="brand">Dove</span><span class="arrow">→</span><span class="parent">[Unilever]</span></div>
+      <div class="bracket-line"><span class="brand">Sephora</span><span class="arrow">→</span><span class="parent">[LVMH]</span></div>
+    </div>
+
+    <div class="subtitle">
+      Search any brand. Know <em>who really owns it</em>.
+    </div>
+
+    <div class="footer">
+      <div class="url">fairvein.com</div>
+      <div class="tagline">Free · No signup · Open data</div>
+    </div>
+  </div>
+</body>
+</html>
