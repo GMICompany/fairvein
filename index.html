@@ -364,7 +364,7 @@
                 <!-- Alternatives (hidden for clean brands) -->
                 <div id="alternativesSection" class="p-5 sm:p-8" style="background: #F0FAF0;">
                     <h3 class="text-sm font-bold uppercase tracking-wide mb-3 flex items-center gap-2" style="font-family: 'Space Mono', monospace;">
-                        <span style="color: #22C55E;">✓</span> Try Instead
+                        <span style="color: #22C55E;">✓</span> Indie Alternatives
                     </h3>
                     <div id="alternatives" class="space-y-2 text-sm"></div>
                 </div>
@@ -826,43 +826,72 @@
                 document.getElementById('brandName').textContent = brand.name;
                 document.getElementById('parentCompany').textContent = brand.parent;
                 
+                // DYNAMIC: Collect ALL boycotts from ALL brands with same parent
+                const parentBoycotts = [];
+                const seenReasons = new Set();
+                brandDatabase.filter(b => b.parent === brand.parent).forEach(b => {
+                    (b.boycotts || []).forEach(boycott => {
+                        if (!seenReasons.has(boycott.reason)) {
+                            seenReasons.add(boycott.reason);
+                            parentBoycotts.push(boycott);
+                        }
+                    });
+                });
+
+                // DYNAMIC: Compute sisters from ALL brands with same parent (excluding self)
+                const allSisters = brandDatabase
+                    .filter(b => b.parent === brand.parent && b.name !== brand.name)
+                    .map(b => b.name);
+
                 const bce = document.getElementById('boycottCount'), bs = document.getElementById('boycottSection');
                 const altSection = document.getElementById('alternativesSection');
                 const clearSection = document.getElementById('clearSection');
                 
-                if (brand.boycotts?.length > 0) {
+                if (parentBoycotts.length > 0) {
                     bce.classList.remove('hidden');
-                    document.getElementById('boycottCountText').textContent = brand.boycotts.length + ' boycott' + (brand.boycotts.length > 1 ? 's' : '');
+                    document.getElementById('boycottCountText').textContent = parentBoycotts.length + ' boycott' + (parentBoycotts.length > 1 ? 's' : '');
                     bs.classList.remove('hidden');
-                    document.getElementById('boycottReasons').innerHTML = brand.boycotts.map(b => 
+                    document.getElementById('boycottReasons').innerHTML = parentBoycotts.map(b => 
                         `<div class="flex items-start gap-2 py-1"><span style="color:#D9775F;flex-shrink:0;">→</span><span><strong>${b.reason}</strong> <span class="text-warm-gray">(since ${b.since})</span></span></div>`
                     ).join('');
-                    // Show alternatives, hide clear badge
-                    if (altSection) altSection.classList.remove('hidden');
+                    // Show alternatives if available, hide clear badge
+                    if (altSection) {
+                        if (brand.alternatives?.length > 0) { altSection.classList.remove('hidden'); }
+                        else { altSection.classList.add('hidden'); }
+                    }
                     if (clearSection) clearSection.classList.add('hidden');
                 } else {
                     bce.classList.add('hidden');
                     bs.classList.add('hidden');
-                    // Hide alternatives, show "all clear" for clean brands
+                    // No boycotts — show "all clear", hide alternatives
                     if (altSection) altSection.classList.add('hidden');
                     if (clearSection) clearSection.classList.remove('hidden');
                 }
                 
                 const sd = document.getElementById('sisterBrands');
                 const sistersContainer = document.getElementById('sistersContainer');
-                if (brand.sisters?.length > 0) {
+                if (allSisters.length > 0) {
                     if (sistersContainer) sistersContainer.classList.remove('hidden');
-                    sd.innerHTML = brand.sisters.slice(0, 10).map(s => `<span class="tag-pill clickable" onclick="quickSearch('${s.replace(/'/g, "\\'")}')">${s}</span>`).join('');
-                    if (brand.sisters.length > 10) sd.innerHTML += `<span class="mono text-xs text-warm-gray self-center ml-1">+${brand.sisters.length - 10} more</span>`;
+                    sd.innerHTML = allSisters.slice(0, 12).map(s => {
+                        // Check if sister brand exists in database (for clickable links)
+                        const exists = brandDatabase.some(b => b.name === s);
+                        return exists 
+                            ? `<span class="tag-pill clickable" onclick="quickSearch('${s.replace(/'/g, "\\'")}')">${s}</span>`
+                            : `<span class="tag-pill">${s}</span>`;
+                    }).join('');
+                    if (allSisters.length > 12) sd.innerHTML += `<span class="mono text-xs text-warm-gray self-center ml-1">+${allSisters.length - 12} more</span>`;
                 } else {
                     if (sistersContainer) sistersContainer.classList.add('hidden');
                 }
                 
-                document.getElementById('alternatives').innerHTML = brand.alternatives.map(a => {
-                    const m = a.match(/^(.+?)\s*\((.+)\)$/);
-                    return m ? `<p class="flex items-start gap-2 py-0.5"><span style="color:#22C55E;flex-shrink:0;">✓</span><span><strong>${m[1]}</strong> <span class="text-warm-gray">${m[2]}</span></span></p>` :
-                        `<p class="flex items-start gap-2 py-0.5"><span style="color:#22C55E;flex-shrink:0;">✓</span><span>${a}</span></p>`;
-                }).join('');
+                // Only show alternatives section content if there are alternatives AND boycotts
+                if (brand.alternatives?.length > 0 && parentBoycotts.length > 0) {
+                    document.getElementById('alternatives').innerHTML = brand.alternatives.map(a => {
+                        const m = a.match(/^(.+?)\s*\((.+)\)$/);
+                        return m ? `<p class="flex items-start gap-2 py-0.5"><span style="color:#22C55E;flex-shrink:0;">✓</span><span><strong>${m[1]}</strong> <span class="text-warm-gray">${m[2]}</span></span></p>` :
+                            `<p class="flex items-start gap-2 py-0.5"><span style="color:#22C55E;flex-shrink:0;">✓</span><span>${a}</span></p>`;
+                    }).join('');
+                }
                 
                 results.classList.remove('hidden');
                 results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

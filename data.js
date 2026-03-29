@@ -2911,7 +2911,23 @@ const brandDatabase = [
         name: "Bioderma",
         aliases: ["bioderma"],
         parent: "Independent (NAOS Group — France)",
-        sisters: ["Institut Esthederm", "Etat Pur"],
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Institut Esthederm",
+        aliases: ["institut esthederm", "esthederm"],
+        parent: "Independent (NAOS Group — France)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Etat Pur",
+        aliases: ["etat pur"],
+        parent: "Independent (NAOS Group — France)",
+        sisters: [],
         boycotts: [],
         alternatives: []
     },
@@ -2919,7 +2935,31 @@ const brandDatabase = [
         name: "Avène",
         aliases: ["avene", "avène", "eau thermale avene"],
         parent: "Independent (Pierre Fabre — France)",
-        sisters: ["Ducray", "Klorane", "A-Derma"],
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Ducray",
+        aliases: ["ducray"],
+        parent: "Independent (Pierre Fabre — France)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Klorane",
+        aliases: ["klorane"],
+        parent: "Independent (Pierre Fabre — France)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "A-Derma",
+        aliases: ["a-derma", "aderma"],
+        parent: "Independent (Pierre Fabre — France)",
+        sisters: [],
         boycotts: [],
         alternatives: []
     },
