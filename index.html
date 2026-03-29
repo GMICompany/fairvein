@@ -388,9 +388,11 @@
                 <img src="Images/Fairvein_Mascot_Sad.png" alt="" class="w-20 h-20 object-contain mx-auto mb-3">
                 <p class="text-lg font-semibold mb-2">We don't have this brand yet.</p>
                 <p class="text-warm-gray text-sm mb-4">Suggest it below and we'll research & add it within 48 hours.</p>
-                <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-                    <input id="requestEmail" type="email" placeholder="your@email.com" class="flex-1 px-4 py-3 border-2 focus:outline-none mono text-sm" style="background: #FDFCF9; border-color: #2C2C2C; min-height: 44px;" />
-                    <button onclick="submitBrandRequest()" class="brutal-btn px-5 py-2.5 flex-shrink-0" style="min-height: 44px;">Request Brand</button>
+                <div class="max-w-md mx-auto space-y-2">
+                    <input id="requestBrandName" type="text" placeholder="Brand name" class="w-full px-4 py-3 border-2 focus:outline-none text-sm" style="background: #FDFCF9; border-color: #2C2C2C; min-height: 44px;" />
+                    <input id="requestBrandUrl" type="url" placeholder="Brand website (e.g. https://cetaphil.com)" class="w-full px-4 py-3 border-2 focus:outline-none mono text-sm" style="background: #FDFCF9; border-color: #2C2C2C; min-height: 44px;" />
+                    <input id="requestEmail" type="email" placeholder="Your email (we'll notify you when added)" class="w-full px-4 py-3 border-2 focus:outline-none mono text-sm" style="background: #FDFCF9; border-color: #2C2C2C; min-height: 44px;" />
+                    <button onclick="submitBrandRequest()" class="brutal-btn w-full px-5 py-3" style="min-height: 44px;">Submit Brand Request</button>
                 </div>
                 <div id="requestNotification"></div>
             </div>
@@ -452,8 +454,17 @@
             <div class="bg-off-white border-2 border-dark-charcoal p-6 sm:p-8 text-center">
                 <img src="Images/Fairvein_Mascot_Sad.png" alt="" class="w-20 h-20 object-contain mx-auto mb-3">
                 <p class="text-lg font-semibold mb-2">No swap guide for this product yet.</p>
-                <p class="text-warm-gray text-sm mb-4">Try searching by brand name, or check if we have it in the Brand Search tab.</p>
-                <button onclick="switchTab('search')" class="brutal-btn-outline px-5 py-2">← Brand Search</button>
+                <p class="text-warm-gray text-sm mb-4">Suggest the product below and we'll find indie alternatives for it.</p>
+                <div class="max-w-md mx-auto space-y-2">
+                    <input id="swapRequestProduct" type="text" placeholder="Product name (e.g. Cetaphil Gentle Cleanser)" class="w-full px-4 py-3 border-2 focus:outline-none text-sm" style="background: #FDFCF9; border-color: #2C2C2C; min-height: 44px;" />
+                    <input id="swapRequestBrand" type="text" placeholder="Brand name" class="w-full px-4 py-3 border-2 focus:outline-none text-sm" style="background: #FDFCF9; border-color: #2C2C2C; min-height: 44px;" />
+                    <input id="swapRequestEmail" type="email" placeholder="Your email (we'll notify you when added)" class="w-full px-4 py-3 border-2 focus:outline-none mono text-sm" style="background: #FDFCF9; border-color: #2C2C2C; min-height: 44px;" />
+                    <button onclick="submitSwapRequest()" class="brutal-btn w-full px-5 py-3" style="min-height: 44px;">Submit Swap Request</button>
+                </div>
+                <div id="swapRequestNotification"></div>
+                <div class="mt-4">
+                    <button onclick="switchTab('search')" class="text-sm text-warm-gray hover:text-burnt-orange">← Or try Brand Search instead</button>
+                </div>
             </div>
         </div>
     </section>
@@ -911,6 +922,9 @@
                 results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } else {
                 noResults.classList.remove('hidden');
+                // Auto-fill the brand name from search query
+                const reqBrandInput = document.getElementById('requestBrandName');
+                if (reqBrandInput) reqBrandInput.value = document.getElementById('brandSearch').value.trim();
                 noResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
             // Hide autocomplete after search
@@ -1176,6 +1190,9 @@
                     swapResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 } else {
                     noSwap.classList.remove('hidden');
+                    // Auto-fill product from search query
+                    const swapReqInput = document.getElementById('swapRequestProduct');
+                    if (swapReqInput) swapReqInput.value = document.getElementById('swapSearch').value.trim();
                     noSwap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
             }
@@ -1285,10 +1302,32 @@
             });
         }
         async function submitBrandRequest() {
+            const brandName = document.getElementById('requestBrandName').value.trim();
+            const brandUrl = document.getElementById('requestBrandUrl').value.trim();
             const email = document.getElementById('requestEmail').value.trim();
             const query = document.getElementById('brandSearch').value.trim();
-            await doEmailSubmit(email, 'brand-request:' + query, document.querySelector('#noResults button'), document.getElementById('requestNotification'), () => {
-                document.getElementById('requestNotification').innerHTML = '<div class="inline-notification success">Thanks! We\'ll look into this brand.</div>';
+            if (!brandName) {
+                document.getElementById('requestNotification').innerHTML = '<div class="inline-notification error">Please enter a brand name.</div>';
+                return;
+            }
+            const source = `brand-request: ${brandName} | url: ${brandUrl || 'not provided'} | searched: ${query}`;
+            await doEmailSubmit(email || 'anonymous@fairvein.com', source, document.querySelector('#noResults .brutal-btn'), document.getElementById('requestNotification'), () => {
+                document.getElementById('requestNotification').innerHTML = '<div class="inline-notification success">Thanks! We\'ll research <strong>' + brandName + '</strong> and add it within 48 hours.</div>';
+            });
+        }
+
+        async function submitSwapRequest() {
+            const product = document.getElementById('swapRequestProduct').value.trim();
+            const brand = document.getElementById('swapRequestBrand').value.trim();
+            const email = document.getElementById('swapRequestEmail').value.trim();
+            const query = document.getElementById('swapSearch').value.trim();
+            if (!product && !brand) {
+                document.getElementById('swapRequestNotification').innerHTML = '<div class="inline-notification error">Please enter a product or brand name.</div>';
+                return;
+            }
+            const source = `swap-request: ${product} | brand: ${brand || 'not provided'} | searched: ${query}`;
+            await doEmailSubmit(email || 'anonymous@fairvein.com', source, document.querySelector('#noSwapResults .brutal-btn'), document.getElementById('swapRequestNotification'), () => {
+                document.getElementById('swapRequestNotification').innerHTML = '<div class="inline-notification success">Thanks! We\'ll find indie alternatives for <strong>' + (product || brand) + '</strong>.</div>';
             });
         }
 
