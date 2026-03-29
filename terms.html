@@ -9,7 +9,7 @@
     <link rel="canonical" href="https://fairvein.com/terms">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
         
         :root {
             --cream: #F5F1E8;
@@ -26,8 +26,7 @@
         }
         
         h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 900;
+            font-family: 'DM Serif Display', serif; font-weight: 400;
             letter-spacing: -0.02em;
         }
         
@@ -93,19 +92,15 @@
 </head>
 <body class="receipt-bg">
     <!-- Header -->
-    <nav class="bg-off-white border-b-2 border-dark-charcoal sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center space-x-3 no-underline">
-                <div class="mono text-xl font-bold">
-                    <span class="bracket">[</span>FV<span class="bracket">]</span>
-                </div>
-                <h1 class="text-2xl tracking-tight" style="font-size: 1.5rem;">
-                    Fairvein
-                </h1>
+    <nav class="bg-cream border-b-2 border-dark-charcoal sticky top-0 z-50" style="background-color: #F5F1E8;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <a href="/" class="flex items-center space-x-2 no-underline">
+                <img src="Images/Fairvein_Mascot_HalfBottom.png" alt="FairVein mascot" class="w-10 h-10 object-contain">
+                <span class="text-xl sm:text-2xl tracking-tight" style="font-family: 'DM Serif Display', serif; color: #2C2C2C;">
+                    Fair<span style="color: #D9775F;">Vein</span>
+                </span>
             </a>
-            <a href="/" class="brutal-btn px-4 py-2 no-underline">
-                ← Back to Home
-            </a>
+            <a href="/" class="brutal-btn px-4 py-2 no-underline">Back to Home</a>
         </div>
     </nav>
 
@@ -232,20 +227,24 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-dark-charcoal text-off-white border-t-2 border-dark-charcoal py-12">
-        <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
-            <div class="mono text-2xl font-bold">
-                <span class="bracket text-burnt-orange">[</span>FV<span class="bracket text-burnt-orange">]</span>
+    <footer class="border-t-2 border-dark-charcoal py-10 sm:py-12" style="background: #EDEAE2;">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="Images/Fairvein_Mascot_HalfBottom.png" alt="FairVein" class="w-10 h-10 object-contain">
+                    <div>
+                        <span class="text-lg" style="font-family: 'DM Serif Display', serif;">Fair<span style="color: #D9775F;">Vein</span></span>
+                        <p class="text-xs text-warm-gray">Know who you're really buying from.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6 text-xs uppercase tracking-widest text-warm-gray">
+                    <a href="/" class="hover:text-burnt-orange transition-colors">Home</a>
+                    <a href="terms.html" class="hover:text-burnt-orange transition-colors">Terms</a>
+                    <a href="privacy.html" class="hover:text-burnt-orange transition-colors">Privacy</a>
+                    <a href="disclaimer.html" class="hover:text-burnt-orange transition-colors">Disclaimer</a>
+                </div>
             </div>
-            <div class="flex justify-center gap-6 text-xs uppercase tracking-widest">
-                <a href="/" class="hover:text-burnt-orange transition-colors">Home</a>
-                <a href="/terms" class="text-burnt-orange">Terms</a>
-                <a href="/privacy" class="hover:text-burnt-orange transition-colors">Privacy</a>
-                <a href="/disclaimer" class="hover:text-burnt-orange transition-colors">Disclaimer</a>
-            </div>
-            <p class="mono text-xs text-warm-gray">
-                © 2026 Fairvein
-            </p>
+            <div class="text-center mt-8"><p class="mono text-xs text-warm-gray">� 2026 FairVein</p></div>
         </div>
     </footer>
 </body>
