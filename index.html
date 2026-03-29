@@ -58,7 +58,7 @@
       }
     }
     </script>
-    <!-- Structured Data (JSON-LD) — FAQPage for SEO targeting "who owns [brand]" queries -->
+    <!-- Structured Data (JSON-LD) — FAQPage for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -109,7 +109,6 @@
     </script>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Tailwind custom config — required for custom color classes -->
     <script>
     tailwind.config = {
         theme: {
@@ -158,27 +157,11 @@
         }
         
         /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F5F1E8;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #D9775F;
-            border-radius: 4px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F5F1E8; }
+        ::-webkit-scrollbar-thumb { background: #D9775F; border-radius: 4px; }
         
-        /* Decorative elements */
-        .bracket {
-            color: #D9775F;
-            font-weight: 700;
-        }
-        
-        /* Asymmetric layout helper */
-        .offset-right {
-            margin-right: -2rem;
-        }
+        .bracket { color: #D9775F; font-weight: 700; }
         
         /* Hover states */
         .hover-lift {
@@ -189,25 +172,13 @@
             box-shadow: 0 4px 12px rgba(217, 119, 95, 0.15);
         }
         
-        /* Search box custom styling */
-        .search-container {
-            position: relative;
-            overflow: hidden;
+        /* Search box focus glow */
+        .search-box {
+            transition: box-shadow 0.2s ease, border-color 0.2s ease;
         }
-        .search-container::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #D9775F, #2C2C2C);
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-        .search-container:focus-within::before {
-            opacity: 1;
+        .search-box:focus-within {
+            border-color: #D9775F;
+            box-shadow: 0 0 0 3px rgba(217, 119, 95, 0.2);
         }
         
         /* Tag pill styling */
@@ -221,12 +192,14 @@
             letter-spacing: 0.03em;
             text-transform: uppercase;
             transition: all 0.15s;
+            font-family: 'Space Mono', monospace;
         }
         .tag-pill:hover {
             background: #D9775F;
             color: #FDFCF9;
             border-color: #D9775F;
         }
+        .tag-pill.clickable { cursor: pointer; }
         
         /* Neo-brutalist button */
         .brutal-btn {
@@ -249,37 +222,26 @@
             box-shadow: 0px 0px 0px #2C2C2C;
         }
         
+        .brutal-btn-secondary {
+            background: #FDFCF9;
+            color: #2C2C2C;
+            border: 2px solid #2C2C2C;
+            box-shadow: 3px 3px 0px #2C2C2C;
+            transition: all 0.1s;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            font-size: 0.8rem;
+        }
+        .brutal-btn-secondary:hover {
+            transform: translate(1px, 1px);
+            box-shadow: 2px 2px 0px #2C2C2C;
+            background: #D9775F;
+            color: #FDFCF9;
+        }
+        
         /* Navbar scroll state */
         .nav-scrolled {
             box-shadow: 0 2px 12px rgba(44, 44, 44, 0.1);
-        }
-
-        /* Inline notification styles */
-        .inline-notification {
-            padding: 0.75rem 1rem;
-            border-radius: 2px;
-            font-size: 0.875rem;
-            margin-top: 0.5rem;
-            animation: fadeSlideIn 0.3s ease-out;
-        }
-        .inline-notification.error {
-            background: #FEF2F2;
-            border: 1.5px solid #D9775F;
-            color: #2C2C2C;
-        }
-        .inline-notification.success {
-            background: #F0FDF4;
-            border: 1.5px solid #22C55E;
-            color: #2C2C2C;
-        }
-        .inline-notification.warning {
-            background: #FFFBEB;
-            border: 1.5px solid #F59E0B;
-            color: #2C2C2C;
-        }
-        @keyframes fadeSlideIn {
-            from { opacity: 0; transform: translateY(-8px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Mobile menu */
@@ -306,32 +268,111 @@
             color: #FDFCF9;
             letter-spacing: -0.02em;
         }
-        .logo-mark .bracket {
+        .logo-mark .bracket { color: #D9775F; }
+
+        /* Results animations */
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            animation: fadeSlideIn 0.35s ease-out;
+        }
+
+        /* Boycott severity badge */
+        .boycott-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: #FEF2F2;
+            border: 1.5px solid #D9775F;
+            padding: 0.3rem 0.65rem;
+            border-radius: 2px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            font-family: 'Space Mono', monospace;
+            color: #2C2C2C;
+        }
+
+        /* Quick-try buttons */
+        .quick-try {
+            cursor: pointer;
+            background: transparent;
+            border: 1.5px dashed #6B6B6B;
+            padding: 0.35rem 0.85rem;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            font-family: 'Space Mono', monospace;
+            color: #6B6B6B;
+            transition: all 0.15s;
+        }
+        .quick-try:hover {
+            border-color: #D9775F;
             color: #D9775F;
+            border-style: solid;
+        }
+
+        /* Inline notification styles */
+        .inline-notification {
+            padding: 0.75rem 1rem;
+            border-radius: 2px;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            animation: fadeSlideIn 0.3s ease-out;
+        }
+        .inline-notification.error {
+            background: #FEF2F2;
+            border: 1.5px solid #D9775F;
+            color: #2C2C2C;
+        }
+        .inline-notification.success {
+            background: #F0FDF4;
+            border: 1.5px solid #22C55E;
+            color: #2C2C2C;
+        }
+        .inline-notification.warning {
+            background: #FFFBEB;
+            border: 1.5px solid #F59E0B;
+            color: #2C2C2C;
+        }
+
+        /* Dashed divider */
+        .dashed-divider {
+            border-top: 2px dashed #2C2C2C;
+            opacity: 0.2;
+        }
+
+        /* Post-search email nudge */
+        .email-nudge {
+            animation: fadeSlideIn 0.5s ease-out 0.3s both;
+        }
+
+        /* Responsive touch targets */
+        @media (max-width: 768px) {
+            .quick-try { min-height: 44px; display: inline-flex; align-items: center; }
+            .tag-pill { min-height: 36px; display: inline-flex; align-items: center; }
         }
     </style>
 </head>
 <body class="receipt-bg">
     <!-- Header -->
     <nav id="mainNav" class="bg-off-white border-b-2 border-dark-charcoal sticky top-0 z-50 transition-shadow duration-300" style="background-color: #FDFCF9;">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="flex items-center space-x-3 no-underline">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center space-x-2 sm:space-x-3 no-underline">
                 <div class="logo-mark">
                     <span><span class="bracket">[</span>FV<span class="bracket">]</span></span>
                 </div>
-                <span class="text-2xl tracking-tight" style="font-family: 'Playfair Display', serif; font-weight: 900; letter-spacing: -0.02em; color: #2C2C2C;">
+                <span class="text-xl sm:text-2xl tracking-tight" style="font-family: 'Playfair Display', serif; font-weight: 900; letter-spacing: -0.02em; color: #2C2C2C;">
                     Fair<span style="color: #D9775F;">Vein</span>
                 </span>
             </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#how" class="text-sm font-medium hover:text-burnt-orange transition-colors nav-link">How It Works</a>
-                <a href="#why" class="text-sm font-medium hover:text-burnt-orange transition-colors nav-link">Why Now</a>
-                <button onclick="showEmailModal()" class="brutal-btn px-4 py-2">
-                    Get Access
-                </button>
+                <a href="#why" class="text-sm font-medium hover:text-burnt-orange transition-colors nav-link">About</a>
+                <a href="#updates" class="brutal-btn px-4 py-2 nav-link">Get Updates</a>
             </div>
             <!-- Mobile hamburger -->
-            <button id="mobileMenuBtn" class="md:hidden" onclick="toggleMobileMenu()" aria-label="Open menu">
+            <button id="mobileMenuBtn" class="md:hidden p-2" onclick="toggleMobileMenu()" aria-label="Open menu">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
@@ -344,17 +385,14 @@
                 <div class="logo-mark">
                     <span><span class="bracket">[</span>FV<span class="bracket">]</span></span>
                 </div>
-                <button onclick="toggleMobileMenu()" aria-label="Close menu">
+                <button onclick="toggleMobileMenu()" class="p-2" aria-label="Close menu">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
             <div class="flex flex-col space-y-6">
-                <a href="#search" onclick="toggleMobileMenu()" class="text-lg font-medium hover:text-burnt-orange transition-colors nav-link">Search Brands</a>
                 <a href="#how" onclick="toggleMobileMenu()" class="text-lg font-medium hover:text-burnt-orange transition-colors nav-link">How It Works</a>
-                <a href="#why" onclick="toggleMobileMenu()" class="text-lg font-medium hover:text-burnt-orange transition-colors nav-link">Why Now</a>
-                <button onclick="toggleMobileMenu(); showEmailModal();" class="brutal-btn px-4 py-3 mt-4">
-                    Get Access
-                </button>
+                <a href="#why" onclick="toggleMobileMenu()" class="text-lg font-medium hover:text-burnt-orange transition-colors nav-link">About</a>
+                <a href="#updates" onclick="toggleMobileMenu()" class="text-lg font-medium hover:text-burnt-orange transition-colors nav-link">Get Updates</a>
             </div>
             <div class="mt-auto pt-8 border-t-2 border-dark-charcoal">
                 <p class="mono text-xs text-warm-gray">© 2026 FairVein</p>
@@ -362,243 +400,271 @@
         </div>
     </div>
 
-    <!-- Hero Section (Asymmetric Layout) -->
-    <section class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-12 gap-12 items-center">
-        <!-- Left Column (Text) -->
-        <div class="md:col-span-7 space-y-8">
-            <div class="inline-block">
-                <div class="mono text-xs uppercase tracking-widest text-warm-gray mb-2">
-                    <span class="bracket">/</span> Launching Q2 2026
-                </div>
+    <!-- ======================== -->
+    <!-- HERO: Search-First       -->
+    <!-- ======================== -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-6 sm:pb-10 text-center">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl leading-none tracking-tight mb-4 sm:mb-5">
+            Follow the Money<span class="text-burnt-orange">.</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-warm-gray max-w-xl mx-auto mb-8 sm:mb-10 leading-relaxed">
+            Search any brand to instantly see who <em>really</em> owns it, 
+            what else they own, and why it matters.
+        </p>
+
+        <!-- Search Bar — THE HERO -->
+        <div class="search-box bg-off-white border-2 border-dark-charcoal flex items-center max-w-2xl mx-auto" style="min-height: 56px;">
+            <div class="pl-4 text-warm-gray flex-shrink-0">
+                <i data-lucide="search" class="w-5 h-5"></i>
             </div>
-            
-            <h2 class="text-6xl md:text-7xl leading-none tracking-tight">
-                Follow<br/>
-                the Money<span class="text-burnt-orange">.</span>
-            </h2>
-            
-            <p class="text-xl text-warm-gray leading-relaxed max-w-xl">
-                Before you tap "Buy Now," know who's really cashing in. 
-                <strong>Search any brand</strong> to expose its parent company, 
-                sister brands, and active boycott campaigns.
-            </p>
-            
-            <div class="flex flex-wrap gap-3 mono text-xs">
-                <span class="tag-pill">Parent Companies</span>
-                <span class="tag-pill">Boycott Tracker</span>
-                <span class="tag-pill">Indie Alternatives</span>
-                <span class="tag-pill">Free Forever</span>
-            </div>
-            
-            <div class="pt-4">
-                <a href="#search" class="brutal-btn px-8 py-4 inline-block nav-link">
-                    Try It Now
-                </a>
-                <p class="mono text-xs text-warm-gray mt-3">
-                    No signup required <span class="bracket">→</span> 200+ brands indexed
-                </p>
-            </div>
+            <input 
+                id="brandSearch" 
+                type="text" 
+                placeholder="Search any brand..."
+                autocomplete="off"
+                class="flex-1 px-3 sm:px-4 py-3 sm:py-4 text-base sm:text-lg bg-transparent focus:outline-none"
+                style="min-height: 48px;"
+            />
+            <button 
+                onclick="searchBrand()"
+                class="brutal-btn px-4 sm:px-6 py-2.5 sm:py-3 m-1.5 sm:m-2 flex-shrink-0"
+            >
+                Search
+            </button>
         </div>
-        
-        <!-- Right Column (Visual) -->
-        <div class="md:col-span-5 offset-right">
-            <div class="bg-off-white border-2 border-dark-charcoal p-8 rotate-1 hover:rotate-0 transition-transform duration-300">
-                <div class="mono text-xs uppercase tracking-widest mb-4 text-warm-gray">
-                    Case Study <span class="bracket">#001</span>
-                </div>
-                <h3 class="text-3xl mb-4">
-                    "I didn't know MAC was Estée Lauder."
-                </h3>
-                <p class="text-sm text-warm-gray leading-relaxed mb-6">
-                    8 major conglomerates own most consumer brands. 
-                    Estée Lauder alone controls MAC, Clinique, Bobbi Brown, La Mer, 
-                    Tom Ford, Too Faced, Aveda, Bumble and bumble, and 20+ others.
-                </p>
-                <div class="border-t-2 border-dark-charcoal pt-4">
-                    <p class="mono text-xs">
-                        <span class="text-burnt-orange font-bold">$2.5M</span> political donation (Nov 2025)<br/>
-                        <span class="text-burnt-orange font-bold">BDS list</span> since Oct 2023<br/>
-                        <span class="text-burnt-orange font-bold">Epstein links</span> via board member (Feb 2026)
-                    </p>
-                </div>
-            </div>
+
+        <!-- Quick-try buttons -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-4 sm:mt-5">
+            <span class="mono text-xs text-warm-gray self-center mr-1">Try:</span>
+            <button class="quick-try" onclick="quickSearch('MAC Cosmetics')">MAC</button>
+            <button class="quick-try" onclick="quickSearch('Clinique')">Clinique</button>
+            <button class="quick-try" onclick="quickSearch('NYX')">NYX</button>
+            <button class="quick-try" onclick="quickSearch('Dove')">Dove</button>
+            <button class="quick-try" onclick="quickSearch('Fenty Beauty')">Fenty</button>
+            <button class="quick-try" onclick="quickSearch('Zara')">Zara</button>
         </div>
     </section>
 
-    <!-- Interactive Search Section -->
-    <section id="search" class="max-w-4xl mx-auto px-6 py-16">
-        <div class="bg-off-white border-2 border-dark-charcoal p-8 md:p-12">
-            <div class="text-center mb-8">
-                <h3 class="text-4xl mb-3">
-                    Search <span class="text-burnt-orange">Any</span> Brand
-                </h3>
-                <p class="text-warm-gray mono text-sm">
-                    Try: MAC, Clinique, Bobbi Brown, La Mer, Tom Ford...
-                </p>
-            </div>
-            
-            <div class="search-container bg-cream border-2 border-dark-charcoal flex items-center">
-                <input 
-                    id="brandSearch" 
-                    type="text" 
-                    placeholder="e.g., MAC Cosmetics"
-                    class="flex-1 px-6 py-4 text-lg bg-transparent focus:outline-none"
-                />
-                <button 
-                    onclick="searchBrand()"
-                    class="brutal-btn px-6 py-3 m-2"
-                >
-                    Search
-                </button>
-            </div>
-
-            <!-- Search Results -->
-            <div id="results" class="mt-8 hidden">
-                <div class="bg-cream border-2 border-dark-charcoal p-6 md:p-8">
-                    <div class="flex flex-col md:flex-row items-start gap-6">
-                        <div class="text-5xl">⚠️</div>
-                        <div class="flex-1 space-y-6">
-                            <div>
-                                <h4 id="brandName" class="text-3xl mb-2" style="font-family: 'Playfair Display', serif; font-weight: 900;"></h4>
-                                <p class="mono text-sm text-warm-gray">
-                                    Owned by <span id="parentCompany" class="text-burnt-orange font-bold text-base"></span>
-                                </p>
-                            </div>
-                            
-                            <div>
-                                <h5 class="font-bold mb-3 uppercase tracking-wide text-sm">Active Boycott Campaigns:</h5>
-                                <div id="boycottReasons" class="space-y-2 mono text-xs"></div>
-                            </div>
-
-                            <div>
-                                <h5 class="font-bold mb-3 uppercase tracking-wide text-sm">Sister Brands (Same Owner):</h5>
-                                <div id="sisterBrands" class="flex flex-wrap gap-2"></div>
-                            </div>
-
-                            <div class="border-2 border-dark-charcoal bg-off-white p-6">
-                                <h5 class="font-bold mb-3 flex items-center gap-2">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-burnt-orange"></i>
-                                    Try These Indie Alternatives:
-                                </h5>
-                                <div id="alternatives" class="space-y-2 text-sm"></div>
-                            </div>
+    <!-- ======================== -->
+    <!-- SEARCH RESULTS (inline)  -->
+    <!-- ======================== -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6">
+        <!-- Found Result -->
+        <div id="results" class="hidden animate-in mb-8">
+            <div class="bg-off-white border-2 border-dark-charcoal">
+                <!-- Header row -->
+                <div class="p-5 sm:p-8 border-b-2 border-dark-charcoal" style="border-bottom-style: dashed;">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <h2 id="brandName" class="text-2xl sm:text-3xl mb-1"></h2>
+                            <p class="mono text-sm text-warm-gray">
+                                Owned by <span id="parentCompany" class="text-burnt-orange font-bold text-base"></span>
+                            </p>
+                        </div>
+                        <div id="boycottCount" class="hidden">
+                            <span class="boycott-badge">
+                                <span>⚠</span>
+                                <span id="boycottCountText"></span>
+                            </span>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- No Results -->
-            <div id="noResults" class="mt-8 hidden">
-                <div class="bg-cream border-2 border-dark-charcoal p-8 text-center">
-                    <p class="text-warm-gray mb-2">Brand not found in our database yet.</p>
-                    <p class="mono text-xs text-warm-gray">Expanding to 1000+ brands by launch.</p>
+                <!-- Boycott campaigns -->
+                <div id="boycottSection" class="hidden p-5 sm:p-8 border-b-2 border-dark-charcoal" style="border-bottom-style: dashed; background: #FEF8F6;">
+                    <h3 class="text-sm font-bold uppercase tracking-wide mb-3 flex items-center gap-2" style="font-family: 'Space Mono', monospace;">
+                        <span style="color: #D9775F;">⚠</span> Active Boycott Campaigns
+                    </h3>
+                    <div id="boycottReasons" class="space-y-2 mono text-xs sm:text-sm"></div>
                 </div>
+
+                <!-- Sister brands -->
+                <div class="p-5 sm:p-8 border-b-2 border-dark-charcoal" style="border-bottom-style: dashed;">
+                    <h3 class="text-sm font-bold uppercase tracking-wide mb-3" style="font-family: 'Space Mono', monospace;">
+                        Sister Brands <span class="font-normal text-warm-gray">(Same Owner)</span>
+                    </h3>
+                    <div id="sisterBrands" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <!-- Alternatives -->
+                <div class="p-5 sm:p-8" style="background: #F0FAF0;">
+                    <h3 class="text-sm font-bold uppercase tracking-wide mb-3 flex items-center gap-2" style="font-family: 'Space Mono', monospace;">
+                        <span style="color: #22C55E;">✓</span> Try Instead
+                    </h3>
+                    <div id="alternatives" class="space-y-2 text-sm"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- No Results -->
+        <div id="noResults" class="hidden animate-in mb-8">
+            <div class="bg-off-white border-2 border-dark-charcoal p-6 sm:p-8 text-center">
+                <p class="text-lg font-semibold mb-2">We don't have this brand yet.</p>
+                <p class="text-warm-gray text-sm mb-4">Want us to add it? Drop your email and we'll research it.</p>
+                <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+                    <input 
+                        id="requestEmail" 
+                        type="email" 
+                        placeholder="your@email.com"
+                        class="flex-1 px-4 py-3 border-2 focus:outline-none mono text-sm"
+                        style="background: #FDFCF9; border-color: #2C2C2C; min-height: 44px;"
+                    />
+                    <button onclick="submitBrandRequest()" class="brutal-btn px-5 py-2.5 flex-shrink-0" style="min-height: 44px;">
+                        Request Brand
+                    </button>
+                </div>
+                <div id="requestNotification"></div>
+            </div>
+        </div>
+
+        <!-- Post-search email nudge (shown after first search) -->
+        <div id="emailNudge" class="hidden email-nudge mb-8">
+            <div class="bg-off-white border-2 border-dark-charcoal p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-4">
+                <div class="flex-1 text-center sm:text-left">
+                    <p class="font-semibold text-sm">Like what you see?</p>
+                    <p class="text-warm-gray text-xs">We're adding 100+ brands monthly. Get notified about new features.</p>
+                </div>
+                <button onclick="showEmailModal()" class="brutal-btn-secondary px-4 py-2 flex-shrink-0 whitespace-nowrap" style="min-height: 44px;">
+                    Get Updates
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- How It Works (Grid Layout) -->
-    <section id="how" class="max-w-6xl mx-auto px-6 py-24">
-        <h3 class="text-5xl text-center mb-16">
+    <!-- ======================== -->
+    <!-- HOW IT WORKS             -->
+    <!-- ======================== -->
+    <section id="how" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+        <h2 class="text-4xl sm:text-5xl text-center mb-12 sm:mb-16">
             How It Works<span class="text-burnt-orange">.</span>
-        </h3>
+        </h2>
         
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-off-white border-2 border-dark-charcoal p-8 hover-lift">
-                <div class="mono text-6xl font-bold text-burnt-orange mb-4">01</div>
-                <h4 class="text-2xl mb-3">Search</h4>
-                <p class="text-warm-gray leading-relaxed">
-                    Type in any beauty, fashion, or consumer brand. No barcode scanner needed.
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div class="bg-off-white border-2 border-dark-charcoal p-6 sm:p-8 hover-lift">
+                <div class="mono text-5xl sm:text-6xl font-bold text-burnt-orange mb-4">01</div>
+                <h3 class="text-xl sm:text-2xl mb-3">Search</h3>
+                <p class="text-warm-gray leading-relaxed text-sm sm:text-base">
+                    Type any beauty, fashion, or consumer brand. Instant results, no sign-up.
                 </p>
             </div>
             
-            <div class="bg-off-white border-2 border-dark-charcoal p-8 hover-lift">
-                <div class="mono text-6xl font-bold text-burnt-orange mb-4">02</div>
-                <h4 class="text-2xl mb-3">Discover</h4>
-                <p class="text-warm-gray leading-relaxed">
-                    See parent company, sister brands, active boycott campaigns—with sources.
+            <div class="bg-off-white border-2 border-dark-charcoal p-6 sm:p-8 hover-lift">
+                <div class="mono text-5xl sm:text-6xl font-bold text-burnt-orange mb-4">02</div>
+                <h3 class="text-xl sm:text-2xl mb-3">Discover</h3>
+                <p class="text-warm-gray leading-relaxed text-sm sm:text-base">
+                    See the parent company, sister brands, and active boycott campaigns — with sources.
                 </p>
             </div>
             
-            <div class="bg-off-white border-2 border-dark-charcoal p-8 hover-lift">
-                <div class="mono text-6xl font-bold text-burnt-orange mb-4">03</div>
-                <h4 class="text-2xl mb-3">Choose</h4>
-                <p class="text-warm-gray leading-relaxed">
-                    Get indie alternatives that align with your values. Shop informed.
+            <div class="bg-off-white border-2 border-dark-charcoal p-6 sm:p-8 hover-lift">
+                <div class="mono text-5xl sm:text-6xl font-bold text-burnt-orange mb-4">03</div>
+                <h3 class="text-xl sm:text-2xl mb-3">Choose</h3>
+                <p class="text-warm-gray leading-relaxed text-sm sm:text-base">
+                    Get indie alternatives that align with your values. Shop with your eyes open.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Why This Matters -->
-    <section id="why" class="max-w-4xl mx-auto px-6 py-24">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <div class="mono text-xs uppercase tracking-widest text-warm-gray mb-4">
-                    <span class="bracket">/</span> The Problem
+    <!-- ======================== -->
+    <!-- STATS BAR                -->
+    <!-- ======================== -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div class="bg-dark-charcoal text-off-white border-2 border-dark-charcoal p-8 sm:p-12">
+            <div class="grid grid-cols-3 gap-4 sm:gap-12 text-center">
+                <div>
+                    <div class="mono text-3xl sm:text-5xl font-bold text-burnt-orange mb-1 sm:mb-2" id="statBrands">141</div>
+                    <p class="text-xs sm:text-sm uppercase tracking-widest">Brands Tracked</p>
                 </div>
-                <h3 class="text-5xl leading-tight mb-6">
+                <div>
+                    <div class="mono text-3xl sm:text-5xl font-bold text-burnt-orange mb-1 sm:mb-2" id="statCorps">17</div>
+                    <p class="text-xs sm:text-sm uppercase tracking-widest">Conglomerates</p>
+                </div>
+                <div>
+                    <div class="mono text-3xl sm:text-5xl font-bold text-burnt-orange mb-1 sm:mb-2">100%</div>
+                    <p class="text-xs sm:text-sm uppercase tracking-widest">Free Forever</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- WHY THIS MATTERS         -->
+    <!-- ======================== -->
+    <section id="why" class="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+        <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div>
+                <h2 class="text-4xl sm:text-5xl leading-tight mb-4 sm:mb-6">
                     Your Wallet<br/>
                     is Your<br/>
                     Voice<span class="text-burnt-orange">.</span>
-                </h3>
+                </h2>
             </div>
-            <div class="space-y-6 text-warm-gray leading-relaxed">
+            <div class="space-y-5 text-warm-gray leading-relaxed text-sm sm:text-base">
                 <p>
-                    <strong class="text-dark-charcoal">8 conglomerates</strong> control most of the brands you love. 
-                    They hide behind "indie-looking" labels, making billions while you think you're supporting small businesses.
+                    <strong class="text-dark-charcoal">A handful of conglomerates</strong> control most of the brands you see on shelves. 
+                    They hide behind "indie-looking" labels while you think you're supporting small businesses.
                 </p>
                 <p>
-                    <strong class="text-dark-charcoal">Boycott campaigns</strong> are everywhere—BDS lists, Reddit threads, 
-                    Instagram stories—but they're scattered, outdated, and hard to track.
+                    <strong class="text-dark-charcoal">Boycott lists</strong> are scattered across Reddit threads, 
+                    Instagram stories, and group chats — hard to track, easy to forget.
                 </p>
                 <p class="font-semibold text-dark-charcoal">
-                    Before FairVein: 20 minutes of Googling every brand before checkout.<br/>
-                    <span class="text-burnt-orange">Now: One search.</span>
+                    We built FairVein so you can check any brand in seconds, not 20 minutes of Googling.
+                </p>
+                <p class="mono text-xs text-warm-gray pt-2">
+                    Built by people who believe in transparency. No ads, no corporate sponsors.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof / Stats -->
-    <section class="max-w-6xl mx-auto px-6 py-16">
-        <div class="bg-dark-charcoal text-off-white border-2 border-dark-charcoal p-12">
-            <div class="grid md:grid-cols-3 gap-12 text-center">
-                <div>
-                    <div class="mono text-5xl font-bold text-burnt-orange mb-2">200+</div>
-                    <p class="text-sm uppercase tracking-widest">Brands Indexed</p>
+    <!-- ======================== -->
+    <!-- EMAIL CAPTURE (post-value) -->
+    <!-- ======================== -->
+    <section id="updates" class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+        <div class="bg-off-white border-2 border-dark-charcoal p-6 sm:p-10 text-center">
+            <h2 class="text-3xl sm:text-4xl mb-3">
+                Stay in the Loop<span class="text-burnt-orange">.</span>
+            </h2>
+            <p class="text-warm-gray mb-6 sm:mb-8 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
+                We're adding new brands weekly and building features like a browser extension 
+                and collection scanner. Get notified when they drop.
+            </p>
+            <div id="footerEmailForm">
+                <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+                    <input 
+                        id="footerEmailInput" 
+                        type="email" 
+                        placeholder="your@email.com"
+                        class="flex-1 px-4 py-3 border-2 focus:outline-none mono text-sm"
+                        style="background: #FDFCF9; border-color: #2C2C2C; min-height: 48px;"
+                        onfocus="this.style.borderColor='#D9775F'"
+                        onblur="this.style.borderColor='#2C2C2C'"
+                    />
+                    <button 
+                        id="footerEmailBtn"
+                        onclick="submitFooterEmail()"
+                        class="brutal-btn px-6 py-3 flex-shrink-0"
+                        style="min-height: 48px;"
+                    >
+                        Notify Me
+                    </button>
                 </div>
-                <div>
-                    <div class="mono text-5xl font-bold text-burnt-orange mb-2">15</div>
-                    <p class="text-sm uppercase tracking-widest">Boycott Campaigns</p>
-                </div>
-                <div>
-                    <div class="mono text-5xl font-bold text-burnt-orange mb-2">100%</div>
-                    <p class="text-sm uppercase tracking-widest">Free Forever</p>
-                </div>
+                <div id="footerEmailNotification"></div>
+                <p class="text-xs text-warm-gray mt-3">No spam, ever. Unsubscribe anytime.</p>
+            </div>
+            <div id="footerEmailSuccess" class="hidden">
+                <div class="text-4xl mb-3">✓</div>
+                <p class="font-semibold text-lg">You're in!</p>
+                <p class="text-warm-gray text-sm">We'll let you know when new features and brands drop.</p>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="max-w-4xl mx-auto px-6 py-24 text-center">
-        <h3 class="text-6xl mb-6">
-            Get Early Access<span class="text-burnt-orange">.</span>
-        </h3>
-        <p class="text-xl text-warm-gray mb-8 max-w-2xl mx-auto">
-            Join the waitlist to be notified when we launch. Free forever. No credit card required.
-        </p>
-        <button onclick="showEmailModal()" class="brutal-btn px-12 py-5 text-base">
-            Join Waitlist
-        </button>
-        <p class="mono text-xs text-warm-gray mt-4">
-            500+ people already waiting <span class="bracket">→</span> Launch: Q2 2026
-        </p>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark-charcoal text-off-white border-t-2 border-dark-charcoal py-12 mt-24">
-        <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
+    <footer class="bg-dark-charcoal text-off-white border-t-2 border-dark-charcoal py-10 sm:py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-5">
             <div class="flex items-center justify-center space-x-3">
                 <div class="logo-mark" style="border-color: #D9775F;">
                     <span><span class="bracket">[</span>FV<span class="bracket">]</span></span>
@@ -608,12 +674,12 @@
                 </span>
             </div>
             <p class="text-sm text-warm-gray max-w-lg mx-auto leading-relaxed">
-                Know who you're really buying from. Powered by open data and community contributions.
+                Know who you're really buying from.
             </p>
             <div class="flex justify-center gap-6 text-xs uppercase tracking-widest">
-                <a href="/terms" class="hover:text-burnt-orange transition-colors">Terms</a>
-                <a href="/privacy" class="hover:text-burnt-orange transition-colors">Privacy</a>
-                <a href="/disclaimer" class="hover:text-burnt-orange transition-colors">Disclaimer</a>
+                <a href="terms.html" class="hover:text-burnt-orange transition-colors">Terms</a>
+                <a href="privacy.html" class="hover:text-burnt-orange transition-colors">Privacy</a>
+                <a href="disclaimer.html" class="hover:text-burnt-orange transition-colors">Disclaimer</a>
             </div>
             <p class="text-sm text-warm-gray">
                 <a href="mailto:hello@fairvein.com" class="hover:text-burnt-orange transition-colors">hello@fairvein.com</a>
@@ -624,20 +690,19 @@
         </div>
     </footer>
 
-    <!-- Email Capture Modal -->
+    <!-- Email Capture Modal (triggered by button clicks) -->
     <div id="emailModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4" style="background: rgba(10, 10, 10, 0.85);">
         <div class="border-4 border-dark-charcoal max-w-md w-full relative" style="box-shadow: 8px 8px 0px #2C2C2C; background: #f5f0e8;">
-            <!-- Close Button -->
-            <button onclick="closeEmailModal()" class="absolute top-4 right-4 hover:text-burnt-orange transition-colors" style="color: #2C2C2C;">
+            <button onclick="closeEmailModal()" class="absolute top-4 right-4 hover:text-burnt-orange transition-colors p-2" style="color: #2C2C2C;" aria-label="Close">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
             
-            <div class="p-8">
+            <div class="p-6 sm:p-8">
                 <div class="text-center mb-6">
-                    <h4 class="text-4xl mb-3" style="font-family: 'Playfair Display', serif; font-weight: 900;">Stay Updated<span style="color: #D9775F;">.</span></h4>
-                    <p class="text-warm-gray leading-relaxed">
-                        We're adding <strong style="color: #2C2C2C;">100+ new brands every month</strong>. 
-                        Get early access to premium features.
+                    <h3 class="text-3xl sm:text-4xl mb-3" style="font-family: 'Playfair Display', serif; font-weight: 900;">Stay Updated<span style="color: #D9775F;">.</span></h3>
+                    <p class="text-warm-gray leading-relaxed text-sm">
+                        We're adding <strong style="color: #2C2C2C;">100+ new brands every month</strong> 
+                        and building a browser extension. Get notified about new features.
                     </p>
                 </div>
                 
@@ -648,12 +713,11 @@
                             type="email" 
                             placeholder="your@email.com"
                             class="w-full px-4 py-3 border-2 focus:outline-none mono text-sm"
-                            style="background: #FDFCF9; border-color: #2C2C2C;"
+                            style="background: #FDFCF9; border-color: #2C2C2C; min-height: 48px;"
                             onfocus="this.style.borderColor='#D9775F'"
                             onblur="this.style.borderColor='#2C2C2C'"
                             required
                         />
-                        <!-- Inline validation message -->
                         <div id="emailValidationMsg" class="hidden"></div>
                     </div>
                     
@@ -661,28 +725,28 @@
                         id="emailSubmitBtn"
                         onclick="submitEmail()"
                         class="brutal-btn w-full px-6 py-3"
+                        style="min-height: 48px;"
                     >
                         Notify Me
                     </button>
                     
                     <button 
                         onclick="closeEmailModal()"
-                        class="w-full text-center text-sm text-warm-gray hover:text-dark-charcoal transition-colors mono"
+                        class="w-full text-center text-sm text-warm-gray hover:text-dark-charcoal transition-colors mono py-2"
                     >
                         Maybe Later
                     </button>
                     
                     <p class="text-xs text-warm-gray text-center leading-relaxed">
-                        We'll never spam you or share your email. Unsubscribe anytime.
+                        No spam, ever. Unsubscribe anytime.
                     </p>
                 </div>
                 
-                <!-- Success Message (hidden by default) -->
                 <div id="emailSuccess" class="hidden text-center space-y-4">
                     <div class="text-5xl">✓</div>
-                    <h5 class="text-2xl" style="font-family: 'Playfair Display', serif; font-weight: 900;">You're on the list!</h5>
+                    <h4 class="text-2xl" style="font-family: 'Playfair Display', serif; font-weight: 900;">You're in!</h4>
                     <p class="text-warm-gray leading-relaxed text-sm">
-                        We'll email you when we add premium features (browser extension, collection scanner, etc.)
+                        We'll email you when new features drop — browser extension, collection scanner, and more.
                     </p>
                     <button 
                         onclick="closeEmailModal()"
@@ -701,15 +765,25 @@
         lucide.createIcons();
         
         // ========================
+        // COMPUTE LIVE STATS
+        // ========================
+        (function computeStats() {
+            if (typeof brandDatabase !== 'undefined') {
+                const brands = brandDatabase.length;
+                const parents = new Set(brandDatabase.map(b => b.parent));
+                const el1 = document.getElementById('statBrands');
+                const el2 = document.getElementById('statCorps');
+                if (el1) el1.textContent = brands;
+                if (el2) el2.textContent = parents.size;
+            }
+        })();
+
+        // ========================
         // NAVBAR SCROLL BEHAVIOR
         // ========================
         const mainNav = document.getElementById('mainNav');
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 20) {
-                mainNav.classList.add('nav-scrolled');
-            } else {
-                mainNav.classList.remove('nav-scrolled');
-            }
+            mainNav.classList.toggle('nav-scrolled', window.scrollY > 20);
         });
 
         // ========================
@@ -728,44 +802,19 @@
             }
             lucide.createIcons();
         }
-
-        // Close mobile menu on clicking overlay background
         document.getElementById('mobileMenu').addEventListener('click', function(e) {
             if (e.target === this) toggleMobileMenu();
         });
 
         // ========================
-        // INLINE NOTIFICATION HELPER
-        // ========================
-        function showInlineNotification(containerId, type, message) {
-            const container = document.getElementById(containerId);
-            // Remove any existing notification
-            const existing = container.querySelector('.inline-notification');
-            if (existing) existing.remove();
-            
-            const div = document.createElement('div');
-            div.className = `inline-notification ${type}`;
-            div.innerHTML = message;
-            container.appendChild(div);
-            
-            // Auto-dismiss success/warning after 8 seconds
-            if (type !== 'error') {
-                setTimeout(() => { if (div.parentNode) div.remove(); }, 8000);
-            }
-        }
-
-        // ========================
         // EMAIL MODAL LOGIC
         // ========================
-        let hasSearched = false;
-        let modalTimer = null;
+        let searchCount = 0;
         
         function showEmailModal() {
             const modal = document.getElementById('emailModal');
             modal.classList.remove('hidden');
             lucide.createIcons();
-            
-            // Reset form state when opening
             document.getElementById('emailForm').classList.remove('hidden');
             document.getElementById('emailSuccess').classList.add('hidden');
             const validMsg = document.getElementById('emailValidationMsg');
@@ -777,12 +826,10 @@
             document.getElementById('emailModal').classList.add('hidden');
         }
         
-        // Close modal on clicking backdrop
         document.getElementById('emailModal').addEventListener('click', function(e) {
             if (e.target === this) closeEmailModal();
         });
         
-        // Close modal on Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeEmailModal();
@@ -790,143 +837,140 @@
             }
         });
 
-        async function submitEmail() {
-            const emailInput = document.getElementById('emailInput');
-            const submitBtn = document.getElementById('emailSubmitBtn');
-            const validMsg = document.getElementById('emailValidationMsg');
-            const email = emailInput.value.trim();
-            
-            // Clear previous validation message
-            validMsg.classList.add('hidden');
-            validMsg.innerHTML = '';
-            
-            // Basic email validation
+        // ========================
+        // EMAIL SUBMISSION (shared)
+        // ========================
+        const EMAIL_ENDPOINT = 'https://loyal-opossum-407.convex.site/subscribe';
+
+        async function doEmailSubmit(email, source, btnEl, validMsgEl, onSuccess) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!email || !emailRegex.test(email)) {
-                validMsg.className = 'inline-notification error';
-                validMsg.innerHTML = 'Please enter a valid email address.';
-                validMsg.classList.remove('hidden');
-                emailInput.focus();
+                if (validMsgEl) {
+                    validMsgEl.className = 'inline-notification error';
+                    validMsgEl.innerHTML = 'Please enter a valid email address.';
+                    validMsgEl.classList.remove('hidden');
+                }
                 return;
             }
             
-            const source = hasSearched ? 'search' : 'homepage';
-            
-            // Show loading state
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Submitting...';
-            submitBtn.disabled = true;
-            submitBtn.style.opacity = '0.6';
-            submitBtn.style.cursor = 'not-allowed';
+            const originalText = btnEl.textContent;
+            btnEl.textContent = 'Submitting...';
+            btnEl.disabled = true;
+            btnEl.style.opacity = '0.6';
             
             try {
-                const EMAIL_ENDPOINT = 'https://loyal-opossum-407.convex.site/subscribe';
-
                 const response = await fetch(EMAIL_ENDPOINT, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        email: email,
-                        source: source,
-                        userAgent: navigator.userAgent,
-                    })
+                    body: JSON.stringify({ email, source, userAgent: navigator.userAgent })
                 });
-                
                 if (!response.ok) throw new Error('Endpoint returned ' + response.status);
-                
                 const result = await response.json();
-                
                 if (result.success) {
-                    // Also save to localStorage as backup
                     saveEmailLocally(email, source);
-                    // Show success
-                    document.getElementById('emailForm').classList.add('hidden');
-                    document.getElementById('emailSuccess').classList.remove('hidden');
+                    if (onSuccess) onSuccess();
                 } else {
-                    throw new Error(result.error || 'Failed to subscribe');
+                    throw new Error(result.error || 'Failed');
                 }
-                
             } catch (error) {
                 console.error('Email submission error:', error);
-                
-                // Save to localStorage as fallback
                 saveEmailLocally(email, source);
-                
-                // Show graceful inline fallback message instead of alert()
-                validMsg.className = 'inline-notification warning';
-                validMsg.innerHTML = `
-                    <p style="margin-bottom: 0.25rem; font-weight: 600;">We're setting up our waitlist!</p>
-                    <p style="font-size: 0.8rem;">In the meantime, email us at 
-                    <a href="mailto:hello@fairvein.com" style="color: #D9775F; text-decoration: underline; font-weight: 600;">hello@fairvein.com</a> 
-                    and we'll add you personally. Your email has been saved locally.</p>
-                `;
-                validMsg.classList.remove('hidden');
-                
-                // Reset button
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.opacity = '1';
-                submitBtn.style.cursor = 'pointer';
+                if (validMsgEl) {
+                    validMsgEl.className = 'inline-notification warning';
+                    validMsgEl.innerHTML = '<p style="font-weight:600;margin-bottom:0.25rem;">Saved!</p><p style="font-size:0.8rem;">Your email has been noted. You can also reach us at <a href="mailto:hello@fairvein.com" style="color:#D9775F;text-decoration:underline;font-weight:600;">hello@fairvein.com</a></p>';
+                    validMsgEl.classList.remove('hidden');
+                }
+                btnEl.textContent = originalText;
+                btnEl.disabled = false;
+                btnEl.style.opacity = '1';
             }
         }
 
-        // Save email to localStorage as backup/fallback
         function saveEmailLocally(email, source) {
             try {
-                const stored = JSON.parse(localStorage.getItem('fairvein_waitlist') || '[]');
+                const stored = JSON.parse(localStorage.getItem('fairvein_emails') || '[]');
                 if (!stored.find(e => e.email === email)) {
-                    stored.push({
-                        email: email,
-                        source: source,
-                        timestamp: new Date().toISOString(),
-                        userAgent: navigator.userAgent,
-                    });
-                    localStorage.setItem('fairvein_waitlist', JSON.stringify(stored));
+                    stored.push({ email, source, timestamp: new Date().toISOString(), userAgent: navigator.userAgent });
+                    localStorage.setItem('fairvein_emails', JSON.stringify(stored));
                 }
-            } catch (e) {
-                console.error('localStorage save failed:', e);
-            }
+            } catch (e) { console.error('localStorage save failed:', e); }
+        }
+
+        // Modal email submit
+        async function submitEmail() {
+            const email = document.getElementById('emailInput').value.trim();
+            const btn = document.getElementById('emailSubmitBtn');
+            const validMsg = document.getElementById('emailValidationMsg');
+            validMsg.classList.add('hidden');
+            
+            await doEmailSubmit(email, 'modal', btn, validMsg, () => {
+                document.getElementById('emailForm').classList.add('hidden');
+                document.getElementById('emailSuccess').classList.remove('hidden');
+            });
+        }
+
+        // Footer email submit
+        async function submitFooterEmail() {
+            const email = document.getElementById('footerEmailInput').value.trim();
+            const btn = document.getElementById('footerEmailBtn');
+            const notif = document.getElementById('footerEmailNotification');
+            notif.innerHTML = '';
+            
+            await doEmailSubmit(email, 'footer', btn, notif, () => {
+                document.getElementById('footerEmailForm').classList.add('hidden');
+                document.getElementById('footerEmailSuccess').classList.remove('hidden');
+            });
+        }
+
+        // Brand request email submit
+        async function submitBrandRequest() {
+            const email = document.getElementById('requestEmail').value.trim();
+            const query = document.getElementById('brandSearch').value.trim();
+            const btn = document.querySelector('#noResults button');
+            const notif = document.getElementById('requestNotification');
+            notif.innerHTML = '';
+            
+            await doEmailSubmit(email, 'brand-request:' + query, btn, notif, () => {
+                notif.className = '';
+                notif.innerHTML = '<div class="inline-notification success">Thanks! We\'ll look into adding this brand.</div>';
+            });
         }
         
-        // Show modal 30s after page load (if user hasn't already interacted)
-        modalTimer = setTimeout(() => {
-            if (!sessionStorage.getItem('emailModalShown')) {
-                showEmailModal();
-                sessionStorage.setItem('emailModalShown', 'true');
-            }
-        }, 30000);
-        
+        // Modal email Enter key
+        document.getElementById('emailInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') submitEmail();
+        });
+        document.getElementById('footerEmailInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') submitFooterEmail();
+        });
+
         // ========================
         // BRAND SEARCH
         // ========================
+        function quickSearch(brandName) {
+            document.getElementById('brandSearch').value = brandName;
+            searchBrand();
+        }
+
         function searchBrand() {
-            if (!hasSearched) {
-                hasSearched = true;
-                clearTimeout(modalTimer);
-                setTimeout(() => {
-                    if (!sessionStorage.getItem('emailModalShown')) {
-                        showEmailModal();
-                        sessionStorage.setItem('emailModalShown', 'true');
-                    }
-                }, 1500);
-            }
-            
             const query = document.getElementById('brandSearch').value.toLowerCase().trim();
             const results = document.getElementById('results');
             const noResults = document.getElementById('noResults');
+            const emailNudge = document.getElementById('emailNudge');
             
             results.classList.add('hidden');
             noResults.classList.add('hidden');
+            emailNudge.classList.add('hidden');
             
             if (!query) return;
             
-            // Search in database (exact match or alias)
+            // Search in database
             let brand = brandDatabase.find(b => 
                 b.name.toLowerCase() === query || 
                 b.aliases.some(a => a.toLowerCase() === query)
             );
             
-            // Fuzzy: partial match
+            // Fuzzy partial match
             if (!brand) {
                 brand = brandDatabase.find(b =>
                     b.name.toLowerCase().includes(query) ||
@@ -934,61 +978,90 @@
                 );
             }
             
+            searchCount++;
+            
             if (brand) {
                 document.getElementById('brandName').textContent = brand.name;
                 document.getElementById('parentCompany').textContent = brand.parent;
                 
-                // Boycott reasons
-                const boycottDiv = document.getElementById('boycottReasons');
-                boycottDiv.innerHTML = brand.boycotts.map(b => 
-                    `<div class="flex items-start gap-2">
-                        <span style="color: #D9775F;">→</span>
-                        <span><strong>${b.reason}</strong> (since ${b.since})</span>
-                    </div>`
-                ).join('');
+                // Boycott count badge
+                const boycottCountEl = document.getElementById('boycottCount');
+                const boycottSection = document.getElementById('boycottSection');
+                if (brand.boycotts && brand.boycotts.length > 0) {
+                    boycottCountEl.classList.remove('hidden');
+                    document.getElementById('boycottCountText').textContent = 
+                        brand.boycotts.length + ' boycott' + (brand.boycotts.length > 1 ? 's' : '');
+                    
+                    boycottSection.classList.remove('hidden');
+                    const boycottDiv = document.getElementById('boycottReasons');
+                    boycottDiv.innerHTML = brand.boycotts.map(b => 
+                        `<div class="flex items-start gap-2 py-1">
+                            <span style="color: #D9775F; flex-shrink: 0;">→</span>
+                            <span><strong>${b.reason}</strong> <span class="text-warm-gray">(since ${b.since})</span></span>
+                        </div>`
+                    ).join('');
+                } else {
+                    boycottCountEl.classList.add('hidden');
+                    boycottSection.classList.add('hidden');
+                }
                 
-                // Sister brands
+                // Sister brands (clickable)
                 const sistersDiv = document.getElementById('sisterBrands');
-                sistersDiv.innerHTML = brand.sisters.slice(0, 12).map(s => 
-                    `<span class="tag-pill">${s}</span>`
+                const maxSisters = 10;
+                sistersDiv.innerHTML = brand.sisters.slice(0, maxSisters).map(s => 
+                    `<span class="tag-pill clickable" onclick="quickSearch('${s.replace(/'/g, "\\'")}')">${s}</span>`
                 ).join('');
-                if (brand.sisters.length > 12) {
-                    sistersDiv.innerHTML += `<span class="mono text-xs text-warm-gray ml-2">+${brand.sisters.length - 12} more</span>`;
+                if (brand.sisters.length > maxSisters) {
+                    sistersDiv.innerHTML += `<span class="mono text-xs text-warm-gray self-center ml-1">+${brand.sisters.length - maxSisters} more</span>`;
                 }
                 
                 // Alternatives
                 const altDiv = document.getElementById('alternatives');
-                altDiv.innerHTML = brand.alternatives.map(a => 
-                    `<p class="flex items-start gap-2">
-                        <span style="color: #D9775F;">✓</span>
+                altDiv.innerHTML = brand.alternatives.map(a => {
+                    // Parse "Name (description)" format
+                    const match = a.match(/^(.+?)\s*\((.+)\)$/);
+                    if (match) {
+                        return `<p class="flex items-start gap-2 py-0.5">
+                            <span style="color: #22C55E; flex-shrink: 0;">✓</span>
+                            <span><strong>${match[1]}</strong> <span class="text-warm-gray">${match[2]}</span></span>
+                        </p>`;
+                    }
+                    return `<p class="flex items-start gap-2 py-0.5">
+                        <span style="color: #22C55E; flex-shrink: 0;">✓</span>
                         <span>${a}</span>
-                    </p>`
-                ).join('');
+                    </p>`;
+                }).join('');
                 
+                // Show results with animation
                 results.classList.remove('hidden');
-                
-                // Smooth scroll to results
                 results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 
-                // Re-init icons
                 lucide.createIcons();
             } else {
                 noResults.classList.remove('hidden');
+                noResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            
+            // Show email nudge after first search (post-value capture)
+            if (searchCount === 1 && !sessionStorage.getItem('emailNudgeDismissed')) {
+                setTimeout(() => {
+                    emailNudge.classList.remove('hidden');
+                }, 800);
             }
         }
         
-        // Allow Enter key to search
+        // Enter key to search
         document.getElementById('brandSearch').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') searchBrand();
         });
-        
-        // Allow Enter key in email modal
-        document.getElementById('emailInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') submitEmail();
-        });
+
+        // Auto-focus search on page load (desktop only — don't trigger mobile keyboard)
+        if (window.innerWidth >= 768) {
+            document.getElementById('brandSearch').focus();
+        }
         
         // ========================
-        // SMOOTH SCROLL FOR NAV LINKS
+        // SMOOTH SCROLL
         // ========================
         document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
