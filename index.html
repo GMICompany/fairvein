@@ -310,6 +310,9 @@
                     class="flex-1 px-3 sm:px-4 py-3 sm:py-4 text-base sm:text-lg bg-transparent focus:outline-none" style="min-height: 48px;" />
                 <button onclick="searchSwap()" class="brutal-btn px-4 sm:px-6 py-2.5 sm:py-3 m-1.5 sm:m-2 flex-shrink-0">Find Swaps</button>
             </div>
+            <!-- Swap autocomplete -->
+            <div id="swapAutocomplete" class="hidden bg-off-white border-2 border-dark-charcoal border-t-0 max-w-2xl mx-auto shadow-lg" style="margin-top: -2px; max-height: 250px; overflow-y: auto;"></div>
+
             <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-4 sm:mt-5">
                 <span class="mono text-xs text-warm-gray self-center mr-1">Popular:</span>
                 <button class="quick-try" onclick="quickSwap('Ruby Woo')">Ruby Woo</button>
@@ -751,11 +754,13 @@
         let statsAnimated = false;
         function animateCounter(el, target, duration) {
             const startTime = performance.now();
-            const suffix = target > 10 ? '+' : '';
+            // Round to nearest 10 for display
+            const displayTarget = target >= 20 ? Math.round(target / 10) * 10 : target;
+            const suffix = displayTarget >= 20 ? '+' : '';
             function update(now) {
                 const progress = Math.min((now - startTime) / duration, 1);
                 const eased = 1 - Math.pow(1 - progress, 3);
-                el.textContent = Math.round(target * eased) + (progress >= 1 ? suffix : '');
+                el.textContent = Math.round(displayTarget * eased) + (progress >= 1 ? suffix : '');
                 if (progress < 1) requestAnimationFrame(update);
             }
             requestAnimationFrame(update);
@@ -1087,6 +1092,31 @@
             }
         }
         document.getElementById('swapSearch').addEventListener('keypress', e => { if (e.key === 'Enter') searchSwap(); });
+
+        // Swap autocomplete
+        const swapInput = document.getElementById('swapSearch');
+        let swapAcTimeout;
+        swapInput.addEventListener('input', function() {
+            clearTimeout(swapAcTimeout);
+            swapAcTimeout = setTimeout(() => showSwapAutocomplete(this.value), 150);
+        });
+        swapInput.addEventListener('blur', () => { setTimeout(() => document.getElementById('swapAutocomplete')?.classList.add('hidden'), 200); });
+
+        function showSwapAutocomplete(query) {
+            const ac = document.getElementById('swapAutocomplete');
+            if (!query || query.length < 2) { ac.classList.add('hidden'); return; }
+            const q = query.toLowerCase();
+            const matches = swapDatabase.filter(s =>
+                s.product.toLowerCase().includes(q) ||
+                s.brand.toLowerCase().includes(q) ||
+                (s.brand + ' ' + s.product).toLowerCase().includes(q)
+            ).slice(0, 6);
+            if (matches.length === 0) { ac.classList.add('hidden'); return; }
+            ac.innerHTML = matches.map(s =>
+                `<div class="ac-item px-3 py-2 hover:bg-burnt-orange/10 cursor-pointer text-sm" onmousedown="quickSwap('${s.product.replace(/'/g, "\\'")}')">${s.brand} · <strong>${s.product}</strong> <span class="text-warm-gray text-xs">· ${s.category}</span></div>`
+            ).join('');
+            ac.classList.remove('hidden');
+        }
 
         // ========================
         // EARLY ACCESS MODAL
