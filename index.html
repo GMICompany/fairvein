@@ -532,6 +532,98 @@
     </section>
 
     <!-- ======================== -->
+    <!-- SEE IT IN ACTION (Demo)  -->
+    <!-- ======================== -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <h2 class="text-3xl sm:text-4xl text-center mb-3">
+            See It In Action<span class="text-burnt-orange">.</span>
+        </h2>
+        <p class="text-center text-warm-gray mb-8 sm:mb-10 text-sm sm:text-base">Type any brand. See who really owns it.</p>
+
+        <!-- Static demo result card -->
+        <div class="bg-off-white border-2 border-dark-charcoal demo-card">
+            <!-- Header row -->
+            <div class="p-5 sm:p-8 border-b-2 border-dark-charcoal" style="border-bottom-style: dashed;">
+                <div class="flex items-start justify-between gap-4">
+                    <div>
+                        <h3 class="text-2xl sm:text-3xl mb-1" style="font-family: 'Playfair Display', serif; font-weight: 900;">MAC Cosmetics</h3>
+                        <p class="mono text-sm text-warm-gray">
+                            Owned by <span class="text-burnt-orange font-bold text-base">Estée Lauder Companies</span>
+                        </p>
+                    </div>
+                    <span class="boycott-badge flex-shrink-0">
+                        <span>⚠</span>
+                        <span>3 boycotts</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Boycott campaigns -->
+            <div class="p-5 sm:p-8 border-b-2 border-dark-charcoal" style="border-bottom-style: dashed; background: #FEF8F6;">
+                <h4 class="text-sm font-bold uppercase tracking-wide mb-3 flex items-center gap-2" style="font-family: 'Space Mono', monospace;">
+                    <span style="color: #D9775F;">⚠</span> Active Boycott Campaigns
+                </h4>
+                <div class="space-y-2 mono text-xs sm:text-sm">
+                    <div class="flex items-start gap-2 py-1">
+                        <span style="color: #D9775F; flex-shrink: 0;">→</span>
+                        <span><strong>Palestine solidarity (BDS list)</strong> <span class="text-warm-gray">(since Oct 2023)</span></span>
+                    </div>
+                    <div class="flex items-start gap-2 py-1">
+                        <span style="color: #D9775F; flex-shrink: 0;">→</span>
+                        <span><strong>Political spending ($2.5M to block progressive NYC candidate)</strong> <span class="text-warm-gray">(since Nov 2025)</span></span>
+                    </div>
+                    <div class="flex items-start gap-2 py-1">
+                        <span style="color: #D9775F; flex-shrink: 0;">→</span>
+                        <span><strong>Epstein files connection (via board member Leon Black)</strong> <span class="text-warm-gray">(since Feb 2026)</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sister brands -->
+            <div class="p-5 sm:p-8 border-b-2 border-dark-charcoal" style="border-bottom-style: dashed;">
+                <h4 class="text-sm font-bold uppercase tracking-wide mb-3" style="font-family: 'Space Mono', monospace;">
+                    Sister Brands <span class="font-normal text-warm-gray">(Same Owner)</span>
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag-pill">Clinique</span>
+                    <span class="tag-pill">Bobbi Brown</span>
+                    <span class="tag-pill">La Mer</span>
+                    <span class="tag-pill">Tom Ford Beauty</span>
+                    <span class="tag-pill">Too Faced</span>
+                    <span class="tag-pill">Aveda</span>
+                </div>
+            </div>
+
+            <!-- Alternatives -->
+            <div class="p-5 sm:p-8" style="background: #F0FAF0;">
+                <h4 class="text-sm font-bold uppercase tracking-wide mb-3 flex items-center gap-2" style="font-family: 'Space Mono', monospace;">
+                    <span style="color: #22C55E;">✓</span> Try Instead
+                </h4>
+                <div class="space-y-2 text-sm">
+                    <p class="flex items-start gap-2 py-0.5">
+                        <span style="color: #22C55E; flex-shrink: 0;">✓</span>
+                        <span><strong>Fenty Beauty</strong> <span class="text-warm-gray">Indie, Rihanna-owned, inclusive shade ranges</span></span>
+                    </p>
+                    <p class="flex items-start gap-2 py-0.5">
+                        <span style="color: #22C55E; flex-shrink: 0;">✓</span>
+                        <span><strong>Rare Beauty</strong> <span class="text-warm-gray">Selena Gomez-owned, donates 1% to mental health</span></span>
+                    </p>
+                    <p class="flex items-start gap-2 py-0.5">
+                        <span style="color: #22C55E; flex-shrink: 0;">✓</span>
+                        <span><strong>Tower 28</strong> <span class="text-warm-gray">Woman-owned, sensitive skin focus, clean ingredients</span></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center mt-6">
+            <a href="#" onclick="document.getElementById('brandSearch').focus(); document.getElementById('brandSearch').scrollIntoView({behavior:'smooth',block:'center'}); return false;" class="brutal-btn inline-block px-6 py-3">
+                Try It Yourself →
+            </a>
+        </p>
+    </section>
+
+    <!-- ======================== -->
     <!-- HOW IT WORKS             -->
     <!-- ======================== -->
     <section id="how" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
@@ -567,54 +659,160 @@
     </section>
 
     <!-- ======================== -->
-    <!-- STATS BAR                -->
+    <!-- STATS BAR (animated)     -->
     <!-- ======================== -->
     <section class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div class="bg-dark-charcoal text-off-white border-2 border-dark-charcoal p-8 sm:p-12">
+        <div id="statsBar" class="bg-dark-charcoal text-off-white border-2 border-dark-charcoal p-8 sm:p-12">
             <div class="grid grid-cols-3 gap-4 sm:gap-12 text-center">
                 <div>
-                    <div class="mono text-3xl sm:text-5xl font-bold text-burnt-orange mb-1 sm:mb-2" id="statBrands">141</div>
-                    <p class="text-xs sm:text-sm uppercase tracking-widest">Brands Tracked</p>
+                    <div class="mono text-3xl sm:text-5xl font-bold text-burnt-orange mb-1 sm:mb-2" id="statBrands" data-target="0">0</div>
+                    <p class="text-xs sm:text-sm uppercase tracking-widest">Brands Indexed</p>
                 </div>
                 <div>
-                    <div class="mono text-3xl sm:text-5xl font-bold text-burnt-orange mb-1 sm:mb-2" id="statCorps">17</div>
-                    <p class="text-xs sm:text-sm uppercase tracking-widest">Conglomerates</p>
+                    <div class="mono text-3xl sm:text-5xl font-bold text-burnt-orange mb-1 sm:mb-2" id="statCorps" data-target="0">0</div>
+                    <p class="text-xs sm:text-sm uppercase tracking-widest">Conglomerates Tracked</p>
                 </div>
                 <div>
-                    <div class="mono text-3xl sm:text-5xl font-bold text-burnt-orange mb-1 sm:mb-2">100%</div>
-                    <p class="text-xs sm:text-sm uppercase tracking-widest">Free Forever</p>
+                    <div class="mono text-3xl sm:text-5xl font-bold text-burnt-orange mb-1 sm:mb-2" id="statAlts" data-target="0">0</div>
+                    <p class="text-xs sm:text-sm uppercase tracking-widest">Indie Alternatives</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ======================== -->
-    <!-- WHY THIS MATTERS         -->
+    <!-- WHY THIS MATTERS (PAS)   -->
     <!-- ======================== -->
-    <section id="why" class="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-        <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <div>
-                <h2 class="text-4xl sm:text-5xl leading-tight mb-4 sm:mb-6">
-                    Your Wallet<br/>
-                    is Your<br/>
-                    Voice<span class="text-burnt-orange">.</span>
-                </h2>
-            </div>
-            <div class="space-y-5 text-warm-gray leading-relaxed text-sm sm:text-base">
-                <p>
-                    <strong class="text-dark-charcoal">A handful of conglomerates</strong> control most of the brands you see on shelves. 
-                    They hide behind "indie-looking" labels while you think you're supporting small businesses.
+    <section id="why" class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+        <div class="bg-off-white border-2 border-dark-charcoal p-6 sm:p-10">
+            <h2 class="text-3xl sm:text-4xl text-center mb-6">
+                Why This Matters<span class="text-burnt-orange">.</span>
+            </h2>
+            <div class="space-y-4 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+                <p class="text-warm-gray">
+                    <strong class="text-dark-charcoal" id="whyCorpCount">8 conglomerates</strong> own most of the brands you love.
                 </p>
-                <p>
-                    <strong class="text-dark-charcoal">Boycott lists</strong> are scattered across Reddit threads, 
-                    Instagram stories, and group chats — hard to track, easy to forget.
+                <p class="text-warm-gray">
+                    They hide behind "indie-looking" labels. Your MAC lipstick funds the same company as your Clinique moisturizer.
                 </p>
                 <p class="font-semibold text-dark-charcoal">
-                    We built FairVein so you can check any brand in seconds, not 20 minutes of Googling.
+                    FairVein makes ownership transparent. Search any brand. See the truth. Choose differently.
                 </p>
-                <p class="mono text-xs text-warm-gray pt-2">
-                    Built by people who believe in transparency. No ads, no corporate sponsors.
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- EXTENSION TEASER         -->
+    <!-- ======================== -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <div class="border-2 border-dark-charcoal" style="background: linear-gradient(180deg, #2C2C2C 0%, #3a3a3a 100%);">
+            <div class="p-6 sm:p-10">
+                <p class="mono text-xs text-burnt-orange uppercase tracking-widest mb-3">Coming Soon</p>
+                <h2 class="text-3xl sm:text-4xl text-off-white mb-4" style="font-family: 'Playfair Display', serif; font-weight: 900;">
+                    Shop Smarter<span class="text-burnt-orange">.</span>
+                </h2>
+                <p class="text-warm-gray mb-8 leading-relaxed text-sm sm:text-base max-w-lg">
+                    Imagine: you're browsing Sephora. A small badge appears next to every product, 
+                    showing you who really owns that brand. No extra tabs. No research. Just shop informed.
                 </p>
+
+                <!-- Extension badge mockup -->
+                <div class="bg-off-white border-2 border-dark-charcoal p-4 sm:p-5 mb-8 max-w-sm">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 bg-cream border-2 border-dark-charcoal flex items-center justify-center flex-shrink-0">
+                            <span class="mono text-xs font-bold" style="color: #D9775F;">[FV]</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm">MAC Studio Fix Fluid</p>
+                            <p class="text-xs text-warm-gray">sephora.com</p>
+                        </div>
+                    </div>
+                    <div class="border-t-2 border-dark-charcoal pt-3" style="border-top-style: dashed;">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-burnt-orange text-xs">⚠</span>
+                            <span class="mono text-xs font-bold">Estée Lauder Companies</span>
+                        </div>
+                        <p class="mono text-xs text-warm-gray">3 active boycotts · 10 sister brands</p>
+                        <div class="flex items-center gap-2 mt-2">
+                            <span style="color: #22C55E; font-size: 0.7rem;">✓</span>
+                            <span class="mono text-xs text-warm-gray">Try: Fenty Beauty, Rare Beauty</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email capture for extension -->
+                <div id="extensionEmailForm">
+                    <p class="text-off-white font-semibold text-sm mb-3">Get early access to the browser extension</p>
+                    <div class="flex flex-col sm:flex-row gap-2 max-w-md">
+                        <input 
+                            id="extensionEmailInput" 
+                            type="email" 
+                            placeholder="your@email.com"
+                            class="flex-1 px-4 py-3 border-2 focus:outline-none mono text-sm"
+                            style="background: #FDFCF9; border-color: #2C2C2C; min-height: 48px;"
+                            onfocus="this.style.borderColor='#D9775F'"
+                            onblur="this.style.borderColor='#2C2C2C'"
+                        />
+                        <button 
+                            id="extensionEmailBtn"
+                            onclick="submitExtensionEmail()"
+                            class="brutal-btn px-6 py-3 flex-shrink-0"
+                            style="min-height: 48px;"
+                        >
+                            Notify Me
+                        </button>
+                    </div>
+                    <div id="extensionEmailNotification" class="mt-2"></div>
+                    <p class="text-xs text-warm-gray mt-2">No spam. Just a heads-up when it launches.</p>
+                </div>
+                <div id="extensionEmailSuccess" class="hidden">
+                    <div class="text-3xl mb-2">✓</div>
+                    <p class="text-off-white font-semibold">You're on the list!</p>
+                    <p class="text-warm-gray text-sm">We'll let you know when the extension is ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- JOIN THE COMMUNITY       -->
+    <!-- ======================== -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div class="bg-off-white border-2 border-dark-charcoal p-6 sm:p-8 text-center">
+            <h2 class="text-2xl sm:text-3xl mb-3" style="font-family: 'Playfair Display', serif; font-weight: 900;">
+                Join the Community<span class="text-burnt-orange">.</span>
+            </h2>
+            <p class="text-warm-gray mb-6 max-w-lg mx-auto text-sm leading-relaxed">
+                We add new brands every week. Get notified about new features, the browser extension launch, and brand ownership updates.
+            </p>
+            <div id="communityEmailForm">
+                <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+                    <input 
+                        id="communityEmailInput" 
+                        type="email" 
+                        placeholder="your@email.com"
+                        class="flex-1 px-4 py-3 border-2 focus:outline-none mono text-sm"
+                        style="background: #FDFCF9; border-color: #2C2C2C; min-height: 48px;"
+                        onfocus="this.style.borderColor='#D9775F'"
+                        onblur="this.style.borderColor='#2C2C2C'"
+                    />
+                    <button 
+                        id="communityEmailBtn"
+                        onclick="submitCommunityEmail()"
+                        class="brutal-btn px-6 py-3 flex-shrink-0"
+                        style="min-height: 48px;"
+                    >
+                        Join Us
+                    </button>
+                </div>
+                <div id="communityEmailNotification" class="mt-2"></div>
+                <p class="text-xs text-warm-gray mt-3">No spam, ever. Unsubscribe anytime.</p>
+            </div>
+            <div id="communityEmailSuccess" class="hidden">
+                <div class="text-3xl mb-2">✓</div>
+                <p class="font-semibold text-lg">Welcome to the community!</p>
+                <p class="text-warm-gray text-sm">You'll hear from us when new brands and features drop.</p>
             </div>
         </div>
     </section>
@@ -767,16 +965,70 @@
         // ========================
         // COMPUTE LIVE STATS
         // ========================
+        let statValues = { brands: 0, corps: 0, alts: 0 };
         (function computeStats() {
             if (typeof brandDatabase !== 'undefined') {
-                const brands = brandDatabase.length;
+                statValues.brands = brandDatabase.length;
                 const parents = new Set(brandDatabase.map(b => b.parent));
+                statValues.corps = parents.size;
+                // Count unique indie alternatives across all brands
+                const altSet = new Set();
+                brandDatabase.forEach(b => {
+                    if (b.alternatives) {
+                        b.alternatives.forEach(a => {
+                            const name = a.match(/^(.+?)\s*\(/);
+                            altSet.add(name ? name[1].trim() : a.trim());
+                        });
+                    }
+                });
+                statValues.alts = altSet.size;
+                // Set data-target attributes
                 const el1 = document.getElementById('statBrands');
                 const el2 = document.getElementById('statCorps');
-                if (el1) el1.textContent = brands;
-                if (el2) el2.textContent = parents.size;
+                const el3 = document.getElementById('statAlts');
+                if (el1) el1.setAttribute('data-target', statValues.brands);
+                if (el2) el2.setAttribute('data-target', statValues.corps);
+                if (el3) el3.setAttribute('data-target', statValues.alts);
+                // Update "Why This Matters" dynamic corp count
+                const whyEl = document.getElementById('whyCorpCount');
+                if (whyEl) whyEl.textContent = parents.size + ' conglomerates';
             }
         })();
+
+        // Counter animation with Intersection Observer
+        let statsAnimated = false;
+        function animateCounter(el, target, duration) {
+            const start = 0;
+            const startTime = performance.now();
+            const suffix = target > 100 ? '+' : '';
+            function update(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(start + (target - start) * eased);
+                el.textContent = current + (progress >= 1 ? suffix : '');
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        }
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !statsAnimated) {
+                    statsAnimated = true;
+                    const el1 = document.getElementById('statBrands');
+                    const el2 = document.getElementById('statCorps');
+                    const el3 = document.getElementById('statAlts');
+                    if (el1) animateCounter(el1, parseInt(el1.getAttribute('data-target')), 1200);
+                    if (el2) animateCounter(el2, parseInt(el2.getAttribute('data-target')), 1000);
+                    if (el3) animateCounter(el3, parseInt(el3.getAttribute('data-target')), 1400);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        const statsBar = document.getElementById('statsBar');
+        if (statsBar) statsObserver.observe(statsBar);
 
         // ========================
         // NAVBAR SCROLL BEHAVIOR
@@ -936,12 +1188,44 @@
             });
         }
         
+        // Extension email submit
+        async function submitExtensionEmail() {
+            const email = document.getElementById('extensionEmailInput').value.trim();
+            const btn = document.getElementById('extensionEmailBtn');
+            const notif = document.getElementById('extensionEmailNotification');
+            notif.innerHTML = '';
+            
+            await doEmailSubmit(email, 'extension-teaser', btn, notif, () => {
+                document.getElementById('extensionEmailForm').classList.add('hidden');
+                document.getElementById('extensionEmailSuccess').classList.remove('hidden');
+            });
+        }
+
+        // Community email submit
+        async function submitCommunityEmail() {
+            const email = document.getElementById('communityEmailInput').value.trim();
+            const btn = document.getElementById('communityEmailBtn');
+            const notif = document.getElementById('communityEmailNotification');
+            notif.innerHTML = '';
+            
+            await doEmailSubmit(email, 'community', btn, notif, () => {
+                document.getElementById('communityEmailForm').classList.add('hidden');
+                document.getElementById('communityEmailSuccess').classList.remove('hidden');
+            });
+        }
+
         // Modal email Enter key
         document.getElementById('emailInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') submitEmail();
         });
         document.getElementById('footerEmailInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') submitFooterEmail();
+        });
+        document.getElementById('extensionEmailInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') submitExtensionEmail();
+        });
+        document.getElementById('communityEmailInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') submitCommunityEmail();
         });
 
         // ========================
