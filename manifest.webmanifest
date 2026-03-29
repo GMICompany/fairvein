@@ -1,0 +1,27 @@
+{
+  "name": "FairVein — Know Who You're Really Buying From",
+  "short_name": "FairVein",
+  "description": "Search any brand to see the parent company, boycotts, and indie alternatives. Scan your collection. Find exact product swaps.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F1E8",
+  "theme_color": "#D9775F",
+  "icons": [
+    {
+      "src": "Images/assets/images/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "Images/assets/images/splash-icon.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    },
+    {
+      "src": "Images/assets/images/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
+}
