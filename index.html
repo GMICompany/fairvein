@@ -247,7 +247,7 @@
                 </div>
                 <div>
                     <div class="mono text-2xl sm:text-4xl font-bold text-burnt-orange mb-1" id="statAlts" data-target="0">0</div>
-                    <p class="text-xs sm:text-sm text-warm-gray uppercase tracking-wider">Product Swaps</p>
+                    <p class="text-xs sm:text-sm text-warm-gray uppercase tracking-wider">Indie Alternatives</p>
                 </div>
             </div>
         </div>
@@ -435,7 +435,8 @@
                 <div class="p-5 sm:p-8 border-b-2 border-dark-charcoal" style="border-bottom-style: dashed;">
                     <p class="mono text-xs text-warm-gray uppercase tracking-widest mb-1">Product Swap Guide</p>
                     <h2 id="swapProductName" class="text-2xl sm:text-3xl mb-1"></h2>
-                    <p class="text-sm text-warm-gray"><span id="swapBrandName" class="font-semibold"></span> · <span id="swapCategory"></span> · <span id="swapPrice" class="mono"></span></p>
+                    <p class="text-sm text-warm-gray"><span id="swapBrandName" class="font-semibold"></span> <span id="swapCategory"></span> <span id="swapPrice" class="mono"></span></p>
+                    <p id="swapMatchType" class="text-xs text-warm-gray mt-2 italic"></p>
                 </div>
                 <div class="p-5 sm:p-8" style="background: #F0FAF0;">
                     <h3 class="text-sm font-bold uppercase tracking-wide mb-4 flex items-center gap-2" style="font-family: 'Space Mono', monospace;">
@@ -744,7 +745,15 @@
             if (typeof brandDatabase !== 'undefined') {
                 statValues.brands = brandDatabase.length;
                 statValues.corps = new Set(brandDatabase.map(b => b.parent)).size;
-                statValues.swaps = typeof swapDatabase !== 'undefined' ? swapDatabase.length : 0;
+                // Count unique indie alternative brands across swaps + brand alternatives
+                const altBrandSet = new Set();
+                if (typeof swapDatabase !== 'undefined') {
+                    swapDatabase.forEach(s => s.swaps.forEach(sw => altBrandSet.add(sw.brand)));
+                }
+                brandDatabase.forEach(b => (b.alternatives || []).forEach(a => {
+                    const m = a.match(/^(.+?)\s*\(/); if (m) altBrandSet.add(m[1].trim());
+                }));
+                statValues.swaps = altBrandSet.size;
                 document.getElementById('statBrands')?.setAttribute('data-target', statValues.brands);
                 document.getElementById('statCorps')?.setAttribute('data-target', statValues.corps);
                 document.getElementById('statAlts')?.setAttribute('data-target', statValues.swaps);
@@ -1066,10 +1075,12 @@
             
             const swap = findSwapByProduct(query);
             if (swap) {
+                // Exact product match
                 document.getElementById('swapProductName').textContent = swap.product;
                 document.getElementById('swapBrandName').textContent = swap.brand;
                 document.getElementById('swapCategory').textContent = swap.category;
                 document.getElementById('swapPrice').textContent = swap.price;
+                document.getElementById('swapMatchType').textContent = '';
                 
                 document.getElementById('swapList').innerHTML = swap.swaps.map(s => `
                     <div class="swap-card bg-off-white border border-dark-charcoal/20 p-4 pl-5">
@@ -1087,8 +1098,86 @@
                 swapResults.classList.remove('hidden');
                 swapResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } else {
-                noSwap.classList.remove('hidden');
-                noSwap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                // No exact product match — try brand-level fallback
+                const q = query.toLowerCase();
+                let brand = brandDatabase.find(b => b.name.toLowerCase().includes(q) || b.aliases.some(a => a.toLowerCase().includes(q)));
+                
+                // Collect parent boycotts
+                const parentBoycotts = brand ? brandDatabase.filter(b => b.parent === brand.parent)
+                    .flatMap(b => b.boycotts || [])
+                    .filter((b, i, arr) => arr.findIndex(x => x.reason === b.reason) === i) : [];
+                
+                if (brand && parentBoycotts.length > 0) {
+                    // Brand found with boycotts — show brand-level alternatives
+                    // Also pull any other product swaps from this brand
+                    const brandSwaps = swapDatabase.filter(s => s.brand.toLowerCase() === brand.name.toLowerCase());
+                    
+                    document.getElementById('swapProductName').textContent = brand.name;
+                    document.getElementById('swapBrandName').textContent = brand.parent;
+                    document.getElementById('swapCategory').textContent = parentBoycotts.length + ' boycott' + (parentBoycotts.length > 1 ? 's' : '');
+                    document.getElementById('swapPrice').textContent = '';
+                    document.getElementById('swapMatchType').textContent = 'We don\'t have an exact product match yet — here are indie alternatives to this brand.';
+                    
+                    let html = '';
+                    
+                    // Show any specific product swaps we do have for this brand
+                    if (brandSwaps.length > 0) {
+                        html += '<p class="mono text-xs text-warm-gray uppercase tracking-wider mb-3">Products we have swaps for:</p>';
+                        brandSwaps.forEach(s => {
+                            html += `<div class="swap-card bg-off-white border border-dark-charcoal/20 p-4 pl-5 mb-2 cursor-pointer" onclick="quickSwap('${s.product.replace(/'/g, "\\'")}')">
+                                <p class="font-semibold text-sm">${s.product} <span class="text-burnt-orange text-xs">→ ${s.swaps.length} swaps</span></p>
+                                <p class="text-xs text-warm-gray">${s.category} · ${s.price}</p>
+                            </div>`;
+                        });
+                        html += '<div class="border-t border-dark-charcoal/10 my-4"></div>';
+                        html += '<p class="mono text-xs text-warm-gray uppercase tracking-wider mb-3">General indie alternatives:</p>';
+                    }
+                    
+                    // Show brand-level alternatives
+                    // Collect from this brand + all same-parent brands
+                    const allAlts = new Set();
+                    brandDatabase.filter(b => b.parent === brand.parent).forEach(b => {
+                        (b.alternatives || []).forEach(a => allAlts.add(a));
+                    });
+                    
+                    if (allAlts.size > 0) {
+                        [...allAlts].forEach(a => {
+                            const m = a.match(/^(.+?)\s*\((.+)\)$/);
+                            html += `<div class="swap-card bg-off-white border border-dark-charcoal/20 p-3 pl-5">
+                                <p class="font-semibold text-sm">${m ? m[1] : a}</p>
+                                ${m ? `<p class="text-xs text-warm-gray">${m[2]}</p>` : ''}
+                            </div>`;
+                        });
+                    } else {
+                        html += '<p class="text-warm-gray text-sm">We\'re still building alternatives for this brand. Check back soon!</p>';
+                    }
+                    
+                    document.getElementById('swapList').innerHTML = html;
+                    swapResults.classList.remove('hidden');
+                    swapResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else if (brand && parentBoycotts.length === 0) {
+                    // Brand found but no boycotts — show "all clear"
+                    document.getElementById('swapProductName').textContent = brand.name;
+                    document.getElementById('swapBrandName').textContent = brand.parent;
+                    document.getElementById('swapCategory').textContent = '';
+                    document.getElementById('swapPrice').textContent = '';
+                    document.getElementById('swapMatchType').textContent = '';
+                    document.getElementById('swapList').innerHTML = `
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background: #DEF7EC;">
+                                <span style="color: #22C55E; font-size: 1.5rem;">✓</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sm" style="color: #22C55E;">No swap needed!</p>
+                                <p class="text-warm-gray text-sm">${brand.name} has no active boycott campaigns. You're good to keep using it.</p>
+                            </div>
+                        </div>`;
+                    swapResults.classList.remove('hidden');
+                    swapResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    noSwap.classList.remove('hidden');
+                    noSwap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
             }
         }
         document.getElementById('swapSearch').addEventListener('keypress', e => { if (e.key === 'Enter') searchSwap(); });
@@ -1106,15 +1195,34 @@
             const ac = document.getElementById('swapAutocomplete');
             if (!query || query.length < 2) { ac.classList.add('hidden'); return; }
             const q = query.toLowerCase();
-            const matches = swapDatabase.filter(s =>
+            let html = '';
+            
+            // First: exact product matches from swap database
+            const productMatches = swapDatabase.filter(s =>
                 s.product.toLowerCase().includes(q) ||
                 s.brand.toLowerCase().includes(q) ||
                 (s.brand + ' ' + s.product).toLowerCase().includes(q)
-            ).slice(0, 6);
-            if (matches.length === 0) { ac.classList.add('hidden'); return; }
-            ac.innerHTML = matches.map(s =>
-                `<div class="ac-item px-3 py-2 hover:bg-burnt-orange/10 cursor-pointer text-sm" onmousedown="quickSwap('${s.product.replace(/'/g, "\\'")}')">${s.brand} · <strong>${s.product}</strong> <span class="text-warm-gray text-xs">· ${s.category}</span></div>`
-            ).join('');
+            ).slice(0, 4);
+            
+            productMatches.forEach(s => {
+                html += `<div class="ac-item px-3 py-2 hover:bg-burnt-orange/10 cursor-pointer text-sm" onmousedown="quickSwap('${s.product.replace(/'/g, "\\'")}')">${s.brand} · <strong>${s.product}</strong> <span class="text-warm-gray text-xs">· ${s.category}</span></div>`;
+            });
+            
+            // Then: brand-level matches (for brands without specific product swaps)
+            const brandMatches = brandDatabase.filter(b =>
+                (b.name.toLowerCase().includes(q) || b.aliases.some(a => a.toLowerCase().includes(q))) &&
+                !productMatches.some(p => p.brand.toLowerCase() === b.name.toLowerCase())
+            ).slice(0, 3);
+            
+            if (brandMatches.length > 0 && productMatches.length > 0) {
+                html += '<div class="px-3 py-1 border-t border-dark-charcoal/10 text-xs text-warm-gray">Browse by brand:</div>';
+            }
+            brandMatches.forEach(b => {
+                html += `<div class="ac-item px-3 py-2 hover:bg-burnt-orange/10 cursor-pointer text-sm" onmousedown="quickSwap('${b.name.replace(/'/g, "\\'")}')">${b.name} <span class="text-warm-gray text-xs">· ${b.parent}</span></div>`;
+            });
+            
+            if (!html) { ac.classList.add('hidden'); return; }
+            ac.innerHTML = html;
             ac.classList.remove('hidden');
         }
 

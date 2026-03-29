@@ -2821,6 +2821,25 @@ const brandDatabase = [
     },
 
     // ============================================
+    // GALDERMA (Cetaphil parent)
+    // ============================================
+    {
+        name: "Cetaphil",
+        aliases: ["cetaphil"],
+        parent: "Galderma",
+        sisters: [],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — Galderma formerly Nestlé subsidiary, Nestlé on BDS list)", since: "2023" }
+        ],
+        alternatives: [
+            "Versed (Clean skincare, gentle formulas, Target-exclusive)",
+            "Vanicream (Dermatologist-recommended, fragrance-free, independent)",
+            "COSRX (K-beauty, gentle, science-backed)",
+            "Purito (Korean indie, gentle + effective)"
+        ]
+    },
+
+    // ============================================
     // BEIERSDORF
     // ============================================
     {
