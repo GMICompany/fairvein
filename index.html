@@ -157,6 +157,10 @@
         /* Swap card */
         .swap-card { border-left: 3px solid #22C55E; }
 
+        /* Autocomplete */
+        .ac-item { transition: background 0.1s; }
+        .ac-item:hover { background: rgba(217, 119, 95, 0.1); }
+
         @media (max-width: 768px) {
             .quick-try { min-height: 44px; display: inline-flex; align-items: center; }
             .tag-pill { min-height: 36px; display: inline-flex; align-items: center; }
@@ -269,14 +273,17 @@
                     class="flex-1 px-3 sm:px-4 py-3 sm:py-4 text-base sm:text-lg bg-transparent focus:outline-none" style="min-height: 48px;" />
                 <button onclick="searchBrand()" class="brutal-btn px-4 sm:px-6 py-2.5 sm:py-3 m-1.5 sm:m-2 flex-shrink-0">Search</button>
             </div>
+            <!-- Autocomplete dropdown -->
+            <div id="autocomplete" class="hidden bg-off-white border-2 border-dark-charcoal border-t-0 max-w-2xl mx-auto shadow-lg" style="margin-top: -2px; max-height: 250px; overflow-y: auto;"></div>
+
             <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-4 sm:mt-5">
                 <span class="mono text-xs text-warm-gray self-center mr-1">Try:</span>
                 <button class="quick-try" onclick="quickSearch('MAC Cosmetics')">MAC</button>
                 <button class="quick-try" onclick="quickSearch('Clinique')">Clinique</button>
-                <button class="quick-try" onclick="quickSearch('NYX')">NYX</button>
+                <button class="quick-try" onclick="quickSearch('Neutrogena')">Neutrogena</button>
                 <button class="quick-try" onclick="quickSearch('Dove')">Dove</button>
-                <button class="quick-try" onclick="quickSearch('Fenty Beauty')">Fenty</button>
-                <button class="quick-try" onclick="quickSearch('Zara')">Zara</button>
+                <button class="quick-try" onclick="quickSearch('COSRX')">COSRX</button>
+                <button class="quick-try" onclick="quickSearch('Innisfree')">Innisfree</button>
             </div>
         </div>
 
@@ -336,13 +343,26 @@
                     </h3>
                     <div id="boycottReasons" class="space-y-2 mono text-xs sm:text-sm"></div>
                 </div>
-                <div class="p-5 sm:p-8 border-b-2 border-dark-charcoal" style="border-bottom-style: dashed;">
+                <div id="sistersContainer" class="p-5 sm:p-8 border-b-2 border-dark-charcoal" style="border-bottom-style: dashed;">
                     <h3 class="text-sm font-bold uppercase tracking-wide mb-3" style="font-family: 'Space Mono', monospace;">
                         Sister Brands <span class="font-normal text-warm-gray">(Same Owner)</span>
                     </h3>
                     <div id="sisterBrands" class="flex flex-wrap gap-2"></div>
                 </div>
-                <div class="p-5 sm:p-8" style="background: #F0FAF0;">
+                <!-- All Clear badge (shown for clean brands) -->
+                <div id="clearSection" class="hidden p-5 sm:p-8" style="background: #F0FAF0;">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background: #DEF7EC;">
+                            <span style="color: #22C55E; font-size: 1.5rem;">✓</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-sm" style="color: #22C55E;">All Clear!</p>
+                            <p class="text-warm-gray text-sm">No active boycott campaigns found for this brand. Shop with confidence.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Alternatives (hidden for clean brands) -->
+                <div id="alternativesSection" class="p-5 sm:p-8" style="background: #F0FAF0;">
                     <h3 class="text-sm font-bold uppercase tracking-wide mb-3 flex items-center gap-2" style="font-family: 'Space Mono', monospace;">
                         <span style="color: #22C55E;">✓</span> Try Instead
                     </h3>
@@ -364,7 +384,7 @@
             <div class="bg-off-white border-2 border-dark-charcoal p-6 sm:p-8 text-center">
                 <img src="Images/Fairvein_Mascot_Halfleft.png" alt="" class="w-16 h-16 object-contain mx-auto mb-3">
                 <p class="text-lg font-semibold mb-2">We don't have this brand yet.</p>
-                <p class="text-warm-gray text-sm mb-4">Want us to add it? Drop your email and we'll research it.</p>
+                <p class="text-warm-gray text-sm mb-4">Suggest it below and we'll research & add it within 48 hours.</p>
                 <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
                     <input id="requestEmail" type="email" placeholder="your@email.com" class="flex-1 px-4 py-3 border-2 focus:outline-none mono text-sm" style="background: #FDFCF9; border-color: #2C2C2C; min-height: 44px;" />
                     <button onclick="submitBrandRequest()" class="brutal-btn px-5 py-2.5 flex-shrink-0" style="min-height: 44px;">Request Brand</button>
@@ -807,6 +827,9 @@
                 document.getElementById('parentCompany').textContent = brand.parent;
                 
                 const bce = document.getElementById('boycottCount'), bs = document.getElementById('boycottSection');
+                const altSection = document.getElementById('alternativesSection');
+                const clearSection = document.getElementById('clearSection');
+                
                 if (brand.boycotts?.length > 0) {
                     bce.classList.remove('hidden');
                     document.getElementById('boycottCountText').textContent = brand.boycotts.length + ' boycott' + (brand.boycotts.length > 1 ? 's' : '');
@@ -814,11 +837,26 @@
                     document.getElementById('boycottReasons').innerHTML = brand.boycotts.map(b => 
                         `<div class="flex items-start gap-2 py-1"><span style="color:#D9775F;flex-shrink:0;">→</span><span><strong>${b.reason}</strong> <span class="text-warm-gray">(since ${b.since})</span></span></div>`
                     ).join('');
-                } else { bce.classList.add('hidden'); bs.classList.add('hidden'); }
+                    // Show alternatives, hide clear badge
+                    if (altSection) altSection.classList.remove('hidden');
+                    if (clearSection) clearSection.classList.add('hidden');
+                } else {
+                    bce.classList.add('hidden');
+                    bs.classList.add('hidden');
+                    // Hide alternatives, show "all clear" for clean brands
+                    if (altSection) altSection.classList.add('hidden');
+                    if (clearSection) clearSection.classList.remove('hidden');
+                }
                 
                 const sd = document.getElementById('sisterBrands');
-                sd.innerHTML = brand.sisters.slice(0, 10).map(s => `<span class="tag-pill clickable" onclick="quickSearch('${s.replace(/'/g, "\\'")}')">${s}</span>`).join('');
-                if (brand.sisters.length > 10) sd.innerHTML += `<span class="mono text-xs text-warm-gray self-center ml-1">+${brand.sisters.length - 10} more</span>`;
+                const sistersContainer = document.getElementById('sistersContainer');
+                if (brand.sisters?.length > 0) {
+                    if (sistersContainer) sistersContainer.classList.remove('hidden');
+                    sd.innerHTML = brand.sisters.slice(0, 10).map(s => `<span class="tag-pill clickable" onclick="quickSearch('${s.replace(/'/g, "\\'")}')">${s}</span>`).join('');
+                    if (brand.sisters.length > 10) sd.innerHTML += `<span class="mono text-xs text-warm-gray self-center ml-1">+${brand.sisters.length - 10} more</span>`;
+                } else {
+                    if (sistersContainer) sistersContainer.classList.add('hidden');
+                }
                 
                 document.getElementById('alternatives').innerHTML = brand.alternatives.map(a => {
                     const m = a.match(/^(.+?)\s*\((.+)\)$/);
@@ -832,8 +870,49 @@
                 noResults.classList.remove('hidden');
                 noResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
+            // Hide autocomplete after search
+            document.getElementById('autocomplete').classList.add('hidden');
         }
         document.getElementById('brandSearch').addEventListener('keypress', e => { if (e.key === 'Enter') searchBrand(); });
+
+        // ========================
+        // AUTOCOMPLETE
+        // ========================
+        const searchInput = document.getElementById('brandSearch');
+        let acTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(acTimeout);
+            acTimeout = setTimeout(() => showAutocomplete(this.value), 150);
+        });
+        searchInput.addEventListener('blur', () => { setTimeout(() => document.getElementById('autocomplete')?.classList.add('hidden'), 200); });
+
+        function showAutocomplete(query) {
+            const ac = document.getElementById('autocomplete');
+            if (!query || query.length < 2) { ac.classList.add('hidden'); return; }
+            const q = query.toLowerCase();
+            const matches = brandDatabase.filter(b => 
+                b.name.toLowerCase().includes(q) || b.aliases.some(a => a.toLowerCase().includes(q))
+            ).slice(0, 6);
+            if (matches.length === 0) {
+                // Fuzzy: find closest by Levenshtein-ish (simple character overlap)
+                const scored = brandDatabase.map(b => {
+                    const name = b.name.toLowerCase();
+                    let score = 0;
+                    for (let i = 0; i < q.length; i++) { if (name.includes(q[i])) score++; }
+                    return { brand: b, score: score / q.length };
+                }).filter(s => s.score > 0.5).sort((a, b) => b.score - a.score).slice(0, 3);
+                if (scored.length > 0) {
+                    ac.innerHTML = '<div class="px-3 py-1.5 text-xs text-warm-gray">Did you mean:</div>' +
+                        scored.map(s => `<div class="ac-item px-3 py-2 hover:bg-burnt-orange/10 cursor-pointer text-sm" onmousedown="quickSearch('${s.brand.name.replace(/'/g, "\\'")}')">${s.brand.name} <span class="text-warm-gray text-xs">· ${s.brand.parent}</span></div>`).join('');
+                    ac.classList.remove('hidden');
+                } else { ac.classList.add('hidden'); }
+            } else {
+                ac.innerHTML = matches.map(b => 
+                    `<div class="ac-item px-3 py-2 hover:bg-burnt-orange/10 cursor-pointer text-sm" onmousedown="quickSearch('${b.name.replace(/'/g, "\\'")}')">${b.name} <span class="text-warm-gray text-xs">· ${b.parent}</span></div>`
+                ).join('');
+                ac.classList.remove('hidden');
+            }
+        }
 
         // ========================
         // COLLECTION SCANNER

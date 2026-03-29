@@ -2356,6 +2356,656 @@ const brandDatabase = [
             "Augustinus Bader (Luxury indie skincare, science-backed)",
             "Westman Atelier (Clean luxury, celebrity MUA-founded)"
         ]
+    },
+
+    // ============================================
+    // JOHNSON & JOHNSON (Consumer Health / Kenvue)
+    // ============================================
+    {
+        name: "Neutrogena",
+        aliases: ["neutrogena"],
+        parent: "Kenvue (formerly Johnson & Johnson)",
+        sisters: ["Aveeno", "Clean & Clear", "RoC", "OGX", "Listerine", "Tylenol", "Band-Aid"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Aveeno",
+        aliases: ["aveeno"],
+        parent: "Kenvue (formerly Johnson & Johnson)",
+        sisters: ["Neutrogena", "Clean & Clear", "RoC", "OGX", "Listerine"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Clean & Clear",
+        aliases: ["clean and clear", "clean&clear"],
+        parent: "Kenvue (formerly Johnson & Johnson)",
+        sisters: ["Neutrogena", "Aveeno", "RoC", "OGX"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "OGX",
+        aliases: ["ogx", "organix"],
+        parent: "Kenvue (formerly Johnson & Johnson)",
+        sisters: ["Neutrogena", "Aveeno", "Clean & Clear", "RoC"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "RoC",
+        aliases: ["roc skincare", "roc"],
+        parent: "Kenvue (formerly Johnson & Johnson)",
+        sisters: ["Neutrogena", "Aveeno", "Clean & Clear", "OGX"],
+        boycotts: [],
+        alternatives: []
+    },
+
+    // ============================================
+    // AMOREPACIFIC (K-Beauty Conglomerate)
+    // ============================================
+    {
+        name: "Innisfree",
+        aliases: ["innisfree"],
+        parent: "Amorepacific",
+        sisters: ["Sulwhasoo", "Laneige", "Etude House", "Mamonde", "IOPE", "Hera"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Sulwhasoo",
+        aliases: ["sulwhasoo"],
+        parent: "Amorepacific",
+        sisters: ["Innisfree", "Laneige", "Etude House", "Mamonde", "IOPE", "Hera"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Laneige",
+        aliases: ["laneige"],
+        parent: "Amorepacific",
+        sisters: ["Innisfree", "Sulwhasoo", "Etude House", "Mamonde", "IOPE", "Hera"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Etude House",
+        aliases: ["etude", "etude house"],
+        parent: "Amorepacific",
+        sisters: ["Innisfree", "Sulwhasoo", "Laneige", "Mamonde", "IOPE", "Hera"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Mamonde",
+        aliases: ["mamonde"],
+        parent: "Amorepacific",
+        sisters: ["Innisfree", "Sulwhasoo", "Laneige", "Etude House", "IOPE"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Hera",
+        aliases: ["hera"],
+        parent: "Amorepacific",
+        sisters: ["Innisfree", "Sulwhasoo", "Laneige", "Etude House", "IOPE", "Mamonde"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "IOPE",
+        aliases: ["iope"],
+        parent: "Amorepacific",
+        sisters: ["Innisfree", "Sulwhasoo", "Laneige", "Etude House", "Mamonde", "Hera"],
+        boycotts: [],
+        alternatives: []
+    },
+
+    // ============================================
+    // LG HOUSEHOLD & HEALTH CARE (K-Beauty)
+    // ============================================
+    {
+        name: "The Face Shop",
+        aliases: ["the face shop", "face shop", "thefaceshop"],
+        parent: "LG Household & Health Care",
+        sisters: ["The History of Whoo", "Su:m37°", "Ohui", "belif", "CNP Laboratory", "VDL"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "belif",
+        aliases: ["belif"],
+        parent: "LG Household & Health Care",
+        sisters: ["The Face Shop", "The History of Whoo", "Su:m37°", "Ohui", "CNP Laboratory", "VDL"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "VDL",
+        aliases: ["vdl"],
+        parent: "LG Household & Health Care",
+        sisters: ["The Face Shop", "The History of Whoo", "Su:m37°", "Ohui", "belif", "CNP Laboratory"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "CNP Laboratory",
+        aliases: ["cnp", "cnp laboratory"],
+        parent: "LG Household & Health Care",
+        sisters: ["The Face Shop", "The History of Whoo", "Su:m37°", "belif", "VDL"],
+        boycotts: [],
+        alternatives: []
+    },
+
+    // ============================================
+    // L'ORÉAL ADDITIONAL BRANDS
+    // ============================================
+    {
+        name: "Vichy",
+        aliases: ["vichy"],
+        parent: "L'Oréal",
+        sisters: ["La Roche-Posay", "CeraVe", "SkinCeuticals", "Garnier", "Maybelline", "NYX", "Lancôme", "Kiehl's"],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — L'Oréal operates in occupied territories)", since: "2010" }
+        ],
+        alternatives: [
+            "Avène (Independent French thermal water skincare)",
+            "Bioderma (Independent French dermatological brand)",
+            "Eucerin (Beiersdorf-owned, dermatologist-recommended)",
+            "Uriage (Independent French thermal water brand)"
+        ]
+    },
+    {
+        name: "SkinCeuticals",
+        aliases: ["skinceuticals", "skin ceuticals"],
+        parent: "L'Oréal",
+        sisters: ["La Roche-Posay", "CeraVe", "Vichy", "Garnier", "Maybelline", "NYX", "Lancôme", "Kiehl's"],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — L'Oréal operates in occupied territories)", since: "2010" }
+        ],
+        alternatives: [
+            "The Ordinary (Affordable, science-backed vitamin C & retinoids)",
+            "Naturium (Research-backed actives, transparent formulations)",
+            "Paula's Choice (Independent, evidence-based skincare)"
+        ]
+    },
+
+    // ============================================
+    // AESOP / L'ORÉAL (acquired 2023)
+    // ============================================
+    {
+        name: "Aesop",
+        aliases: ["aesop", "aēsop"],
+        parent: "L'Oréal",
+        sisters: ["La Roche-Posay", "CeraVe", "Kiehl's", "Lancôme", "NYX", "Maybelline", "Garnier"],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — L'Oréal operates in occupied territories)", since: "2010" }
+        ],
+        alternatives: [
+            "Grown Alchemist (Independent Australian botanical skincare)",
+            "Byredo (Independent Swedish luxury brand)",
+            "Le Labo (Estée Lauder-owned — check separately)",
+            "Malin+Goetz (Independent, apothecary-style skincare)"
+        ]
+    },
+
+    // ============================================
+    // INDEPENDENT K-BEAUTY BRANDS
+    // ============================================
+    {
+        name: "Skin1004",
+        aliases: ["skin1004", "skin 1004"],
+        parent: "Independent (Skin1004 Co., Ltd — South Korea)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "COSRX",
+        aliases: ["cosrx"],
+        parent: "Independent (COSRX Inc. — South Korea)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Beauty of Joseon",
+        aliases: ["beauty of joseon", "boj"],
+        parent: "Independent (Beauty of Joseon — South Korea)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Torriden",
+        aliases: ["torriden"],
+        parent: "Independent (Torriden — South Korea)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Anua",
+        aliases: ["anua"],
+        parent: "Independent (Anua — South Korea)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Missha",
+        aliases: ["missha"],
+        parent: "Able C&C (South Korea)",
+        sisters: ["A'Pieu"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "A'Pieu",
+        aliases: ["apieu", "a'pieu"],
+        parent: "Able C&C (South Korea)",
+        sisters: ["Missha"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Klairs",
+        aliases: ["klairs", "dear klairs"],
+        parent: "Independent (Wishcompany — South Korea)",
+        sisters: ["By Wishtrend"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "By Wishtrend",
+        aliases: ["by wishtrend", "wishtrend"],
+        parent: "Independent (Wishcompany — South Korea)",
+        sisters: ["Klairs"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Some By Mi",
+        aliases: ["some by mi", "somebymi"],
+        parent: "Independent (Some By Mi — South Korea)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Banila Co",
+        aliases: ["banila co", "banila"],
+        parent: "Independent (Banila Co — South Korea)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Purito",
+        aliases: ["purito"],
+        parent: "Independent (Purito — South Korea)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Heimish",
+        aliases: ["heimish"],
+        parent: "Independent (Heimish — South Korea)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Isntree",
+        aliases: ["isntree"],
+        parent: "Independent (Isntree — South Korea)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+
+    // ============================================
+    // INDEPENDENT WESTERN BRANDS (popular)
+    // ============================================
+    {
+        name: "The Ordinary",
+        aliases: ["the ordinary", "ordinary"],
+        parent: "Independent (DECIEM / Estée Lauder minority stake)",
+        sisters: ["NIOD", "The Chemistry Brand"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Fenty Beauty",
+        aliases: ["fenty", "fenty beauty", "fenty skin"],
+        parent: "LVMH (Kendo Brands)",
+        sisters: ["Sephora", "Benefit", "Make Up For Ever", "KVD Vegan Beauty"],
+        boycotts: [
+            { reason: "Palestine solidarity (BDS — LVMH/Bernard Arnault invests in Israeli companies)", since: "Oct 2023" }
+        ],
+        alternatives: [
+            "Juvia's Place (Black-owned, inclusive shade ranges)",
+            "Danessa Myricks (BIPOC-owned, innovative formulas)",
+            "Mented Cosmetics (Black woman-owned, inclusive beauty)"
+        ]
+    },
+    {
+        name: "Rare Beauty",
+        aliases: ["rare beauty"],
+        parent: "Independent (Selena Gomez — minority Sephora distribution deal)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Tower 28",
+        aliases: ["tower 28", "tower28"],
+        parent: "Independent (woman-owned, clean beauty)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Kosas",
+        aliases: ["kosas"],
+        parent: "Independent (woman-founded, clean beauty)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "ILIA",
+        aliases: ["ilia", "ilia beauty"],
+        parent: "Independent (clean beauty, B Corp certified)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Glossier",
+        aliases: ["glossier"],
+        parent: "Independent (Emily Weiss-founded)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "e.l.f. Cosmetics",
+        aliases: ["elf", "e.l.f.", "elf cosmetics", "e.l.f. cosmetics"],
+        parent: "Independent (publicly traded, e.l.f. Beauty Inc.)",
+        sisters: ["Well People", "Keys Soulcare"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Thrive Causemetics",
+        aliases: ["thrive", "thrive causemetics"],
+        parent: "Independent (social impact brand, donates to women in need)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Mented Cosmetics",
+        aliases: ["mented", "mented cosmetics"],
+        parent: "Independent (Black woman-owned, inclusive beauty)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Juvia's Place",
+        aliases: ["juvias place", "juvia's place"],
+        parent: "Independent (Nigerian-owned, inclusive beauty)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Danessa Myricks",
+        aliases: ["danessa myricks"],
+        parent: "Independent (BIPOC-owned, innovative formulas)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Milk Makeup",
+        aliases: ["milk makeup", "milk"],
+        parent: "Independent (vegan, clean beauty)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Honest Beauty",
+        aliases: ["honest beauty", "honest"],
+        parent: "Independent (The Honest Company — Jessica Alba-founded)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Versed",
+        aliases: ["versed", "versed skincare"],
+        parent: "Independent (clean skincare, Target-exclusive)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Good Molecules",
+        aliases: ["good molecules"],
+        parent: "Independent (Beautylish)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Naturium",
+        aliases: ["naturium"],
+        parent: "Independent (Susan Yara-founded, science-backed)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Dr. Bronner's",
+        aliases: ["dr bronner's", "dr bronners", "dr. bronner"],
+        parent: "Independent (family-owned since 1948, fair trade, B Corp)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+
+    // ============================================
+    // BEIERSDORF
+    // ============================================
+    {
+        name: "Nivea",
+        aliases: ["nivea"],
+        parent: "Beiersdorf",
+        sisters: ["Eucerin", "La Prairie", "Aquaphor", "Coppertone"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Eucerin",
+        aliases: ["eucerin"],
+        parent: "Beiersdorf",
+        sisters: ["Nivea", "La Prairie", "Aquaphor", "Coppertone"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "La Prairie",
+        aliases: ["la prairie"],
+        parent: "Beiersdorf",
+        sisters: ["Nivea", "Eucerin", "Aquaphor", "Coppertone"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Aquaphor",
+        aliases: ["aquaphor"],
+        parent: "Beiersdorf",
+        sisters: ["Nivea", "Eucerin", "La Prairie", "Coppertone"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Coppertone",
+        aliases: ["coppertone"],
+        parent: "Beiersdorf",
+        sisters: ["Nivea", "Eucerin", "La Prairie", "Aquaphor"],
+        boycotts: [],
+        alternatives: []
+    },
+
+    // ============================================
+    // COLGATE-PALMOLIVE
+    // ============================================
+    {
+        name: "Colgate",
+        aliases: ["colgate"],
+        parent: "Colgate-Palmolive",
+        sisters: ["Palmolive", "Speed Stick", "Tom's of Maine", "Hello"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Palmolive",
+        aliases: ["palmolive"],
+        parent: "Colgate-Palmolive",
+        sisters: ["Colgate", "Speed Stick", "Tom's of Maine"],
+        boycotts: [],
+        alternatives: []
+    },
+
+    // ============================================
+    // HENKEL
+    // ============================================
+    {
+        name: "Schwarzkopf",
+        aliases: ["schwarzkopf"],
+        parent: "Henkel",
+        sisters: ["got2b", "Dial", "Persil"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "got2b",
+        aliases: ["got2b"],
+        parent: "Henkel",
+        sisters: ["Schwarzkopf", "Dial", "Persil"],
+        boycotts: [],
+        alternatives: []
+    },
+
+    // ============================================
+    // INDEPENDENT FRENCH DERMA (not L'Oréal)
+    // ============================================
+    {
+        name: "Bioderma",
+        aliases: ["bioderma"],
+        parent: "Independent (NAOS Group — France)",
+        sisters: ["Institut Esthederm", "Etat Pur"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Avène",
+        aliases: ["avene", "avène", "eau thermale avene"],
+        parent: "Independent (Pierre Fabre — France)",
+        sisters: ["Ducray", "Klorane", "A-Derma"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Uriage",
+        aliases: ["uriage"],
+        parent: "Independent (Uriage Dermatological Laboratories — France)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+
+    // ============================================
+    // REVLON
+    // ============================================
+    {
+        name: "Revlon",
+        aliases: ["revlon"],
+        parent: "Revlon Inc.",
+        sisters: ["Elizabeth Arden", "Almay", "American Crew", "Mitchum"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Elizabeth Arden",
+        aliases: ["elizabeth arden"],
+        parent: "Revlon Inc.",
+        sisters: ["Revlon", "Almay", "American Crew"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Almay",
+        aliases: ["almay"],
+        parent: "Revlon Inc.",
+        sisters: ["Revlon", "Elizabeth Arden", "American Crew"],
+        boycotts: [],
+        alternatives: []
+    },
+
+    // ============================================
+    // CHURCH & DWIGHT
+    // ============================================
+    {
+        name: "Batiste",
+        aliases: ["batiste"],
+        parent: "Church & Dwight",
+        sisters: ["OxiClean", "Arm & Hammer", "Nair", "First Response"],
+        boycotts: [],
+        alternatives: []
+    },
+
+    // ============================================
+    // INDEPENDENT J-BEAUTY
+    // ============================================
+    {
+        name: "Canmake",
+        aliases: ["canmake"],
+        parent: "Independent (IDA Laboratories — Japan)",
+        sisters: [],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Biore",
+        aliases: ["biore", "bioré"],
+        parent: "Kao Corporation (Japan)",
+        sisters: ["Jergens", "John Frieda", "Curel"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Hada Labo",
+        aliases: ["hada labo", "hadalabo"],
+        parent: "Rohto Pharmaceutical (Japan)",
+        sisters: ["Mentholatum", "Melano CC"],
+        boycotts: [],
+        alternatives: []
+    },
+    {
+        name: "Melano CC",
+        aliases: ["melano cc"],
+        parent: "Rohto Pharmaceutical (Japan)",
+        sisters: ["Hada Labo", "Mentholatum"],
+        boycotts: [],
+        alternatives: []
     }
 ];
 
